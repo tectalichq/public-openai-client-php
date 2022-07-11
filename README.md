@@ -1,54 +1,44 @@
-# OpenAI REST API Client
+# Tectalic OpenAI REST API Client
 
 ## Introduction
 
-The **OpenAI REST API Client** is a package that provides a simple and convenient way to interact with the **OpenAI API** from your PHP application.
+The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
 
-This package can be purchased from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
-
-## License
-
-This software is copyright (c) [Tectalic](https://tectalic.com).
-
-For the full copyright and license information, please view the *LICENSE* file that was distributed with the source code.
-
-## System Requirements
-
-- PHP version 7.2.5 or newer.
-- [PHP JSON extension](https://www.php.net/manual/en/json.installation.php) installed.
-- A PSR-18 compatible HTTP client such as Guzzle or the Symfony HttpClient.
+You can purchase this package from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
 
 ## Installation
 
+### System Requirements
+
+- PHP version 7.2.5 or newer (including PHP 8.0 and 8.1)
+- [PHP JSON extension](https://www.php.net/manual/en/json.installation.php) installed if using PHP 7.x. As of PHP 8.0, this extension became a core PHP extension so is always enabled.
+- A [PSR-18](https://www.php-fig.org/psr/psr-18/) compatible HTTP client such as 'Guzzle' or the 'Symfony HTTP Client'.
+
+### Composer Installation
+
 To install this package into your PHP project, we recommend using [Composer](http://getcomposer.org/).
 
-Please [see here for detailed instructions on how to configure your project to access the Tectalic Composer repository](https://tectalic.com/products/openai#composer-integration). You will need to log into the Tectalic account that purchased the **OpenAI REST API Client** package in order to access these instructions.
+Please see the detailed instructions on configuring your project to access [the Tectalic Composer repository](https://tectalic.com/products/openai#composer-integration).
 
-Once you have authenticated composer using the above instructions, run the following command:
+You will need to log into the Tectalic account that purchased the **Tectalic OpenAI REST API Client** package to access these instructions.
 
-`composer require tectalic/openai ^TODO`
+Once you have followed the above instructions, install the package into your project:
 
-Then run the following command to install the *OpenAI REST API Client* into your project:
-
-`composer install`
-
-Ensure you have also installed into your project a [compatible PSR-18 HTTP Client](https://packagist.org/providers/psr/http-client-implementation) such as Guzzle or the Symfony HttpClient.
+```shell
+composer require tectalic/openai
+```
 
 ### Manual Installation
 
-TODO: Finalise instructions for manual installation. How does it work as the downloaded zip file does not include the product's dependencies?
+If you aren't using Composer in your PHP project, you can choose to [Download the latest release](https://tectalic.com/products/openai) and install it into your PHP project manually.
 
-[Download the latest release from here](https://tectalic.com/products/openai) and extract it into your PHP project.
+If doing this, you will need to ensure that all dependencies listed in the package's `composer.json` file are also installed.
 
-Then include the OpenAI REST API Client `autoload.php` file:
+## Usage
 
-```php
-require_once('/path/to/your-project/openai/autoload.php');
-```
+After installing the **Tectalic OpenAI REST API Client** package into your project, ensure you also have a [compatible PSR-18 HTTP client](https://packagist.org/providers/psr/http-client-implementation) such as 'Guzzle' or the Symfony 'HTTP Client'.
 
-## Getting Started
-
-After installing the package into your project, you can use the following code sample and customize it to suit your application.
+You can use the following code sample and customize it to suit your application.
 
 ```php
 // Load your project's composer autoloader (if you aren't already doing so).
@@ -56,65 +46,268 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ```
 
 ```php
-use Tectalic\OpenAI\Authentication;
-use Tectalic\OpenAI\Client;
-use Tectalic\OpenAI\Manager;
+use Symfony\Component\HttpClient\Psr18Client;
+use Tectalic\OpenAi\Authentication;
+use Tectalic\OpenAi\Client;
+use Tectalic\OpenAi\Manager;
 
-// Fluent interface
-$auth = new Authentication(TODO: auth params);
-$client = Manager::build($httpClient, $auth);
-// TODO: method parameters, use only a get() method?
-$client->answers()->create()->toModel();
+// Build a Tectalic OpenAI REST API Client globally.
+$auth = new Authentication('token');
+$httpClient = new Psr18Client();
+Manager::build($httpClient, $auth);
+
+// or
+
+// Build a Tectalic OpenAI REST API Client manually.
+$auth = new Authentication('token');
+$httpClient = new Psr18Client();
+$client = new Client($httpClient, $auth, Manager::BASE_URI);
 ```
 
-## Authentication
+### Authentication
 To authenticate your API requests, you will need to provide an `Authentication` (`$auth`) object when calling `Manager::build()`.
 
-Authentication to the **OpenAI API** is by TODO auth type.
+Authentication to the **OpenAI API** is by HTTP Bearer authentication.
 
-In the **Getting Started** code above, customize the `Authentication` constructor to your needs. For example, you may wish to define your API key in an environment variable, and pass it to the constructor.
+Please see the OpenAI API documentation for more details on obtaining your authentication credentials.
 
-## Client Class
+In the **Usage** code above, customize the `Authentication` constructor to your needs. For example, you may wish to define your credentials in an environment variable and pass it to the constructor.
 
-The primary class that you will interact with is the `Client` class (`Tectalic\OpenAI\Client`).
+### Client Class
 
-This `Client` class also contains the helper methods that lets you easily access the 6 handler(s).
+The primary class you will interact with is the `Client` class (`Tectalic\OpenAi\Client`).
 
-Please see below for a full list of supported handlers and methods.
+This `Client` class also contains the helper methods that let you quickly access the 13 API Handlers.
 
-## Supported Handlers and Methods
+Please see below for a complete list of supported handlers and methods.
 
-This package supports 6 handlers(s) and a total of 10 method(s). See the following table for details.
+### Supported API Handlers and Methods
 
- TODO: add parameter(s) to Method Name column
+This package supports 21 API Methods, which are grouped into 13 API Handlers.
 
-| Handler Class Name | Handler URL | HTTP Verb | Method Name | Description | PHP Code |
-| ------------------- | ------------ | --------- | ----------- | ----------- | -------- |
-|`Tectalic\OpenAI\Handler\Answers`|`/answers`|`post`|`create()`|Create answer<br /><br />Answers the specified question using the provided documents and examples.<br /><br />The endpoint first [searches](https://beta.openai.com/docs/api-reference/searches) over provided documents or files to find relevant context.<br />The relevant context is combined with the provided examples and question to create the prompt for [completion](https://beta.openai.com/docs/api-reference/completions).<br /><br />[See More](https://beta.openai.com/docs/api-reference/classifications/create)|`$client->answers()->create()->toModel()`|
-|`Tectalic\OpenAI\Handler\Classifications`|`/classifications`|`post`|`create()`|Create classification<br /><br />Classifies the specified query using provided examples.<br /><br />The endpoint first [searches](https://beta.openai.com/docs/api-reference/searches) over the labeled examples to select the ones most relevant for the particular query.<br />Then, the relevant examples are combined with the query to construct a prompt to produce the final label via the [completions](https://beta.openai.com/docs/api-reference/completions) endpoint.<br /><br />Labeled examples can be provided via an uploaded file, or explicitly listed in the request using the examples parameter for quick tests and small scale use cases.<br /><br />[See More](https://beta.openai.com/docs/api-reference/classifications/create)|`$client->classifications()->create()->toModel()`|
-|`Tectalic\OpenAI\Handler\Engines`|`/engines`|`get`|`list()`|List engines<br /><br />Lists the currently available engines, and provides basic information about each one such as the owner and availability.<br /><br />[See More](https://beta.openai.com/docs/api-reference/engines/list)|`$client->engines()->list()->toModel()`|
-|`Tectalic\OpenAI\Handler\Engines`|`/engines/{engineId}`|`get`|`get()`|Retrieve engine<br /><br />Retrieves an engine instance, providing basic information about the engine such as the owner and availability.<br /><br />[See More](https://beta.openai.com/docs/api-reference/engines/retrieve)|`$client->engines()->get()->toModel()`|
-|`Tectalic\OpenAI\Handler\EnginesCompletions`|`/engines/{engineId}/completions`|`post`|`create()`|Create completion<br /><br />Creates a new completion for the provided prompt and parameters.<br /><br />[See More](https://beta.openai.com/docs/api-reference/completions/create)|`$client->enginesCompletions()->create()->toModel()`|
-|`Tectalic\OpenAI\Handler\EnginesSearch`|`/engines/{engineId}/search`|`post`|`esCreate()`|Create search<br /><br />The search endpoint computes similarity scores between provided query and documents.<br />Documents can be passed directly to the API if there are no more than 200 of them.<br /><br />To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time.<br />When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents.<br />These documents will be returned along with their search scores.<br /><br />The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.<br /><br />[See More](https://beta.openai.com/docs/api-reference/searches/create)|`$client->enginesSearch()->esCreate()->toModel()`|
-|`Tectalic\OpenAI\Handler\Files`|`/files`|`get`|`list()`|List files<br /><br />Returns a list of files that belong to the user's organization.<br /><br />[See More](https://beta.openai.com/docs/api-reference/files/list)|`$client->files()->list()->toModel()`|
-|`Tectalic\OpenAI\Handler\Files`|`/files`|`post`|`upload()`|Upload file<br /><br />Upload a file that contains document(s) to be used across various endpoints/features.<br />Currently, the size of all the files uploaded by one organization can be up to 1 GB.<br />Please contact us if you need to increase the storage limit.<br /><br />[See More](https://beta.openai.com/docs/api-reference/files/upload)|`$client->files()->upload()->toModel()`|
-|`Tectalic\OpenAI\Handler\Files`|`/files/{fileId}`|`get`|`get()`|Retrieve file<br /><br />Returns information about a specific file.<br /><br />[See More](https://beta.openai.com/docs/api-reference/files/retrieve)|`$client->files()->get()->toModel()`|
-|`Tectalic\OpenAI\Handler\Files`|`/files/{fileId}`|`delete`|`remove()`|Delete file<br /><br />Delete a file.<br /><br />[See More](https://beta.openai.com/docs/api-reference/files/delete)|`$client->files()->remove()->toModel()`|
+See the table below for a full list of API Handlers and Methods.
 
 
-## Models (if DTO enabled)
-TODO: Add models if they are part of MVP
+| API Handler Class and Method Name | Description | API Verb and URL |
+| --------------------------------- | ----------- | ---------------- |
+|`Answers::create()`|Answers the specified question using the provided documents and examples.<br />The endpoint first searches over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for completion.|`POST` `/answers`|
+|`Classifications::create()`|Classifies the specified query using provided examples.<br />The endpoint first searches over the labeled examples<br />to select the ones most relevant for the particular query. Then, the relevant examples<br />are combined with the query to construct a prompt to produce the final label via the<br />completions endpoint.<br />Labeled examples can be provided via an uploaded file, or explicitly listed in the<br />request using the examples parameter for quick tests and small scale use cases.|`POST` `/classifications`|
+|`Completions::create()`|Creates a completion for the provided prompt and parameters|`POST` `/completions`|
+|`Edits::create()`|Creates a new edit for the provided input, instruction, and parameters|`POST` `/edits`|
+|`Embeddings::create()`|Creates an embedding vector representing the input text.|`POST` `/embeddings`|
+|`Engines::list()`|Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability.|`GET` `/engines`|
+|`Engines::retrieve()`|Retrieves a model instance, providing basic information about it such as the owner and availability.|`GET` `/engines/{engine_id}`|
+|`EnginesSearch::create()`|The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.<br />To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When file is set, the search endpoint searches over all the documents in the given file and returns up to the max_rerank number of documents. These documents will be returned along with their search scores.<br />The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.|`POST` `/engines/{engine_id}/search`|
+|`Files::list()`|Returns a list of files that belong to the user's organization.|`GET` `/files`|
+|`Files::create()`|Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.|`POST` `/files`|
+|`Files::retrieve()`|Returns information about a specific file.|`GET` `/files/{file_id}`|
+|`Files::delete()`|Delete a file.|`DELETE` `/files/{file_id}`|
+|`FilesContent::download()`|Returns the contents of the specified file|`GET` `/files/{file_id}/content`|
+|`FineTunes::list()`|List your organization's fine-tuning jobs|`GET` `/fine-tunes`|
+|`FineTunes::create()`|Creates a job that fine-tunes a specified model from a given dataset.<br />Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br />Learn more about Fine-tuning|`POST` `/fine-tunes`|
+|`FineTunes::retrieve()`|Gets info about the fine-tune job.<br />Learn more about Fine-tuning|`GET` `/fine-tunes/{fine_tune_id}`|
+|`FineTunesCancel::cancelFineTune()`|Immediately cancel a fine-tune job.|`POST` `/fine-tunes/{fine_tune_id}/cancel`|
+|`FineTunesEvents::listFineTune()`|Get fine-grained status updates for a fine-tune job.|`GET` `/fine-tunes/{fine_tune_id}/events`|
+|`Models::list()`|Lists the currently available models, and provides basic information about each one such as the owner and availability.|`GET` `/models`|
+|`Models::retrieve()`|Retrieves a model instance, providing basic information about the model such as the owner and permissioning.|`GET` `/models/{model}`|
+|`Models::delete()`|Delete a fine-tuned model. You must have the Owner role in your organization.|`DELETE` `/models/{model}`|
+
+### Making a Request
+
+There are two ways to make a request to the nominated API Handler and API Method:
+
+If you built the client to be accessible globally, you can use the relevant API Handler Class directly:
+
+```php
+use Tectalic\OpenAi\Handlers\Answers;
+
+(new Answers())->create();
 ```
-Tectalic\OpenAI\Model\User (primary for the `get()` method)
-Tectalic\OpenAI\Model\UserList (Collection, ArrayAccess)
-Tectalic\OpenAI\Model\UserCreate (if different from User)
-Tectalic\OpenAI\Model\UserUpdate (if different from User)
-Tectalic\OpenAI\Model\UserDelete (if different from User)
-Tectalic\OpenAI\Model\UserTrace (only if exotic HTTP method defined and different from User)
+
+Alternatively, you can access all API Handlers from the client class using the Client class:
+
+```php
+$client->answers()->create();
 ```
 
-## Errors
+### Retrieving the Response
 
-When using **OpenAI REST API Client**, certain types of errors will cause an `Tectalic\OpenAI\Exception\ClientException` to be thrown. For example, if the request cannot be encoded into valid JSON.
+Once you have made a request using one of the two methods outlined above, the next step is to access the response.
 
-Your HTTP client of choice may also throw various exceptions, such as `GuzzleHttp\Exception\ClientException`. Consult your HTTP client's documentation for more details.
+You can access the response in different ways. Please choose your preferred one.
+
+#### Model Responses
+
+Model responses are Data Transfer Object (DTO) style PHP classes, with public properties for each API property.
+
+They offer a structured way of retrieving the response from an API request.
+
+All Response Models are an instance of `Tectalic\OpenAi\Models\AbstractModel` or `Tectalic\OpenAi\Models\AbstractModelCollection`.
+
+After [performing the request](#making-a-request), use the `->toModel()` fluent method to the API Method:
+
+```php
+use Tectalic\OpenAi\Handlers\Answers;
+
+$model = (new Answers())->create()->toModel();
+```
+
+Each API Method's `toModel()` call will return the appropriate Model class type for the API Method you have just called.
+
+#### Associative Array Responses
+
+After performing the request, use the `->toArray()` fluent method to the API Method:
+
+```php
+use Tectalic\OpenAi\Handlers\Answers;
+
+$array = (new Answers())->create()->toArray();
+```
+
+In the resulting associative array, the array keys will match the names of the public properties in the relevant Model class.
+
+#### PSR 7 Response Objects
+
+If you need to access the raw response or inspect the HTTP headers, use the `->getResponse()` fluent method to the API Method. It will return a `Psr\Http\Message\ResponseInterface`:
+
+```php
+use Tectalic\OpenAi\Handlers\Answers;
+
+$response = (new Answers())->create()->getResponse();
+```
+
+### Errors
+
+When performing requests with **Tectalic OpenAI REST API Client**, specific scenarios will cause a `Tectalic\OpenAi\Exception\ClientException` to be thrown. Please see below for details.
+
+#### Invalid Usage of the `Manager` Class
+
+A `\LogicException` will be thrown if the `Manager::build()` function is called multiple times, or if `Manager::access()` is called before calling `Manager::build()`.
+
+#### Unsuccessful HTTP Response Codes
+
+The **Tectalic OpenAI REST API Client** depends on a PSR-18 compatible HTTP client, and that HTTP client should not throw an exception for [unsuccessful HTTP response codes](https://www.php-fig.org/psr/psr-18/#error-handling).
+
+An unsuccessful response code is classified as one that is not in the range `200`-`299` (inclusive). Examples of unsuccessful response codes include:
+
+- Informational responses (`100`-`199`)
+- Redirection responses (`300`-`399`)
+- Client error responses (`400`-`499`)
+- Server error responses (`500`-`599`)
+
+If an unsuccessful response code does occur:
+
+- your HTTP Client will *not* throw an Exception.
+- the API Handler's `toModel()` method will throw a `ClientException`.
+- the API Handler's `toArray()` method will return the response body and not throw a `ClientException`.
+- The API Handler's `getResponse()` method will return the raw response and not throw a `ClientException`.
+
+Below is an example of how you may wish to use a `try`/`catch` block when performing a request so that you can detect and handle unexpected errors.
+
+```php
+use Tectalic\OpenAi\Authentication;
+use Tectalic\OpenAi\Client;
+use Tectalic\OpenAi\ClientException;
+use Tectalic\OpenAi\Manager;
+
+// Build a Tectalic OpenAI REST API Client globally.
+$auth = new Authentication('token');
+Manager::build($httpClient, $auth);
+$handler = new Answers();
+
+// Perform a request
+try {
+    $model = $handler->create()->toModel();
+    // Do something with the response model...
+} catch (ClientException $e) {
+    // Error response received. Retrieve the HTTP response code and response body.
+    $responseBody = $handler->toArray();
+    $rawResponse  = $handler->getResponse()->getResponse();
+    $responseCode = $handler->getResponse()->getStatusCode();
+    // Handle the error...
+}
+```
+
+#### HTTP Client Exceptions
+
+If your HTTP client of choice throws an exception other than `ClientException`, the **Tectalic OpenAI REST API Client** `Client` and its API Handler classes will let these exceptions bubble up.
+
+Consult your HTTP client's documentation for more details on exception handling.
+
+## Tests
+
+The **Tectalic OpenAI REST API Client** package includes several types of automated PHPUnit tests to verify the correct operation:
+
+- Unit Tests
+- Integration Tests
+
+To run these tests, you will need to have installed the **Tectalic OpenAI REST API Client** package with its dev dependencies (i.e. not using the `--no-dev` flag when running composer).
+
+### Unit Tests
+
+These PHPUnit tests are designed to:
+
+- confirm that each API Method assembles a valid request that matches the OpenAI API OpenAPI specification.
+- verify the behaviour of other parts of the package, such as the `Client` and `Manager` classes.
+
+The unit tests can be run using the following command, which needs to be run from this package's root directory.
+
+```shell
+composer test:unit
+```
+
+Unit tests do *not* perform any real requests against the OpenAI API.
+
+Unit tests are located in the `tests/Unit` directory.
+
+### Integration Tests
+
+Integration tests are located in the `tests/Integration` directory.
+
+These PHPUnit tests are designed to confirm that each API Method parses a valid response, according to the OpenAI API OpenAPI specification. Out of the box the integration tests are designed to work with the [Prism Mock Server](https://meta.stoplight.io/docs/prism/).
+
+#### Using Prism as the Target
+
+Make sure Prism is installed. Please see the [Prism documentation](https://meta.stoplight.io/docs/prism/) for details on how to install Prism.
+
+Once Prism is installed, you can run prism and the integration tests side by side in separate terminal windows, or using the following command, which need to be run from this package's root directory.
+
+```shell
+echo "> Starting Prism server"
+prism mock tests/openapi.yaml >/dev/null 2>&1 &
+PRISM_PID=$!
+sleep 2
+echo "  => Started"
+composer test:integration
+kill $PRISM_PID
+```
+
+Those commands will start the Prism mock server, then run the integration tests, and then stop the Prism mock server when the tests are completed.
+
+In this case the integration tests do *not* perform any real requests against the OpenAI API.
+
+#### Using a Different Target
+
+By setting the `OPENAI_CLIENT_TEST_BASE_URI` environment variable, you can set a different API endpoint target for the integration tests.
+
+For example, instead of using Prism, you can use a different mocking/staging/test server of your choice, or you can use the OpenAI API's live endpoints.
+
+Do not forget to set the appropriate credentials in the `OPENAI_CLIENT_TEST_AUTH_USERNAME` `OPENAI_CLIENT_TEST_AUTH_PASSWORD` environment variables.
+
+After your setup is complete simply run the following command.
+
+```shell
+composer test:integration
+```
+
+We do not recommend running integration tests against the live OpenAI API endpoints. This is because the tests will send example data to all endpoints, which can result in new data being created, or existing data being deleted.
+
+## Support
+
+If you have any questions or feedback, you can submit a support request to the Tectalic developers by going to [https://tectalic.com/support/openai](https://tectalic.com/support/openai).
+
+## License
+
+This software is copyright (c) 2022 [Tectalic](https://tectalic.com).
+
+For copyright and license information, please view [https://tectalic.com/terms](https://tectalic.com/terms).

@@ -1,0 +1,179 @@
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+
+on:
+  # Run on every commit.
+  - push
+    # Allow manually triggering the workflow.
+  - workflow_dispatch
+
+# Cancels all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  # The concurrency group contains the workflow name and the branch name.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+name: CI
+
+jobs:
+  static-analysis:
+    name: Static Analysis
+
+    timeout-minutes: 5
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        test-type: [phpcs, phpstan]
+
+    env:
+      COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          # Colon means remove
+          extensions: :apcu, :imagick
+          coverage: none
+          tools: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install composer dependencies
+        run: composer update --no-interaction --no-ansi --no-progress --optimize-autoloader
+
+      - name: Test with ${{ matrix.test-type }}
+        run: composer test:${{ matrix.test-type }}
+
+  tests:
+    name: Tests
+
+    timeout-minutes: 5
+
+    needs: static-analysis
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        test-type: [unit, integration]
+        php-version: ['7.2', '7.3', '7.4', '8.0', '8.1']
+        dependencies: [lowest, highest]
+        exclude:
+          - test-type: unit
+            dependencies: lowest
+            os: macos-latest
+          - test-type: unit
+            dependencies: lowest
+            os: windows-latest
+          - test-type: integration
+            os: macos-latest
+          - test-type: integration
+            os: windows-latest
+
+    env:
+      COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        if: matrix.test-type == 'integration'
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install and run @stoplight/prism
+        if: matrix.test-type == 'integration'
+        run: |
+          npm install -g @stoplight/prism-cli
+          prism mock tests/openapi.yaml >artifacts/prism.log 2>&1 &
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+          extensions: ctype, json, mbstring, simplexml, tokenizer, xmlwriter, :apcu, :imagick
+          ini-values: memory_limit=-1, assert.exception=1, zend.assertions=1, error_reporting=-1, log_errors_max_len=0, display_errors=On
+          tools: none
+
+      - name: Install lowest dependencies with composer
+        if: matrix.dependencies == 'lowest'
+        run: composer update --no-interaction --no-ansi --no-progress --prefer-lowest --optimize-autoloader
+
+      - name: Install highest dependencies with composer
+        if: matrix.dependencies == 'highest'
+        run: composer update --no-interaction --no-ansi --no-progress --optimize-autoloader
+
+      - name: Test ${{ matrix.test-type }} with phpunit
+        run: composer test:${{ matrix.test-type }} -- --testdox
+
+      - name: Upload prism log
+        if: matrix.test-type == 'integration'
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.event.repository.name }}-prism.log
+          path: artifacts/prism.log
+
+  coverage:
+    name: Coverage
+
+    timeout-minutes: 5
+
+    needs: tests
+
+    runs-on: ubuntu-latest
+
+    env:
+      COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install and run @stoplight/prism
+        run: |
+          npm install -g @stoplight/prism-cli
+          prism mock tests/openapi.yaml &
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          coverage: xdebug
+          extensions: ctype, json, mbstring, simplexml, tokenizer, xmlwriter, :apcu, :imagick
+          ini-values: memory_limit=-1, assert.exception=1, zend.assertions=1, error_reporting=-1, log_errors_max_len=0, display_errors=On
+          tools: none
+
+      - name: Install composer dependencies
+        run: composer update --no-interaction --no-ansi --no-progress --optimize-autoloader
+
+      - name: Test coverage with phpunit
+        run: composer test:coverage
+
+      - name: Upload code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.event.repository.name }}-coverage-report
+          path: coverage/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.event.repository.name }}-artifacts
+          path: artifacts/
