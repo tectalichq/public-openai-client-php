@@ -4,7 +4,7 @@
 
 The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
 
-You can purchase this package from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
+More information is available from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
 
 ## Installation
 
@@ -16,23 +16,11 @@ You can purchase this package from [https://tectalic.com/apis/openai](https://te
 
 ### Composer Installation
 
-To install this package into your PHP project, we recommend using [Composer](http://getcomposer.org/).
-
-Please see the detailed instructions on configuring your project to access [the Tectalic Composer repository](https://tectalic.com/products/openai#composer-integration).
-
-You will need to log into the Tectalic account that purchased the **Tectalic OpenAI REST API Client** package to access these instructions.
-
-Once you have followed the above instructions, install the package into your project:
+Install the package into your project:
 
 ```shell
 composer require tectalic/openai
 ```
-
-### Manual Installation
-
-If you aren't using Composer in your PHP project, you can choose to [Download the latest release](https://tectalic.com/products/openai) and install it into your PHP project manually.
-
-If doing this, you will need to ensure that all dependencies listed in the package's `composer.json` file are also installed.
 
 ## Usage
 
@@ -304,7 +292,7 @@ We do not recommend running integration tests against the live OpenAI API endpoi
 
 ## Support
 
-If you have any questions or feedback, you can submit a support request to the Tectalic developers by going to [https://tectalic.com/support/openai](https://tectalic.com/support/openai).
+If you have any questions or feedback, please use the [discussion board](https://github.com/tectalichq/public-openai-client-php/discussions).
 
 ## License
 
