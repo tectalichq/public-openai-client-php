@@ -8,6 +8,8 @@ More information is available from [https://tectalic.com/apis/openai](https://te
 
 ## Installation
 
+Need help getting started? See our guide: [how to build an app using the OpenAI API](https://tectalic.com/blog/build-an-app-using-openai-api).
+
 ### System Requirements
 
 - PHP version 7.2.5 or newer (including PHP 8.0 and 8.1)
