@@ -16,6 +16,13 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class RetrieveResponse extends AbstractModel
 {
+    /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = ['id', 'object', 'created', 'owned_by'];
+
     /** @var string */
     public $id;
 

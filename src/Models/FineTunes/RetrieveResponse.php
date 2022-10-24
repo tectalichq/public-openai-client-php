@@ -16,6 +16,26 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class RetrieveResponse extends AbstractModel
 {
+    /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = [
+        'id',
+        'object',
+        'created_at',
+        'updated_at',
+        'model',
+        'fine_tuned_model',
+        'organization_id',
+        'status',
+        'hyperparams',
+        'training_files',
+        'validation_files',
+        'result_files',
+    ];
+
     /** @var string */
     public $id;
 
@@ -43,15 +63,15 @@ final class RetrieveResponse extends AbstractModel
     /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseHyperparams */
     public $hyperparams;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseTrainingFilesItem[] */
     public $training_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseValidationFilesItem[] */
     public $validation_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseResultFilesItem[] */
     public $result_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseEventsItem[] */
     public $events;
 }

@@ -16,6 +16,26 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class CancelFineTuneResponse extends AbstractModel
 {
+    /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = [
+        'id',
+        'object',
+        'created_at',
+        'updated_at',
+        'model',
+        'fine_tuned_model',
+        'organization_id',
+        'status',
+        'hyperparams',
+        'training_files',
+        'validation_files',
+        'result_files',
+    ];
+
     /** @var string */
     public $id;
 
@@ -43,15 +63,15 @@ final class CancelFineTuneResponse extends AbstractModel
     /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseHyperparams */
     public $hyperparams;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseTrainingFilesItem[] */
     public $training_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseValidationFilesItem[] */
     public $validation_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseResultFilesItem[] */
     public $result_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseEventsItem[] */
     public $events;
 }

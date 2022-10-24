@@ -1,20 +1,569 @@
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/engines]. Target: Api.Handler[Engines]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/engines/{engine_id}]. Target: Api.Handler[Engines]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/completions]. Target: Api.Handler[Completions]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/edits]. Target: Api.Handler[Edits]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/embeddings]. Target: Api.Handler[Embeddings]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search]. Target: Api.Handler[EnginesSearch]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/files]. Target: Api.Handler[Files]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/files/{file_id}]. Target: Api.Handler[Files]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/files/{file_id}/content]. Target: Api.Handler[FilesContent]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/answers]. Target: Api.Handler[Answers]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/classifications]. Target: Api.Handler[Classifications]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes]. Target: Api.Handler[FineTunes]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}]. Target: Api.Handler[FineTunes]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel]. Target: Api.Handler[FineTunesCancel]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events]. Target: Api.Handler[FineTunesEvents]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/models]. Target: Api.Handler[Models]
-No PathItem summary or description. Source: OpenApi.Paths.PathItem[/models/{model}]. Target: Api.Handler[Models]
+Ignored. No visitors for this input. Source: OpenApi.
+Ignored. No visitors for this input. Source: OpenApi.Paths.
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/engines]. Target: Api.Handler[Engines].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[ready].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/engines/{engine_id}]. Target: Api.Handler[Engines].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[ready].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/completions]. Target: Api.Handler[Completions].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[0].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[1].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[1].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[2].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[2].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[3].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[3].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].Schema[3].Schema[items].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[suffix].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[max_tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[temperature].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[top_p].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[n].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stream].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[echo].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].Schema[0].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].Schema[1].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].Schema[1].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[presence_penalty].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[frequency_penalty].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[best_of].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[logit_bias].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[text].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[index].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[tokens].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[token_logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[token_logprobs].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[top_logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[top_logprobs].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[finish_reason].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[prompt_tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[completion_tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/completions].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[total_tokens].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/edits]. Target: Api.Handler[Edits].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[instruction].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[n].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[temperature].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[top_p].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[text].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[index].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[tokens].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[token_logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[token_logprobs].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[top_logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[top_logprobs].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[finish_reason].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[prompt_tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[completion_tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[total_tokens].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/embeddings]. Target: Api.Handler[Embeddings].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[0].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[1].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[1].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[2].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[2].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[3].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[3].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[3].Schema[items].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[index].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[embedding].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[embedding].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[prompt_tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[total_tokens].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search]. Target: Api.Handler[EnginesSearch].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[query].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[documents].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[documents].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[file].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[max_rerank].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[return_metadata].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[document].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/engines/{engine_id}/search].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[score].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/files]. Target: Api.Handler[Files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].RequestBody.MediaType[multipart/form-data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[file].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[status_details].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/files/{file_id}]. Target: Api.Handler[Files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[delete].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[delete].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[delete].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[delete].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[delete].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}].Operation[delete].Responses.Response[200].MediaType[application/json].Schema.Schema[deleted].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/files/{file_id}/content]. Target: Api.Handler[FilesContent].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}/content].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}/content].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/files/{file_id}/content].Operation[get].Responses.Response[200].MediaType[application/json].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/answers]. Target: Api.Handler[Answers].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[question].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[examples].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[examples].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[examples].Schema[items].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[examples_context].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[documents].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[documents].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[file].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[search_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[max_rerank].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[temperature].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[max_tokens].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].Schema[0].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].Schema[1].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[stop].Schema[1].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[n].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[logit_bias].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[return_metadata].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[return_prompt].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[expand].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[expand].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[search_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[completion].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[answers].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[answers].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_documents].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_documents].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_documents].Schema[items].Schema[document].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/answers].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_documents].Schema[items].Schema[text].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/classifications]. Target: Api.Handler[Classifications].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[query].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[examples].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[examples].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[examples].Schema[items].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[file].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[labels].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[labels].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[search_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[temperature].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[logprobs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[max_examples].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[logit_bias].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[return_prompt].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[return_metadata].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[expand].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[expand].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[search_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[completion].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[label].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_examples].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_examples].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_examples].Schema[items].Schema[document].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_examples].Schema[items].Schema[text].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/classifications].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[selected_examples].Schema[items].Schema[label].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes]. Target: Api.Handler[FineTunes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[updated_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[fine_tuned_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[organization_id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[hyperparams].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[training_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[validation_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[result_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[events].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[events].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[events].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[events].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[events].Schema[items].Schema[level].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[events].Schema[items].Schema[message].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[training_file].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[validation_file].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[n_epochs].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[batch_size].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[learning_rate_multiplier].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt_loss_weight].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[compute_classification_metrics].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[classification_n_classes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[classification_positive_class].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[classification_betas].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[classification_betas].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[suffix].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[updated_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[fine_tuned_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[organization_id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[hyperparams].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[level].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[message].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}]. Target: Api.Handler[FineTunes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[updated_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[fine_tuned_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[organization_id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[hyperparams].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[events].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[level].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[message].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel]. Target: Api.Handler[FineTunesCancel].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[updated_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[fine_tuned_model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[organization_id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[hyperparams].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[training_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[validation_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[bytes].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[filename].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[purpose].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[status].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[result_files].Schema[items].Schema[status_details].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[level].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/cancel].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[events].Schema[items].Schema[message].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events]. Target: Api.Handler[FineTunesEvents].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[created_at].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[level].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/fine-tunes/{fine_tune_id}/events].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[message].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/models]. Target: Api.Handler[Models].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[owned_by].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/models/{model}]. Target: Api.Handler[Models].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[get].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[get].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[get].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[get].Responses.Response[200].MediaType[application/json].Schema.Schema[owned_by].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[delete].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[delete].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[delete].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[delete].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[delete].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/models/{model}].Operation[delete].Responses.Response[200].MediaType[application/json].Schema.Schema[deleted].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/moderations]. Target: Api.Handler[Moderations].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[0].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[1].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[input].Schema[1].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[flagged].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].Schema[hate].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].Schema[hate/threatening].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].Schema[self-harm].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].Schema[sexual].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].Schema[sexual/minors].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].Schema[violence].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[categories].Schema[violence/graphic].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].Schema[hate].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].Schema[hate/threatening].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].Schema[self-harm].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].Schema[sexual].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].Schema[sexual/minors].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].Schema[violence].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/moderations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[results].Schema[items].Schema[category_scores].Schema[violence/graphic].
 Component ignored. Source: OpenApi.Components.
 Component ignored. Source: OpenApi.Components.Schema[ListEnginesResponse].
 Component ignored. Source: OpenApi.Components.Schema[ListEnginesResponse].Schema[object].
@@ -83,6 +632,10 @@ Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].S
 Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].
 Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].Schema[items].
 Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].Schema[choices].Schema[items].Schema[finish_reason].
+Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].Schema[usage].
+Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].Schema[usage].Schema[prompt_tokens].
+Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].Schema[usage].Schema[completion_tokens].
+Component ignored. Source: OpenApi.Components.Schema[CreateCompletionResponse].Schema[usage].Schema[total_tokens].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditRequest].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditRequest].Schema[model].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditRequest].Schema[input].
@@ -109,6 +662,38 @@ Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[choices].Schema[items].Schema[logprobs].Schema[text_offset].Schema[items].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[choices].Schema[items].Schema[finish_reason].
+Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[usage].
+Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[usage].Schema[prompt_tokens].
+Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[usage].Schema[completion_tokens].
+Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[usage].Schema[total_tokens].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].Schema[input].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].Schema[input].Schema[0].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].Schema[input].Schema[1].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].Schema[input].Schema[1].Schema[items].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].Schema[model].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[id].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[model].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[flagged].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].Schema[hate].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].Schema[hate/threatening].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].Schema[self-harm].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].Schema[sexual].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].Schema[sexual/minors].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].Schema[violence].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[categories].Schema[violence/graphic].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].Schema[hate].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].Schema[hate/threatening].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].Schema[self-harm].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].Schema[sexual].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].Schema[sexual/minors].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].Schema[violence].
+Component ignored. Source: OpenApi.Components.Schema[CreateModerationResponse].Schema[results].Schema[items].Schema[category_scores].Schema[violence/graphic].
 Component ignored. Source: OpenApi.Components.Schema[CreateSearchRequest].
 Component ignored. Source: OpenApi.Components.Schema[CreateSearchRequest].Schema[query].
 Component ignored. Source: OpenApi.Components.Schema[CreateSearchRequest].Schema[documents].
@@ -303,6 +888,9 @@ Component ignored. Source: OpenApi.Components.Schema[CreateEmbeddingResponse].Sc
 Component ignored. Source: OpenApi.Components.Schema[CreateEmbeddingResponse].Schema[data].Schema[items].Schema[object].
 Component ignored. Source: OpenApi.Components.Schema[CreateEmbeddingResponse].Schema[data].Schema[items].Schema[embedding].
 Component ignored. Source: OpenApi.Components.Schema[CreateEmbeddingResponse].Schema[data].Schema[items].Schema[embedding].Schema[items].
+Component ignored. Source: OpenApi.Components.Schema[CreateEmbeddingResponse].Schema[usage].
+Component ignored. Source: OpenApi.Components.Schema[CreateEmbeddingResponse].Schema[usage].Schema[prompt_tokens].
+Component ignored. Source: OpenApi.Components.Schema[CreateEmbeddingResponse].Schema[usage].Schema[total_tokens].
 Component ignored. Source: OpenApi.Components.Schema[Engine].
 Component ignored. Source: OpenApi.Components.Schema[Engine].Schema[id].
 Component ignored. Source: OpenApi.Components.Schema[Engine].Schema[object].
@@ -374,3 +962,4 @@ Component ignored. Source: OpenApi.Components.Schema[FineTuneEvent].Schema[creat
 Component ignored. Source: OpenApi.Components.Schema[FineTuneEvent].Schema[level].
 Component ignored. Source: OpenApi.Components.Schema[FineTuneEvent].Schema[message].
 Component ignored. Source: OpenApi.Components.SecurityScheme[bearerAuth].
+Ignored. No visitors for this input. Source: OpenApi.Tag[0].

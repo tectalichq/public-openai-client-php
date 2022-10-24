@@ -31,6 +31,6 @@ final class CreateResponse extends AbstractModel
     /** @var string[] */
     public $answers;
 
-    /** @var \Tectalic\OpenAi\Models\Answers\CreateResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\Answers\CreateResponseSelectedDocumentsItem[] */
     public $selected_documents;
 }

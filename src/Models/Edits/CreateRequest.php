@@ -34,9 +34,9 @@ final class CreateRequest extends AbstractModel
     /**
      * The input text to use as a starting point for the edit.
      *
-     * Example: 'What day of the wek is it?'
-     *
      * Default Value: ''
+     *
+     * Example: 'What day of the wek is it?'
      *
      * @var string|null
      */
@@ -54,9 +54,9 @@ final class CreateRequest extends AbstractModel
     /**
      * How many edits to generate for the input and instruction.
      *
-     * Example: 1
-     *
      * Default Value: 1
+     *
+     * Example: 1
      *
      * @var int|null
      */
@@ -68,9 +68,9 @@ final class CreateRequest extends AbstractModel
      * with a well-defined answer.
      * We generally recommend altering this or top_p but not both.
      *
-     * Example: 1
-     *
      * Default Value: 1
+     *
+     * Example: 1
      *
      * @var float|int|null
      */
@@ -82,9 +82,9 @@ final class CreateRequest extends AbstractModel
      * means only the tokens comprising the top 10% probability mass are considered.
      * We generally recommend altering this or temperature but not both.
      *
-     * Example: 1
-     *
      * Default Value: 1
+     *
+     * Example: 1
      *
      * @var float|int|null
      */

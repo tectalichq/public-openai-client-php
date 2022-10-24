@@ -65,13 +65,13 @@ In the **Usage** code above, customize the `Authentication` constructor to your 
 
 The primary class you will interact with is the `Client` class (`Tectalic\OpenAi\Client`).
 
-This `Client` class also contains the helper methods that let you quickly access the 13 API Handlers.
+This `Client` class also contains the helper methods that let you quickly access the 14 API Handlers.
 
 Please see below for a complete list of supported handlers and methods.
 
 ### Supported API Handlers and Methods
 
-This package supports 21 API Methods, which are grouped into 13 API Handlers.
+This package supports 22 API Methods, which are grouped into 14 API Handlers.
 
 See the table below for a full list of API Handlers and Methods.
 
@@ -99,6 +99,7 @@ See the table below for a full list of API Handlers and Methods.
 |`Models::list()`|Lists the currently available models, and provides basic information about each one such as the owner and availability.|`GET` `/models`|
 |`Models::retrieve()`|Retrieves a model instance, providing basic information about the model such as the owner and permissioning.|`GET` `/models/{model}`|
 |`Models::delete()`|Delete a fine-tuned model. You must have the Owner role in your organization.|`DELETE` `/models/{model}`|
+|`Moderations::create()`|Classifies if text violates OpenAI's Content Policy|`POST` `/moderations`|
 
 ### Making a Request
 

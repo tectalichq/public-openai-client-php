@@ -31,6 +31,6 @@ final class CreateResponse extends AbstractModel
     /** @var string */
     public $label;
 
-    /** @var \Tectalic\OpenAi\Models\Classifications\CreateResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\Classifications\CreateResponseSelectedExamplesItem[] */
     public $selected_examples;
 }

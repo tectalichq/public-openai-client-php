@@ -16,9 +16,16 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class ListResponse extends AbstractModel
 {
+    /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = ['object', 'data'];
+
     /** @var string */
     public $object;
 
-    /** @var \Tectalic\OpenAi\Models\Models\ListResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\Models\ListResponseDataItem[] */
     public $data;
 }

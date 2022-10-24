@@ -47,9 +47,9 @@ final class CreateRequest extends AbstractModel
     /**
      * The suffix that comes after a completion of inserted text.
      *
-     * Example: 'test.'
-     *
      * Default Value: null
+     *
+     * Example: 'test.'
      *
      * @var string|null
      */
@@ -61,9 +61,9 @@ final class CreateRequest extends AbstractModel
      * length. Most models have a context length of 2048 tokens (except for the newest
      * models, which support 4096).
      *
-     * Example: 16
-     *
      * Default Value: 16
+     *
+     * Example: 16
      *
      * @var int|null
      */
@@ -75,9 +75,9 @@ final class CreateRequest extends AbstractModel
      * with a well-defined answer.
      * We generally recommend altering this or top_p but not both.
      *
-     * Example: 1
-     *
      * Default Value: 1
+     *
+     * Example: 1
      *
      * @var float|int|null
      */
@@ -89,9 +89,9 @@ final class CreateRequest extends AbstractModel
      * means only the tokens comprising the top 10% probability mass are considered.
      * We generally recommend altering this or temperature but not both.
      *
-     * Example: 1
-     *
      * Default Value: 1
+     *
+     * Example: 1
      *
      * @var float|int|null
      */
@@ -103,9 +103,9 @@ final class CreateRequest extends AbstractModel
      * your token quota. Use carefully and ensure that you have reasonable settings for
      * max_tokens and stop.
      *
-     * Example: 1
-     *
      * Default Value: 1
+     *
+     * Example: 1
      *
      * @var int|null
      */
@@ -128,7 +128,7 @@ final class CreateRequest extends AbstractModel
      * 5 most likely tokens. The API will always return the logprob of the sampled
      * token, so there may be up to logprobs+1 elements in the response.
      * The maximum value for logprobs is 5. If you need more than this, please contact
-     * support@openai.com and describe your use case.
+     * us through our Help center and describe your use case.
      *
      * Default Value: null
      *

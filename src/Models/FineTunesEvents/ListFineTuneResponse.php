@@ -16,9 +16,16 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class ListFineTuneResponse extends AbstractModel
 {
+    /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = ['object', 'data'];
+
     /** @var string */
     public $object;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesEvents\ListFineTuneResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\FineTunesEvents\ListFineTuneResponseDataItem[] */
     public $data;
 }

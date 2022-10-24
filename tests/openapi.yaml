@@ -2,15 +2,13 @@
 # - Add missing Bearer Authentication:
 #     - Add `bearerAuth` security to the top-level OpenAPI object.
 #     - Add `bearerAuth` definition to Components.securitySchemes.
-#  - `oaiMeta` changed to `x-oaiMeta` (22 instances).
-#  - `oaiTypeLabel` changed to `x-oaiTypeLabel` (1 instance).
 #  - Change the CreateAnswerRequest `examples` property `example` value to an array by removing double quotes
 #  - Add example to CreateFileRequest `purpose` property.
 openapi: 3.0.0
 info:
   title: OpenAI API
   description: APIs for sampling from and fine-tuning language models
-  version: '1.0.5'
+  version: '1.0.6'
 security:
   - bearerAuth: [ ]
 servers:
@@ -161,7 +159,8 @@ paths:
               -d '{
               "model": "VAR_model_id",
               "prompt": "Say this is a test",
-              "max_tokens": 5
+              "max_tokens": 6,
+              "temperature": 0
             }'
           python: |
             import os
@@ -170,7 +169,8 @@ paths:
             openai.Completion.create(
               model="VAR_model_id",
               prompt="Say this is a test",
-              max_tokens=5
+              max_tokens=6,
+              temperature=0
             )
           node.js: |
             const { Configuration, OpenAIApi } = require("openai");
@@ -181,14 +181,15 @@ paths:
             const response = await openai.createCompletion({
               model: "VAR_model_id",
               prompt: "Say this is a test",
-              max_tokens: 5,
+              max_tokens: 6,
+              temperature: 0,
             });
         parameters: |
           {
             "model": "VAR_model_id",
             "prompt": "Say this is a test",
-            "max_tokens": 5,
-            "temperature": 1,
+            "max_tokens": 6,
+            "temperature": 0,
             "top_p": 1,
             "n": 1,
             "stream": false,
@@ -208,7 +209,12 @@ paths:
                 "logprobs": null,
                 "finish_reason": "length"
               }
-            ]
+            ],
+            "usage": {
+              "prompt_tokens": 5,
+              "completion_tokens": 6,
+              "total_tokens": 11
+            }
           }
 
   /edits:
@@ -259,7 +265,8 @@ paths:
               apiKey: process.env.OPENAI_API_KEY,
             });
             const openai = new OpenAIApi(configuration);
-            const response = await openai.createEdit("VAR_model_id", {
+            const response = await openai.createEdit({
+              model: "VAR_model_id",
               input: "What day of the wek is it?",
               instruction: "Fix the spelling mistakes",
             });
@@ -278,7 +285,12 @@ paths:
                 "text": "What day of the week is it?",
                 "index": 0,
               }
-            ]
+            ],
+            "usage": {
+              "prompt_tokens": 25,
+              "completion_tokens": 32,
+              "total_tokens": 57
+            }
           }
 
   /embeddings:
@@ -351,6 +363,10 @@ paths:
                 "index": 0
               }
             ],
+            "usage": {
+              "prompt_tokens": 8,
+              "total_tokens": 8
+            }
           }
 
   /engines/{engine_id}/search:
@@ -358,7 +374,7 @@ paths:
       operationId: createSearch
       deprecated: true
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.
 
@@ -452,7 +468,7 @@ paths:
     get:
       operationId: listFiles
       tags:
-      - OpenAI
+        - OpenAI
       summary: Returns a list of files that belong to the user's organization.
       responses:
         "200":
@@ -506,7 +522,7 @@ paths:
     post:
       operationId: createFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.
 
@@ -567,7 +583,7 @@ paths:
     delete:
       operationId: deleteFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: Delete a file.
       parameters:
         - in: path
@@ -613,7 +629,7 @@ paths:
     get:
       operationId: retrieveFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: Returns information about a specific file.
       parameters:
         - in: path
@@ -663,7 +679,7 @@ paths:
     get:
       operationId: downloadFile
       tags:
-      - OpenAI
+        - OpenAI
       summary: Returns the contents of the specified file
       parameters:
         - in: path
@@ -705,7 +721,7 @@ paths:
       operationId: createAnswer
       deprecated: true
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Answers the specified question using the provided documents and examples.
 
@@ -811,7 +827,7 @@ paths:
       operationId: createClassification
       deprecated: true
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Classifies the specified `query` using provided examples.
 
@@ -929,7 +945,7 @@ paths:
     post:
       operationId: createFineTune
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Creates a job that fine-tunes a specified model from a given dataset.
 
@@ -1017,7 +1033,7 @@ paths:
     get:
       operationId: listFineTunes
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         List your organization's fine-tuning jobs
       responses:
@@ -1075,7 +1091,7 @@ paths:
     get:
       operationId: retrieveFineTune
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Gets info about the fine-tune job.
 
@@ -1193,7 +1209,7 @@ paths:
     post:
       operationId: cancelFineTune
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Immediately cancel a fine-tune job.
       parameters:
@@ -1265,7 +1281,7 @@ paths:
     get:
       operationId: listFineTuneEvents
       tags:
-      - OpenAI
+        - OpenAI
       summary: |
         Get fine-grained status updates for a fine-tune job.
       parameters:
@@ -1469,7 +1485,7 @@ paths:
     delete:
       operationId: deleteModel
       tags:
-      - OpenAI
+        - OpenAI
       summary: Delete a fine-tuned model. You must have the Owner role in your organization.
       parameters:
         - in: path
@@ -1508,6 +1524,77 @@ paths:
             "deleted": true
           }
 
+  /moderations:
+    post:
+      operationId: createModeration
+      tags:
+        - OpenAI
+      summary: Classifies if text violates OpenAI's Content Policy
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateModerationRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateModerationResponse'
+      x-oaiMeta:
+        name: Create moderation
+        group: moderations
+        path: create
+        examples:
+          curl: |
+            curl https://api.openai.com/v1/moderations \
+              -H 'Content-Type: application/json' \
+              -H 'Authorization: Bearer YOUR_API_KEY' \
+              -d '{
+              "input": "I want to kill them."
+            }'
+          python: |
+            import os
+            import openai
+            openai.api_key = os.getenv("OPENAI_API_KEY")
+            openai.Moderation.create(
+              input="I want to kill them.",
+            )
+        parameters: |
+          {
+            "input": "I want to kill them."
+          }
+        response: |
+          {
+            "id": "modr-5MWoLO",
+            "model": "text-moderation-001",
+            "results": [
+              {
+                "categories": {
+                  "hate": false,
+                  "hate/threatening": true,
+                  "self-harm": false,
+                  "sexual": false,
+                  "sexual/minors": false,
+                  "violence": true,
+                  "violence/graphic": false
+                },
+                "category_scores": {
+                  "hate": 0.22714105248451233,
+                  "hate/threatening": 0.4132447838783264,
+                  "self-harm": 0.005232391878962517,
+                  "sexual": 0.01407341007143259,
+                  "sexual/minors": 0.0038522258400917053,
+                  "violence": 0.9223177433013916,
+                  "violence/graphic": 0.036865197122097015
+                },
+                "flagged": true
+              }
+            ]
+          }
+
 components:
   schemas:
     ListEnginesResponse:
@@ -1519,6 +1606,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Engine'
+      required:
+        - object
+        - data
 
     ListModelsResponse:
       type: object
@@ -1529,6 +1619,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Model'
+      required:
+        - object
+        - data
 
     DeleteModelResponse:
       type: object
@@ -1539,6 +1632,10 @@ components:
           type: string
         deleted:
           type: boolean
+      required:
+        - id
+        - object
+        - deleted
 
     CreateCompletionRequest:
       type: object
@@ -1641,7 +1738,7 @@ components:
           description: &completions_logprobs_description |
             Include the log probabilities on the `logprobs` most likely tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.
 
-            The maximum value for `logprobs` is 5. If you need more than this, please contact support@openai.com and describe your use case.
+            The maximum value for `logprobs` is 5. If you need more than this, please contact us through our [Help center](https://help.openai.com) and describe your use case.
         echo:
           type: boolean
           default: false
@@ -1757,6 +1854,25 @@ components:
                       type: integer
               finish_reason:
                 type: string
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+          required:
+            - prompt_tokens
+            - completion_tokens
+            - total_tokens
+      required:
+        - id
+        - object
+        - created
+        - model
+        - choices
 
     CreateEditRequest:
       type: object
@@ -1845,6 +1961,125 @@ components:
                       type: integer
               finish_reason:
                 type: string
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            completion_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+          required:
+            - prompt_tokens
+            - completion_tokens
+            - total_tokens
+      required:
+        - id
+        - object
+        - created
+        - model
+        - choices
+        - usage
+
+    CreateModerationRequest:
+      type: object
+      properties:
+        input:
+          description: The input text to classify
+          oneOf:
+            - type: string
+              default: ''
+              example: "I want to kill them."
+            - type: array
+              items:
+                type: string
+                default: ''
+                example: "I want to kill them."
+        model:
+          description: |
+            Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.
+
+            The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.
+          type: string
+          nullable: false
+          default: "text-moderation-latest"
+          example: "text-moderation-stable"
+      required:
+        - input
+
+    CreateModerationResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        model:
+          type: string
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              flagged:
+                type: boolean
+              categories:
+                type: object
+                properties:
+                  hate:
+                    type: boolean
+                  hate/threatening:
+                    type: boolean
+                  self-harm:
+                    type: boolean
+                  sexual:
+                    type: boolean
+                  sexual/minors:
+                    type: boolean
+                  violence:
+                    type: boolean
+                  violence/graphic:
+                    type: boolean
+                required:
+                  - hate
+                  - hate/threatening
+                  - self-harm
+                  - sexual
+                  - sexual/minors
+                  - violence
+                  - violence/graphic
+              category_scores:
+                type: object
+                properties:
+                  hate:
+                    type: number
+                  hate/threatening:
+                    type: number
+                  self-harm:
+                    type: number
+                  sexual:
+                    type: number
+                  sexual/minors:
+                    type: number
+                  violence:
+                    type: number
+                  violence/graphic:
+                    type: number
+                required:
+                  - hate
+                  - hate/threatening
+                  - self-harm
+                  - sexual
+                  - sexual/minors
+                  - violence
+                  - violence/graphic
+            required:
+              - flagged
+              - categories
+              - category_scores
+      required:
+        - id
+        - model
+        - results
 
     CreateSearchRequest:
       type: object
@@ -1924,6 +2159,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OpenAIFile'
+      required:
+        - object
+        - data
 
     CreateFileRequest:
       type: object
@@ -1957,6 +2195,10 @@ components:
           type: string
         deleted:
           type: boolean
+      required:
+        - id
+        - object
+        - deleted
 
     CreateAnswerRequest:
       type: object
@@ -2029,7 +2271,7 @@ components:
           description: |
             Include the log probabilities on the `logprobs` most likely tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.
 
-            The maximum value for `logprobs` is 5. If you need more than this, please contact support@openai.com and describe your use case.
+            The maximum value for `logprobs` is 5. If you need more than this, please contact us through our [Help center](https://help.openai.com) and describe your use case.
 
             When `logprobs` is set, `completion` will be automatically added into `expand` to get the logprobs.
         max_tokens:
@@ -2237,7 +2479,8 @@ components:
         model:
           description: |
             The name of the base model to fine-tune. You can select one of "ada",
-            "babbage", "curie", or "davinci". To learn more about these models, see the
+            "babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21.
+            To learn more about these models, see the
             [Models](https://beta.openai.com/docs/models) documentation.
           default: "curie"
           type: string
@@ -2285,7 +2528,7 @@ components:
             If prompts are extremely long (relative to completions), it may make
             sense to reduce this weight so as to avoid over-prioritizing
             learning the prompt.
-          default: 0.1
+          default: 0.01
           type: number
           nullable: true
         compute_classification_metrics:
@@ -2356,6 +2599,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FineTune'
+      required:
+        - object
+        - data
 
     ListFineTuneEventsResponse:
       type: object
@@ -2366,6 +2612,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FineTuneEvent'
+      required:
+        - object
+        - data
 
     CreateEmbeddingRequest:
       type: object
@@ -2376,7 +2625,7 @@ components:
           description: |
             Input text to get embeddings for, encoded as a string or array of tokens. To get embeddings for multiple inputs in a single request, pass an array of strings or array of token arrays. Each input must not exceed 2048 tokens in length.
 
-            Unless your are embedding code, we suggest replacing newlines (`\n`) in your input with a single space, as we have observed inferior results when newlines are present.
+            Unless you are embedding code, we suggest replacing newlines (`\n`) in your input with a single space, as we have observed inferior results when newlines are present.
           example: "The quick brown fox jumped over the lazy dog"
           oneOf:
             - type: string
@@ -2425,6 +2674,25 @@ components:
                 type: array
                 items:
                   type: number
+            required:
+              - index
+              - object
+              - embedding
+        usage:
+          type: object
+          properties:
+            prompt_tokens:
+              type: integer
+            total_tokens:
+              type: integer
+          required:
+            - prompt_tokens
+            - total_tokens
+      required:
+        - object
+        - model
+        - data
+        - usage
 
     Engine:
       title: Engine
@@ -2435,8 +2703,14 @@ components:
           type: string
         created:
           type: integer
+          nullable: true
         ready:
           type: boolean
+      required:
+        - id
+        - object
+        - created
+        - ready
 
     Model:
       title: Model
@@ -2449,6 +2723,11 @@ components:
           type: integer
         owned_by:
           type: string
+      required:
+        - id
+        - object
+        - created
+        - owned_by
 
     OpenAIFile:
       title: OpenAIFile
@@ -2470,6 +2749,13 @@ components:
         status_details:
           type: object
           nullable: true
+      required:
+        - id
+        - object
+        - bytes
+        - created_at
+        - filename
+        - purpose
 
     FineTune:
       title: FineTune
@@ -2509,6 +2795,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/FineTuneEvent'
+      required:
+        - id
+        - object
+        - created_at
+        - updated_at
+        - model
+        - fine_tuned_model
+        - organization_id
+        - status
+        - hyperparams
+        - training_files
+        - validation_files
+        - result_files
 
     FineTuneEvent:
       title: FineTuneEvent
@@ -2521,6 +2820,11 @@ components:
           type: string
         message:
           type: string
+      required:
+        - object
+        - created_at
+        - level
+        - message
   securitySchemes:
     bearerAuth:
       type: http
@@ -2555,6 +2859,12 @@ x-oaiMeta:
         Manage fine-tuning jobs to tailor a model to your specific training data.
 
         Related guide: [Fine-tune models](/docs/guides/fine-tuning)
+    - id: moderations
+      title: Moderations
+      description: |
+        Given a input text, outputs if the model classifies it as violating OpenAI's content policy.
+
+        Related guide: [Moderations](/docs/guides/moderation)
     - id: searches
       title: Searches
       warning:

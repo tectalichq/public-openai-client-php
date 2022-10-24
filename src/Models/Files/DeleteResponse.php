@@ -16,6 +16,13 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class DeleteResponse extends AbstractModel
 {
+    /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = ['id', 'object', 'deleted'];
+
     /** @var string */
     public $id;
 

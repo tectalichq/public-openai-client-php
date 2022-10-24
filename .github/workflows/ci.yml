@@ -1,10 +1,12 @@
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 
 on:
-  # Run on every commit.
-  - push
-    # Allow manually triggering the workflow.
-  - workflow_dispatch
+  # Run on every commit to all branches, but not on tags.
+  push:
+    branches:
+      - '**'
+  # Allow manually triggering the workflow.
+  workflow_dispatch:
 
 # Cancels all previous workflow runs for the same branch that have not yet completed.
 concurrency:

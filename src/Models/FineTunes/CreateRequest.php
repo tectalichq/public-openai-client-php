@@ -56,7 +56,8 @@ final class CreateRequest extends AbstractModel
 
     /**
      * The name of the base model to fine-tune. You can select one of "ada",
-     * "babbage", "curie", or "davinci". To learn more about these models, see the
+     * "babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21.
+     * To learn more about these models, see the
      * Models documentation.
      *
      * Default Value: 'curie'
@@ -114,7 +115,7 @@ final class CreateRequest extends AbstractModel
      * sense to reduce this weight so as to avoid over-prioritizing
      * learning the prompt.
      *
-     * Default Value: 0.1
+     * Default Value: 0.01
      *
      * @var float|int|null
      */

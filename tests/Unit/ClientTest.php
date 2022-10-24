@@ -129,7 +129,7 @@ final class ClientTest extends TestCase
     {
         $request = Manager::access()->$method('/');
         $this->assertTrue($request->hasHeader('User-Agent'));
-        $this->assertStringContainsString('Tectalic ', $request->getHeaderLine('User-Agent'));
+        $this->assertStringMatchesFormat('Tectalic %s/%d.%d.%d', $request->getHeaderLine('User-Agent'));
     }
 
     /**

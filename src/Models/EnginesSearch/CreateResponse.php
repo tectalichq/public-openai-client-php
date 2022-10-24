@@ -22,6 +22,6 @@ final class CreateResponse extends AbstractModel
     /** @var string */
     public $model;
 
-    /** @var \Tectalic\OpenAi\Models\EnginesSearch\CreateResponseItem[] */
+    /** @var \Tectalic\OpenAi\Models\EnginesSearch\CreateResponseDataItem[] */
     public $data;
 }

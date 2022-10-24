@@ -32,6 +32,7 @@ use Tectalic\OpenAi\Handlers\FineTunes;
 use Tectalic\OpenAi\Handlers\FineTunesCancel;
 use Tectalic\OpenAi\Handlers\FineTunesEvents;
 use Tectalic\OpenAi\Handlers\Models;
+use Tectalic\OpenAi\Handlers\Moderations;
 use Tectalic\OpenAi\Models\AbstractModel;
 use Tectalic\OpenAi\Models\AbstractModelCollection;
 use Throwable;
@@ -211,6 +212,17 @@ final class Client implements ClientInterface
     }
 
     /**
+     * Access to the moderations handler.
+     *
+     * @api
+     * @return Moderations
+     */
+    public function moderations(): Moderations
+    {
+        return new \Tectalic\OpenAi\Handlers\Moderations($this);
+    }
+
+    /**
      * Encode the request body.
      *
      * @param RequestInterface $request
@@ -301,7 +313,7 @@ final class Client implements ClientInterface
                 // Property is a full path to a file.
                 // Attempt to open the file.
                 /** @var string $value */
-                \set_error_handler(function ($t, $m) use ($value) {
+                \set_error_handler(function ($errorNumber, $errorString) use ($value) {
                     throw new ClientException(\sprintf('Unable to read file: %s', $value));
                 });
                 try {
@@ -369,7 +381,7 @@ final class Client implements ClientInterface
 
         $request = $request->withHeader(
             'User-Agent',
-            'Tectalic OpenAI REST API Client'
+            'Tectalic OpenAI REST API Client/1.0.1'
         );
 
         // Merge Headers.
@@ -515,7 +527,7 @@ final class Client implements ClientInterface
         } finally {
             // Close any open file pointers from the request.
             foreach ($this->fileHandles as $file) {
-                \set_error_handler(function ($t, $m) {
+                \set_error_handler(function ($errorNumber, $errorString) {
                     throw new ClientException();
                 });
                 try {

@@ -118,7 +118,7 @@ final class CreateRequest extends AbstractModel
      * 5 most likely tokens. The API will always return the logprob of the sampled
      * token, so there may be up to logprobs+1 elements in the response.
      * The maximum value for logprobs is 5. If you need more than this, please contact
-     * support@openai.com and describe your use case.
+     * us through our Help center and describe your use case.
      * When logprobs is set, completion will be automatically added into expand to get
      * the logprobs.
      *
