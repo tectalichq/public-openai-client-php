@@ -2,7 +2,15 @@
   "name": "tectalic/openai",
   "description": "Tectalic OpenAI REST API Client",
   "type": "library",
-  "license": "proprietary",
+  "license": "MIT",
+  "keywords": [
+    "tectalic",
+    "openai",
+    "open",
+    "ai",
+    "gpt-3",
+    "gpt3"
+  ],
   "homepage": "https://tectalic.com/apis/openai",
   "autoload": {
     "psr-4": {
@@ -48,7 +56,6 @@
     "test:phpcs": "phpcs -q -s",
     "test:phpstan": "phpstan analyse --memory-limit=1G",
     "test:unit": "phpunit --verbose --testsuite=unit"
-
   },
   "scripts-descriptions": {
     "test": "Run common test.",

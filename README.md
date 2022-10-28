@@ -301,4 +301,4 @@ If you have any questions or feedback, please use the [discussion board](https:/
 
 This software is copyright (c) 2022 [Tectalic](https://tectalic.com).
 
-For copyright and license information, please view [https://tectalic.com/terms](https://tectalic.com/terms).
+For copyright and license information, please view the [LICENSE](LICENSE) file.
