@@ -19,13 +19,9 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
-use Tectalic\OpenAi\Handlers\Answers;
-use Tectalic\OpenAi\Handlers\Classifications;
 use Tectalic\OpenAi\Handlers\Completions;
 use Tectalic\OpenAi\Handlers\Edits;
 use Tectalic\OpenAi\Handlers\Embeddings;
-use Tectalic\OpenAi\Handlers\Engines;
-use Tectalic\OpenAi\Handlers\EnginesSearch;
 use Tectalic\OpenAi\Handlers\Files;
 use Tectalic\OpenAi\Handlers\FilesContent;
 use Tectalic\OpenAi\Handlers\FineTunes;
@@ -69,17 +65,6 @@ final class Client implements ClientInterface
     }
 
     /**
-     * Access to the engines handler.
-     *
-     * @api
-     * @return Engines
-     */
-    public function engines(): Engines
-    {
-        return new \Tectalic\OpenAi\Handlers\Engines($this);
-    }
-
-    /**
      * Access to the completions handler.
      *
      * @api
@@ -113,17 +98,6 @@ final class Client implements ClientInterface
     }
 
     /**
-     * Access to the enginesSearch handler.
-     *
-     * @api
-     * @return EnginesSearch
-     */
-    public function enginesSearch(): EnginesSearch
-    {
-        return new \Tectalic\OpenAi\Handlers\EnginesSearch($this);
-    }
-
-    /**
      * Access to the files handler.
      *
      * @api
@@ -143,28 +117,6 @@ final class Client implements ClientInterface
     public function filesContent(): FilesContent
     {
         return new \Tectalic\OpenAi\Handlers\FilesContent($this);
-    }
-
-    /**
-     * Access to the answers handler.
-     *
-     * @api
-     * @return Answers
-     */
-    public function answers(): Answers
-    {
-        return new \Tectalic\OpenAi\Handlers\Answers($this);
-    }
-
-    /**
-     * Access to the classifications handler.
-     *
-     * @api
-     * @return Classifications
-     */
-    public function classifications(): Classifications
-    {
-        return new \Tectalic\OpenAi\Handlers\Classifications($this);
     }
 
     /**

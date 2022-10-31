@@ -1,15 +1,16 @@
 {
   "name": "tectalic/openai",
-  "description": "Tectalic OpenAI REST API Client",
+  "description": "An OpenAI REST API Client with GPT-3 and Codex model support. Includes fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.",
   "type": "library",
   "license": "MIT",
   "keywords": [
-    "tectalic",
-    "openai",
-    "open",
     "ai",
+    "api",
     "gpt-3",
-    "gpt3"
+    "gpt3",
+    "openai",
+    "rest",
+    "tectalic"
   ],
   "homepage": "https://tectalic.com/apis/openai",
   "autoload": {
