@@ -67,27 +67,22 @@ In the **Usage** code above, customize the `Authentication` constructor to your 
 
 The primary class you will interact with is the `Client` class (`Tectalic\OpenAi\Client`).
 
-This `Client` class also contains the helper methods that let you quickly access the 14 API Handlers.
+This `Client` class also contains the helper methods that let you quickly access the 10 API Handlers.
 
 Please see below for a complete list of supported handlers and methods.
 
 ### Supported API Handlers and Methods
 
-This package supports 22 API Methods, which are grouped into 14 API Handlers.
+This package supports 17 API Methods, which are grouped into 10 API Handlers.
 
 See the table below for a full list of API Handlers and Methods.
 
 
 | API Handler Class and Method Name | Description | API Verb and URL |
 | --------------------------------- | ----------- | ---------------- |
-|`Answers::create()`|Answers the specified question using the provided documents and examples.<br />The endpoint first searches over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for completion.|`POST` `/answers`|
-|`Classifications::create()`|Classifies the specified query using provided examples.<br />The endpoint first searches over the labeled examples<br />to select the ones most relevant for the particular query. Then, the relevant examples<br />are combined with the query to construct a prompt to produce the final label via the<br />completions endpoint.<br />Labeled examples can be provided via an uploaded file, or explicitly listed in the<br />request using the examples parameter for quick tests and small scale use cases.|`POST` `/classifications`|
 |`Completions::create()`|Creates a completion for the provided prompt and parameters|`POST` `/completions`|
 |`Edits::create()`|Creates a new edit for the provided input, instruction, and parameters|`POST` `/edits`|
 |`Embeddings::create()`|Creates an embedding vector representing the input text.|`POST` `/embeddings`|
-|`Engines::list()`|Lists the currently available (non-finetuned) models, and provides basic information about each one such as the owner and availability.|`GET` `/engines`|
-|`Engines::retrieve()`|Retrieves a model instance, providing basic information about it such as the owner and availability.|`GET` `/engines/{engine_id}`|
-|`EnginesSearch::create()`|The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.<br />To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When file is set, the search endpoint searches over all the documents in the given file and returns up to the max_rerank number of documents. These documents will be returned along with their search scores.<br />The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.|`POST` `/engines/{engine_id}/search`|
 |`Files::list()`|Returns a list of files that belong to the user's organization.|`GET` `/files`|
 |`Files::create()`|Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.|`POST` `/files`|
 |`Files::retrieve()`|Returns information about a specific file.|`GET` `/files/{file_id}`|
@@ -110,15 +105,15 @@ There are two ways to make a request to the nominated API Handler and API Method
 If you built the client to be accessible globally, you can use the relevant API Handler Class directly:
 
 ```php
-use Tectalic\OpenAi\Handlers\Answers;
+use Tectalic\OpenAi\Handlers\Completions;
 
-(new Answers())->create();
+(new Completions())->create();
 ```
 
 Alternatively, you can access all API Handlers from the client class using the Client class:
 
 ```php
-$client->answers()->create();
+$client->completions()->create();
 ```
 
 ### Retrieving the Response
@@ -138,9 +133,9 @@ All Response Models are an instance of `Tectalic\OpenAi\Models\AbstractModel` or
 After [performing the request](#making-a-request), use the `->toModel()` fluent method to the API Method:
 
 ```php
-use Tectalic\OpenAi\Handlers\Answers;
+use Tectalic\OpenAi\Handlers\Completions;
 
-$model = (new Answers())->create()->toModel();
+$model = (new Completions())->create()->toModel();
 ```
 
 Each API Method's `toModel()` call will return the appropriate Model class type for the API Method you have just called.
@@ -150,9 +145,9 @@ Each API Method's `toModel()` call will return the appropriate Model class type 
 After performing the request, use the `->toArray()` fluent method to the API Method:
 
 ```php
-use Tectalic\OpenAi\Handlers\Answers;
+use Tectalic\OpenAi\Handlers\Completions;
 
-$array = (new Answers())->create()->toArray();
+$array = (new Completions())->create()->toArray();
 ```
 
 In the resulting associative array, the array keys will match the names of the public properties in the relevant Model class.
@@ -162,9 +157,9 @@ In the resulting associative array, the array keys will match the names of the p
 If you need to access the raw response or inspect the HTTP headers, use the `->getResponse()` fluent method to the API Method. It will return a `Psr\Http\Message\ResponseInterface`:
 
 ```php
-use Tectalic\OpenAi\Handlers\Answers;
+use Tectalic\OpenAi\Handlers\Completions;
 
-$response = (new Answers())->create()->getResponse();
+$response = (new Completions())->create()->getResponse();
 ```
 
 ### Errors
@@ -204,7 +199,7 @@ use Tectalic\OpenAi\Manager;
 // Build a Tectalic OpenAI REST API Client globally.
 $auth = new Authentication('token');
 Manager::build($httpClient, $auth);
-$handler = new Answers();
+$handler = new Completions();
 
 // Perform a request
 try {
