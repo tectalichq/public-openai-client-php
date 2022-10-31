@@ -42,14 +42,14 @@ use Tectalic\OpenAi\Client;
 use Tectalic\OpenAi\Manager;
 
 // Build a Tectalic OpenAI REST API Client globally.
-$auth = new Authentication('token');
+$auth = new Authentication(getenv('OPENAI_API_KEY'));
 $httpClient = new Psr18Client();
 Manager::build($httpClient, $auth);
 
 // or
 
 // Build a Tectalic OpenAI REST API Client manually.
-$auth = new Authentication('token');
+$auth = new Authentication(getenv('OPENAI_API_KEY'));
 $httpClient = new Psr18Client();
 $client = new Client($httpClient, $auth, Manager::BASE_URI);
 ```
@@ -61,7 +61,7 @@ Authentication to the **OpenAI API** is by HTTP Bearer authentication.
 
 Please see the OpenAI API documentation for more details on obtaining your authentication credentials.
 
-In the **Usage** code above, customize the `Authentication` constructor to your needs. For example, you may wish to define your credentials in an environment variable and pass it to the constructor.
+In the **Usage** code above, customize the `Authentication` constructor to your needs. For example, will likely need to add a `OPENAI_API_KEY` environment variable to your system.
 
 ### Client Class
 
