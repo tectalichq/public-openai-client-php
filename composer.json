@@ -4,13 +4,13 @@
   "type": "library",
   "license": "MIT",
   "keywords": [
-    "tectalic",
-    "openai",
     "ai",
+    "api",
     "gpt-3",
     "gpt3",
+    "openai",
     "rest",
-    "api"
+    "tectalic"
   ],
   "homepage": "https://tectalic.com/apis/openai",
   "autoload": {

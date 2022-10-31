@@ -4,7 +4,27 @@
 
 The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
 
+Supports GPT-3 and Codex based models, fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
+
+Integrating OpenAI into your **PHP** application is now as simple as:
+
+```php
+$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication('OPENAI_API_KEY'));
+
+$response = $openaiClient->completions()->create(
+    new CreateRequest([
+        'model'  => 'text-davinci-002',
+        'prompt' => 'Will using a third party package save time?',
+    ])
+)->toModel();
+
+echo $response->choices[0]->text;
+// Using a third party package can save time because you don't have to write the code yourself.
+```
+
 More information is available from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
+
+**This is an unofficial package and has no affiliations with OpenAI.**
 
 ## Installation
 
