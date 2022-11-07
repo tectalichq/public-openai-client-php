@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add support for DALL·E [image generation](https://beta.openai.com/docs/guides/images).
 - Add new `ImageGenerations` Handler, which creates an image given a prompt.
-- Add new `ImagesEdits` Handler, which creates an edited or extended image given an original image and a prompt
+- Add new `ImagesEdits` Handler, which creates an edited or extended image given an original image and a prompt.
 - Add new `ImagesVariations` Handler, which creates a variation of a given image.
 
 ### Changed
