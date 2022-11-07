@@ -18,12 +18,13 @@ use ReflectionClass;
 use ReflectionObject;
 use Tectalic\OpenAi\Authentication;
 use Tectalic\OpenAi\ClientException;
-use Tectalic\OpenAi\Handlers\FineTunesCancel;
+use Tectalic\OpenAi\Handlers\ImagesGenerations;
 use Tectalic\OpenAi\Manager;
+use Tectalic\OpenAi\Models\ImagesGenerations\CreateRequest;
 use Tests\AssertValidateTrait;
 use Tests\MockHttpClient;
 
-final class FineTunesCancelTest extends TestCase
+final class ImagesGenerationsTest extends TestCase
 {
     use AssertValidateTrait;
 
@@ -51,7 +52,7 @@ final class FineTunesCancelTest extends TestCase
     {
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Request not configured.');
-        (new FineTunesCancel())->getRequest();
+        (new ImagesGenerations())->getRequest();
     }
 
     public function testUnsupportedContentTypeResponse(): void
@@ -59,7 +60,7 @@ final class FineTunesCancelTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Unsupported content type: text/plain');
 
-        $handler = new FineTunesCancel();
+        $handler = new ImagesGenerations();
         $method = (new ReflectionObject($handler))->getMethod('parseResponse');
         $method->setAccessible(true);
         $method->invoke($handler, new Response(
@@ -74,7 +75,7 @@ final class FineTunesCancelTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Failed to parse JSON response body: Syntax error');
 
-        $handler = new FineTunesCancel();
+        $handler = new ImagesGenerations();
         $method = (new ReflectionObject($handler))->getMethod('parseResponse');
         $method->setAccessible(true);
         $method->invoke($handler, new Response(
@@ -89,7 +90,7 @@ final class FineTunesCancelTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage("Unsuccessful response. HTTP status code: 418 (I'm a teapot).");
 
-        $handler = new FineTunesCancel();
+        $handler = new ImagesGenerations();
         $property = (new ReflectionObject($handler))->getProperty('response');
         $property->setAccessible(true);
         $property->setValue($handler, new Response(418));
@@ -110,7 +111,7 @@ final class FineTunesCancelTest extends TestCase
      */
     public function testToArray(string $rawJsonResponse, array $expected): void
     {
-        $handler = new FineTunesCancel();
+        $handler = new ImagesGenerations();
         $property = (new ReflectionObject($handler))->getProperty('response');
         $property->setAccessible(true);
         $property->setValue($handler, new Response(
@@ -121,10 +122,10 @@ final class FineTunesCancelTest extends TestCase
         $this->assertSame($expected, $handler->toArray());
     }
 
-    public function testCancelFineTuneMethod(): void
+    public function testCreateMethod(): void
     {
-        $request = (new FineTunesCancel())
-            ->cancelFineTune('ft-AF1WoRqd3aJAHsqc9NY7iL8F')
+        $request = (new ImagesGenerations())
+            ->create(new CreateRequest(['prompt' => 'A cute baby sea otter']))
             ->getRequest();
         $this->assertValidate($request);
     }

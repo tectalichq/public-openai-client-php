@@ -15,6 +15,7 @@ namespace Tests\Unit\Handlers;
 use Nyholm\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
+use ReflectionObject;
 use Tectalic\OpenAi\Authentication;
 use Tectalic\OpenAi\ClientException;
 use Tectalic\OpenAi\Handlers\Edits;
@@ -59,17 +60,14 @@ final class EditsTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Unsupported content type: text/plain');
 
-        $this->mockClient->makeResponse(
-            new Response(
-                200,
-                ['Content-Type' => 'text/plain'],
-                null
-            )
-        );
-        (new Edits())->create(new CreateRequest([
-            'model' => 'alpha0',
-            'instruction' => 'Fix the spelling mistakes.',
-        ]))->toArray();
+        $handler = new Edits();
+        $method = (new ReflectionObject($handler))->getMethod('parseResponse');
+        $method->setAccessible(true);
+        $method->invoke($handler, new Response(
+            200,
+            ['Content-Type' => 'text/plain'],
+            null
+        ));
     }
 
     public function testInvalidJsonResponse(): void
@@ -77,17 +75,14 @@ final class EditsTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Failed to parse JSON response body: Syntax error');
 
-        $this->mockClient->makeResponse(
-            new Response(
-                200,
-                ['Content-Type' => 'application/json'],
-                'invalidJson'
-            )
-        );
-        (new Edits())->create(new CreateRequest([
-            'model' => 'alpha0',
-            'instruction' => 'Fix the spelling mistakes.',
-        ]))->toArray();
+        $handler = new Edits();
+        $method = (new ReflectionObject($handler))->getMethod('parseResponse');
+        $method->setAccessible(true);
+        $method->invoke($handler, new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            'invalidJson'
+        ));
     }
 
     public function testUnsuccessfulResponseCode(): void
@@ -95,11 +90,36 @@ final class EditsTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage("Unsuccessful response. HTTP status code: 418 (I'm a teapot).");
 
-        $this->mockClient->makeResponse(new Response(418));
-        (new Edits())->create(new CreateRequest([
-            'model' => 'alpha0',
-            'instruction' => 'Fix the spelling mistakes.',
-        ]))->toModel();
+        $handler = new Edits();
+        $property = (new ReflectionObject($handler))->getProperty('response');
+        $property->setAccessible(true);
+        $property->setValue($handler, new Response(418));
+        $handler->toModel();
+    }
+
+    public function toArrayDataProvider(): array
+    {
+        return [
+            ['{}', []],
+            ['[]', []],
+            ['{"a": "b"}', ['a' => 'b']],
+        ];
+    }
+
+    /**
+     * @dataProvider toArrayDataProvider
+     */
+    public function testToArray(string $rawJsonResponse, array $expected): void
+    {
+        $handler = new Edits();
+        $property = (new ReflectionObject($handler))->getProperty('response');
+        $property->setAccessible(true);
+        $property->setValue($handler, new Response(
+            200,
+            ['Content-Type' => 'application/json'],
+            $rawJsonResponse
+        ));
+        $this->assertSame($expected, $handler->toArray());
     }
 
     public function testCreateMethod(): void
