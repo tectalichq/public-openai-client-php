@@ -27,6 +27,9 @@ use Tectalic\OpenAi\Handlers\FilesContent;
 use Tectalic\OpenAi\Handlers\FineTunes;
 use Tectalic\OpenAi\Handlers\FineTunesCancel;
 use Tectalic\OpenAi\Handlers\FineTunesEvents;
+use Tectalic\OpenAi\Handlers\ImagesEdits;
+use Tectalic\OpenAi\Handlers\ImagesGenerations;
+use Tectalic\OpenAi\Handlers\ImagesVariations;
 use Tectalic\OpenAi\Handlers\Models;
 use Tectalic\OpenAi\Handlers\Moderations;
 use Tectalic\OpenAi\Models\AbstractModel;
@@ -84,6 +87,39 @@ final class Client implements ClientInterface
     public function edits(): Edits
     {
         return new \Tectalic\OpenAi\Handlers\Edits($this);
+    }
+
+    /**
+     * Access to the imagesGenerations handler.
+     *
+     * @api
+     * @return ImagesGenerations
+     */
+    public function imagesGenerations(): ImagesGenerations
+    {
+        return new \Tectalic\OpenAi\Handlers\ImagesGenerations($this);
+    }
+
+    /**
+     * Access to the imagesEdits handler.
+     *
+     * @api
+     * @return ImagesEdits
+     */
+    public function imagesEdits(): ImagesEdits
+    {
+        return new \Tectalic\OpenAi\Handlers\ImagesEdits($this);
+    }
+
+    /**
+     * Access to the imagesVariations handler.
+     *
+     * @api
+     * @return ImagesVariations
+     */
+    public function imagesVariations(): ImagesVariations
+    {
+        return new \Tectalic\OpenAi\Handlers\ImagesVariations($this);
     }
 
     /**
@@ -333,7 +369,7 @@ final class Client implements ClientInterface
 
         $request = $request->withHeader(
             'User-Agent',
-            'Tectalic OpenAI REST API Client/1.0.1'
+            'Tectalic OpenAI REST API Client/1.2.0'
         );
 
         // Merge Headers.

@@ -4,7 +4,7 @@
 
 The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
 
-Supports GPT-3 and Codex based models, fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
+Supports GPT-3, Codex and DALL·E based models, fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
 
 Integrating OpenAI into your **PHP** application is now as simple as:
 
@@ -87,13 +87,13 @@ In the **Usage** code above, customize the `Authentication` constructor to your 
 
 The primary class you will interact with is the `Client` class (`Tectalic\OpenAi\Client`).
 
-This `Client` class also contains the helper methods that let you quickly access the 10 API Handlers.
+This `Client` class also contains the helper methods that let you quickly access the 13 API Handlers.
 
 Please see below for a complete list of supported handlers and methods.
 
 ### Supported API Handlers and Methods
 
-This package supports 17 API Methods, which are grouped into 10 API Handlers.
+This package supports 20 API Methods, which are grouped into 13 API Handlers.
 
 See the table below for a full list of API Handlers and Methods.
 
@@ -113,6 +113,9 @@ See the table below for a full list of API Handlers and Methods.
 |`FineTunes::retrieve()`|Gets info about the fine-tune job.<br />Learn more about Fine-tuning|`GET` `/fine-tunes/{fine_tune_id}`|
 |`FineTunesCancel::cancelFineTune()`|Immediately cancel a fine-tune job.|`POST` `/fine-tunes/{fine_tune_id}/cancel`|
 |`FineTunesEvents::listFineTune()`|Get fine-grained status updates for a fine-tune job.|`GET` `/fine-tunes/{fine_tune_id}/events`|
+|`ImagesEdits::createImage()`|Creates an edited or extended image given an original image and a prompt.|`POST` `/images/edits`|
+|`ImagesGenerations::create()`|Creates an image given a prompt.|`POST` `/images/generations`|
+|`ImagesVariations::createImage()`|Creates a variation of a given image.|`POST` `/images/variations`|
 |`Models::list()`|Lists the currently available models, and provides basic information about each one such as the owner and availability.|`GET` `/models`|
 |`Models::retrieve()`|Retrieves a model instance, providing basic information about the model such as the owner and permissioning.|`GET` `/models/{model}`|
 |`Models::delete()`|Delete a fine-tuned model. You must have the Owner role in your organization.|`DELETE` `/models/{model}`|

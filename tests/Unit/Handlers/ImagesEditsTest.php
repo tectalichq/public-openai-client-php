@@ -18,12 +18,15 @@ use ReflectionClass;
 use ReflectionObject;
 use Tectalic\OpenAi\Authentication;
 use Tectalic\OpenAi\ClientException;
-use Tectalic\OpenAi\Handlers\FineTunesCancel;
+use Tectalic\OpenAi\Handlers\ImagesEdits;
 use Tectalic\OpenAi\Manager;
+use Tectalic\OpenAi\Models\ImagesEdits\CreateImageRequest;
 use Tests\AssertValidateTrait;
 use Tests\MockHttpClient;
+use org\bovigo\vfs\content\LargeFileContent;
+use org\bovigo\vfs\vfsStream;
 
-final class FineTunesCancelTest extends TestCase
+final class ImagesEditsTest extends TestCase
 {
     use AssertValidateTrait;
 
@@ -51,7 +54,7 @@ final class FineTunesCancelTest extends TestCase
     {
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Request not configured.');
-        (new FineTunesCancel())->getRequest();
+        (new ImagesEdits())->getRequest();
     }
 
     public function testUnsupportedContentTypeResponse(): void
@@ -59,7 +62,7 @@ final class FineTunesCancelTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Unsupported content type: text/plain');
 
-        $handler = new FineTunesCancel();
+        $handler = new ImagesEdits();
         $method = (new ReflectionObject($handler))->getMethod('parseResponse');
         $method->setAccessible(true);
         $method->invoke($handler, new Response(
@@ -74,7 +77,7 @@ final class FineTunesCancelTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Failed to parse JSON response body: Syntax error');
 
-        $handler = new FineTunesCancel();
+        $handler = new ImagesEdits();
         $method = (new ReflectionObject($handler))->getMethod('parseResponse');
         $method->setAccessible(true);
         $method->invoke($handler, new Response(
@@ -89,7 +92,7 @@ final class FineTunesCancelTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage("Unsuccessful response. HTTP status code: 418 (I'm a teapot).");
 
-        $handler = new FineTunesCancel();
+        $handler = new ImagesEdits();
         $property = (new ReflectionObject($handler))->getProperty('response');
         $property->setAccessible(true);
         $property->setValue($handler, new Response(418));
@@ -110,7 +113,7 @@ final class FineTunesCancelTest extends TestCase
      */
     public function testToArray(string $rawJsonResponse, array $expected): void
     {
-        $handler = new FineTunesCancel();
+        $handler = new ImagesEdits();
         $property = (new ReflectionObject($handler))->getProperty('response');
         $property->setAccessible(true);
         $property->setValue($handler, new Response(
@@ -121,10 +124,22 @@ final class FineTunesCancelTest extends TestCase
         $this->assertSame($expected, $handler->toArray());
     }
 
-    public function testCancelFineTuneMethod(): void
+    public function testCreateImageMethod(): void
     {
-        $request = (new FineTunesCancel())
-            ->cancelFineTune('ft-AF1WoRqd3aJAHsqc9NY7iL8F')
+        $filesystem = vfsStream::setup();
+        // Create the file(s) to be uploaded.
+        $files = ['image', 'mask'];
+        foreach ($files as $file) {
+            vfsStream::newFile($file)
+                ->withContent(LargeFileContent::withKilobytes(1))
+                ->at($filesystem);
+        }
+        $request = (new ImagesEdits())
+            ->createImage(new CreateImageRequest([
+            'image' => 'vfs://root/image',
+            'mask' => 'vfs://root/mask',
+            'prompt' => 'A cute baby sea otter wearing a beret',
+        ]))
             ->getRequest();
         $this->assertValidate($request);
     }

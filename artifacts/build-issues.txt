@@ -89,6 +89,56 @@ Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Oper
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[prompt_tokens].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[completion_tokens].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[usage].Schema[total_tokens].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/images/generations]. Target: Api.Handler[ImagesGenerations].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].RequestBody.MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[prompt].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[n].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[size].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[response_format].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].RequestBody.MediaType[application/json].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[url].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/generations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[b64_json].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/images/edits]. Target: Api.Handler[ImagesEdits].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[image].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[mask].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[prompt].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[n].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[size].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[response_format].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[url].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[b64_json].
+No PathItem summary or description. Source: OpenApi.Paths.PathItem[/images/variations]. Target: Api.Handler[ImagesVariations].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].RequestBody.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].RequestBody.MediaType[multipart/form-data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[image].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[n].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[size].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[response_format].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].RequestBody.MediaType[multipart/form-data].Schema.Schema[user].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.Response[200].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.Response[200].MediaType[application/json].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[url].
+Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/images/variations].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[data].Schema[items].Schema[b64_json].
 No PathItem summary or description. Source: OpenApi.Paths.PathItem[/embeddings]. Target: Api.Handler[Embeddings].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/embeddings].Operation[post].RequestBody.MediaType[application/json].
@@ -552,6 +602,32 @@ Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[usage].Schema[prompt_tokens].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[usage].Schema[completion_tokens].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[usage].Schema[total_tokens].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageRequest].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageRequest].Schema[prompt].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageRequest].Schema[n].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageRequest].Schema[size].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageRequest].Schema[response_format].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageRequest].Schema[user].
+Component ignored. Source: OpenApi.Components.Schema[ImagesResponse].
+Component ignored. Source: OpenApi.Components.Schema[ImagesResponse].Schema[created].
+Component ignored. Source: OpenApi.Components.Schema[ImagesResponse].Schema[data].
+Component ignored. Source: OpenApi.Components.Schema[ImagesResponse].Schema[data].Schema[items].
+Component ignored. Source: OpenApi.Components.Schema[ImagesResponse].Schema[data].Schema[items].Schema[url].
+Component ignored. Source: OpenApi.Components.Schema[ImagesResponse].Schema[data].Schema[items].Schema[b64_json].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].Schema[image].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].Schema[mask].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].Schema[prompt].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].Schema[n].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].Schema[size].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].Schema[response_format].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageEditRequest].Schema[user].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageVariationRequest].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageVariationRequest].Schema[image].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageVariationRequest].Schema[n].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageVariationRequest].Schema[size].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageVariationRequest].Schema[response_format].
+Component ignored. Source: OpenApi.Components.Schema[CreateImageVariationRequest].Schema[user].
 Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].
 Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].Schema[input].
 Component ignored. Source: OpenApi.Components.Schema[CreateModerationRequest].Schema[input].Schema[0].
