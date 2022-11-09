@@ -4,12 +4,20 @@
 
 The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
 
-Supports GPT-3, Codex and DALL·E based models, fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
+Supports **GPT-3**, **Codex** and **DALL·E** based models, fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
 
-Integrating OpenAI into your **PHP** application is now as simple as:
+More information is available from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
+
+**This is an unofficial package and has no affiliations with OpenAI.**
+
+## Examples
+
+Integrating OpenAI into your application is now as simple as a few lines of code.
+
+### Text Completion using GPT-3
 
 ```php
-$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication('OPENAI_API_KEY'));
+$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication(getenv('OPENAI_API_KEY')));
 
 $response = $openaiClient->completions()->create(
     new CreateRequest([
@@ -22,9 +30,47 @@ echo $response->choices[0]->text;
 // Using a third party package can save time because you don't have to write the code yourself.
 ```
 
-More information is available from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
+[Learn more about text completion](https://beta.openai.com/docs/guides/completion).
 
-**This is an unofficial package and has no affiliations with OpenAI.**
+### Code Completion Using Codex
+
+```php
+$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication(getenv('OPENAI_API_KEY')));
+
+$response = $openaiClient->completions()->create(
+    new CreateRequest([
+        'model'  => 'code-davinci-002',
+        'prompt' => "// PHP 8\n// A variable that saves the current date and time",
+        'max_tokens' => 256,
+        'stop' => ";",
+    ])
+)->toModel();
+
+echo $response->choices[0]->text;
+// $now = date("Y-m-d G:i:s")
+```
+
+[Learn more about code completion](https://beta.openai.com/docs/guides/code).
+
+### Image Generation Using DALL·E
+
+```php
+$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication(getenv('OPENAI_API_KEY')));
+
+$response = $openaiClient->imagesGenerations()->create(
+    new CreateRequest([
+        'prompt' => 'A cute baby sea otter wearing a hat',
+        'size' => '256x256',
+        'n' => 5
+    ])
+)->toModel();
+
+foreach ($response->data as $item) {
+    var_dump($item->url);
+}
+```
+
+[Learn more about image generation](https://beta.openai.com/docs/guides/images).
 
 ## Installation
 
@@ -98,28 +144,28 @@ This package supports 20 API Methods, which are grouped into 13 API Handlers.
 See the table below for a full list of API Handlers and Methods.
 
 
-| API Handler Class and Method Name | Description | API Verb and URL |
-| --------------------------------- | ----------- | ---------------- |
-|`Completions::create()`|Creates a completion for the provided prompt and parameters|`POST` `/completions`|
-|`Edits::create()`|Creates a new edit for the provided input, instruction, and parameters|`POST` `/edits`|
-|`Embeddings::create()`|Creates an embedding vector representing the input text.|`POST` `/embeddings`|
-|`Files::list()`|Returns a list of files that belong to the user's organization.|`GET` `/files`|
-|`Files::create()`|Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.|`POST` `/files`|
-|`Files::retrieve()`|Returns information about a specific file.|`GET` `/files/{file_id}`|
-|`Files::delete()`|Delete a file.|`DELETE` `/files/{file_id}`|
-|`FilesContent::download()`|Returns the contents of the specified file|`GET` `/files/{file_id}/content`|
-|`FineTunes::list()`|List your organization's fine-tuning jobs|`GET` `/fine-tunes`|
-|`FineTunes::create()`|Creates a job that fine-tunes a specified model from a given dataset.<br />Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br />Learn more about Fine-tuning|`POST` `/fine-tunes`|
-|`FineTunes::retrieve()`|Gets info about the fine-tune job.<br />Learn more about Fine-tuning|`GET` `/fine-tunes/{fine_tune_id}`|
-|`FineTunesCancel::cancelFineTune()`|Immediately cancel a fine-tune job.|`POST` `/fine-tunes/{fine_tune_id}/cancel`|
-|`FineTunesEvents::listFineTune()`|Get fine-grained status updates for a fine-tune job.|`GET` `/fine-tunes/{fine_tune_id}/events`|
-|`ImagesEdits::createImage()`|Creates an edited or extended image given an original image and a prompt.|`POST` `/images/edits`|
-|`ImagesGenerations::create()`|Creates an image given a prompt.|`POST` `/images/generations`|
-|`ImagesVariations::createImage()`|Creates a variation of a given image.|`POST` `/images/variations`|
-|`Models::list()`|Lists the currently available models, and provides basic information about each one such as the owner and availability.|`GET` `/models`|
-|`Models::retrieve()`|Retrieves a model instance, providing basic information about the model such as the owner and permissioning.|`GET` `/models/{model}`|
-|`Models::delete()`|Delete a fine-tuned model. You must have the Owner role in your organization.|`DELETE` `/models/{model}`|
-|`Moderations::create()`|Classifies if text violates OpenAI's Content Policy|`POST` `/moderations`|
+| API Handler Class and Method Name | Description | API Verb and URL                           |
+| --------------------------------- | ----------- |--------------------------------------------|
+|`Completions::create()`|Creates a completion for the provided prompt and parameters| `POST` `/completions`                      |
+|`Edits::create()`|Creates a new edit for the provided input, instruction, and parameters| `POST` `/edits`                            |
+|`Embeddings::create()`|Creates an embedding vector representing the input text.| `POST` `/embeddings`                       |
+|`Files::list()`|Returns a list of files that belong to the user's organization.| `GET` `/files`                             |
+|`Files::create()`|Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.| `POST` `/files`                            |
+|`Files::retrieve()`|Returns information about a specific file.| `GET` `/files/{file_id}`                   |
+|`Files::delete()`|Delete a file.| `DELETE` `/files/{file_id}`                |
+|`FilesContent::download()`|Returns the contents of the specified file| `GET` `/files/{file_id}/content`           |
+|`FineTunes::list()`|List your organization's fine-tuning jobs| `GET` `/fine-tunes`                        |
+|`FineTunes::create()`|Creates a job that fine-tunes a specified model from a given dataset.<br />Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br />Learn more about Fine-tuning| `POST` `/fine-tunes`                       |
+|`FineTunes::retrieve()`|Gets info about the fine-tune job.<br />Learn more about Fine-tuning| `GET` `/fine-tunes/{fine_tune_id}`         |
+|`FineTunesCancel::cancelFineTune()`|Immediately cancel a fine-tune job.| `POST` `/fine-tunes/{fine_tune_id}/cancel` |
+|`FineTunesEvents::listFineTune()`|Get fine-grained status updates for a fine-tune job.| `GET` `/fine-tunes/{fine_tune_id}/e\vents` |
+|`ImagesEdits::createImage()`|Creates an edited or extended image given an original image and a prompt.| `POST` `/images/edits`                     |
+|`ImagesGenerations::create()`|Creates an image given a prompt.| `POST` `/images/generations`               |
+|`ImagesVariations::createImage()`|Creates a variation of a given image.| `POST` `/images/variations`                |
+|`Models::list()`|Lists the currently available models, and provides basic information about each one such as the owner and availability.| `GET` `/models`                            |
+|`Models::retrieve()`|Retrieves a model instance, providing basic information about the model such as the owner and permissioning.| `GET` `/models/{model}`                    |
+|`Models::delete()`|Delete a fine-tuned model. You must have the Owner role in your organization.| `DELETE` `/models/{model}`                 |
+|`Moderations::create()`|Classifies if text violates OpenAI's Content Policy| `POST` `/moderations`                      |
 
 ### Making a Request
 
@@ -319,4 +365,4 @@ If you have any questions or feedback, please use the [discussion board](https:/
 
 This software is copyright (c) 2022 [Tectalic](https://tectalic.com).
 
-For copyright and license information, please view the [LICENSE](LICENSE) file.
+For copyright and license information, please view the **LICENSE** file.
