@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Handlers;
 
+use Http\Mock\Client;
 use Nyholm\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -22,7 +23,6 @@ use Tectalic\OpenAi\Handlers\ImagesEdits;
 use Tectalic\OpenAi\Manager;
 use Tectalic\OpenAi\Models\ImagesEdits\CreateImageRequest;
 use Tests\AssertValidateTrait;
-use Tests\MockHttpClient;
 use org\bovigo\vfs\content\LargeFileContent;
 use org\bovigo\vfs\vfsStream;
 
@@ -30,12 +30,12 @@ final class ImagesEditsTest extends TestCase
 {
     use AssertValidateTrait;
 
-    /** @var MockHttpClient */
+    /** @var Client */
     private $mockClient;
 
     protected function setUp(): void
     {
-        $this->mockClient = new MockHttpClient();
+        $this->mockClient = new Client();
         Manager::build(
             $this->mockClient,
             new Authentication('token')

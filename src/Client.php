@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Tectalic\OpenAi;
 
+use Http\Message\Authentication;
 use Http\Message\MultipartStream\MultipartStreamBuilder;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Client\ClientExceptionInterface;
@@ -369,7 +370,7 @@ final class Client implements ClientInterface
 
         $request = $request->withHeader(
             'User-Agent',
-            'Tectalic OpenAI REST API Client/1.2.0'
+            'Tectalic OpenAI REST API Client/1.3.0'
         );
 
         // Merge Headers.

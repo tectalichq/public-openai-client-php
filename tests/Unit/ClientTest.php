@@ -12,28 +12,28 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
+use Http\Mock\Client;
 use LogicException;
 use Nyholm\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use ReflectionClass;
 use ReflectionObject;
-use Tectalic\OpenAi\Authentication;
-use Tectalic\OpenAi\Client;
+use Tectalic\OpenAi\Client as OpenAiClient;
 use Tectalic\OpenAi\ClientException;
 use Tectalic\OpenAi\Manager;
 use Tectalic\OpenAi\Models\AbstractModel;
 use Tectalic\OpenAi\Models\AbstractModelCollection;
 use Tectalic\OpenAi\Models\UnstructuredModel;
-use Tests\MockHttpClient;
+use Tests\NullAuth;
 
 final class ClientTest extends TestCase
 {
     public function setUp(): void
     {
         Manager::build(
-            new MockHttpClient(),
-            new Authentication('token')
+            new Client(),
+            new NullAuth()
         );
     }
 
@@ -48,9 +48,9 @@ final class ClientTest extends TestCase
 
     public function testGlobal(): void
     {
-        $client = new Client(
-            new MockHttpClient(),
-            new Authentication('token'),
+        $client = new OpenAiClient(
+            new Client(),
+            new NullAuth(),
             Manager::BASE_URI
         );
         $this->assertEquals($client, Manager::access());
@@ -64,8 +64,8 @@ final class ClientTest extends TestCase
         $this->expectException(LogicException::class);
         $this->expectExceptionMessage('Client already built.');
         Manager::build(
-            new MockHttpClient(),
-            new Authentication('token')
+            new Client(),
+            new NullAuth()
         );
     }
 
@@ -385,15 +385,19 @@ final class ClientTest extends TestCase
 
     /**
      * @dataProvider invalidResponse
-     * @param class-string<\Throwable> $exception
+     * @param class-string<\Exception> $exception
      */
     public function testInvalidResponse(string $method, string $exception, string $message): void
     {
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage($message);
-        $client = new Client(
-            new MockHttpClient(new $exception()),
-            new Authentication('token'),
+
+        $mockClient = new Client();
+        $mockClient->addException(new $exception());
+
+        $client = new OpenAiClient(
+            $mockClient,
+            new NullAuth(),
             Manager::BASE_URI
         );
         $client->sendRequest($client->$method('/'));

@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Tectalic\OpenAi;
 
+use Http\Message\Authentication;
 use LogicException;
 use Psr\Http\Client\ClientInterface;
 

@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.3.0 - 2022-12-21
+
+### Added
+- Use parameters defined outside endpoint methods.
+
+### Changed
+- Encourage the use of `php-http/mock-client` for testing and mocking API responses.
+- Remove the `Tests\MockHttpClient` class, and use the `php-http/mock-client` package instead.
+- Make Handler and Model class names more readable.
+
+### Fixed
+- Use correct model type for nested models.
+
 ## 1.2.0 - 2022-11-07
 
 ### Added

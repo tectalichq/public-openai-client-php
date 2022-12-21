@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Handlers;
 
+use Http\Mock\Client;
 use Nyholm\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -22,18 +23,17 @@ use Tectalic\OpenAi\Handlers\ImagesGenerations;
 use Tectalic\OpenAi\Manager;
 use Tectalic\OpenAi\Models\ImagesGenerations\CreateRequest;
 use Tests\AssertValidateTrait;
-use Tests\MockHttpClient;
 
 final class ImagesGenerationsTest extends TestCase
 {
     use AssertValidateTrait;
 
-    /** @var MockHttpClient */
+    /** @var Client */
     private $mockClient;
 
     protected function setUp(): void
     {
-        $this->mockClient = new MockHttpClient();
+        $this->mockClient = new Client();
         Manager::build(
             $this->mockClient,
             new Authentication('token')

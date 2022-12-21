@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -86,13 +86,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup node
         if: matrix.test-type == 'integration'
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
+        uses: actions/setup-node@v3
 
       - name: Install and run @stoplight/prism
         if: matrix.test-type == 'integration'
@@ -141,12 +139,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
+        uses: actions/setup-node@v3
 
       - name: Install and run @stoplight/prism
         run: |

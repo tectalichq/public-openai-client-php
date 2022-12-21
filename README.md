@@ -357,6 +357,16 @@ composer test:integration
 
 We do not recommend running integration tests against the live OpenAI API endpoints. This is because the tests will send example data to all endpoints, which can result in new data being created, or existing data being deleted.
 
+### Writing Your Own Tests
+
+If you are writing your own tests, you will likely need to mock the responses from the **OpenAI API**.
+
+One way of doing this is to install the `php-http/mock-client` package into your project, and then use the `\Http\Mock\Client` class (instead of a real PSR-18 client) when instantiating the **Tectalic OpenAI REST API Client**.
+
+This allows you to mock the responses from the **OpenAI API**, rather than performing real requests.
+
+Please see the [Mock Client documentation](https://docs.php-http.org/en/latest/clients/mock-client.html#mock-client) for details.
+
 ## Support
 
 If you have any questions or feedback, please use the [discussion board](https://github.com/tectalichq/public-openai-client-php/discussions).
