@@ -17,10 +17,11 @@ Integrating OpenAI into your application is now as simple as a few lines of code
 ### Text Completion using GPT-3
 
 ```php
-$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication(getenv('OPENAI_API_KEY')));
+$openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
 
+/** @var \Tectalic\OpenAi\Models\Completions\CreateResponse $response */
 $response = $openaiClient->completions()->create(
-    new CreateRequest([
+    new \Tectalic\OpenAi\Models\Completions\CreateRequest([
         'model'  => 'text-davinci-002',
         'prompt' => 'Will using a third party package save time?',
     ])
@@ -35,10 +36,11 @@ echo $response->choices[0]->text;
 ### Code Completion Using Codex
 
 ```php
-$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication(getenv('OPENAI_API_KEY')));
+$openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
 
+/** @var \Tectalic\OpenAi\Models\Completions\CreateResponse $response */
 $response = $openaiClient->completions()->create(
-    new CreateRequest([
+    new \Tectalic\OpenAi\Models\Completions\CreateRequest([
         'model'  => 'code-davinci-002',
         'prompt' => "// PHP 8\n// A variable that saves the current date and time",
         'max_tokens' => 256,
@@ -55,10 +57,11 @@ echo $response->choices[0]->text;
 ### Image Generation Using DALL·E
 
 ```php
-$openaiClient = Manager::build(new \GuzzleHttp\Client(), new Authentication(getenv('OPENAI_API_KEY')));
+$openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
 
+/** @var \Tectalic\OpenAi\Models\ImagesGenerations\CreateResponse $response */
 $response = $openaiClient->imagesGenerations()->create(
-    new CreateRequest([
+    new \Tectalic\OpenAi\Models\ImagesGenerations\CreateRequest([
         'prompt' => 'A cute baby sea otter wearing a hat',
         'size' => '256x256',
         'n' => 5
