@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2022 Tectalic (https://tectalic.com)
+ * Copyright (c) 2022-present Tectalic (https://tectalic.com)
  *
  * For copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
@@ -26,6 +26,7 @@ use Tectalic\OpenAi\Models\AbstractModel;
 use Tectalic\OpenAi\Models\AbstractModelCollection;
 use Tectalic\OpenAi\Models\UnstructuredModel;
 use Tests\NullAuth;
+use stdClass;
 
 final class ClientTest extends TestCase
 {
@@ -80,7 +81,7 @@ final class ClientTest extends TestCase
     /**
      * @return array<string[]>
      */
-    public function receivingMethods(): array
+    public static function receivingMethods(): array
     {
         return [
             [ 'get' ],
@@ -106,7 +107,7 @@ final class ClientTest extends TestCase
     /**
      * @return array<string[]>
      */
-    public function sendingMethods(): array
+    public static function sendingMethods(): array
     {
         return [
             [ 'post' ]
@@ -142,7 +143,7 @@ final class ClientTest extends TestCase
         $this->assertSame('Test Client/1.0', $request->getHeaderLine('User-Agent'));
     }
 
-    public function jsonBodyEncodeProvider(): array
+    public static function jsonBodyEncodeProvider(): array
     {
         return [
             'JSON encode unstructured model with empty object' => [
@@ -183,7 +184,7 @@ final class ClientTest extends TestCase
         ];
     }
 
-    public function formBodyEncodeProvider(): array
+    public static function formBodyEncodeProvider(): array
     {
         return [
             'form encode unstructured model with empty object' => [
@@ -244,7 +245,7 @@ final class ClientTest extends TestCase
         $this->assertSame($expectedResult, (string) $request->getBody());
     }
 
-    public function multipartBodyEncodeProvider(): array
+    public static function multipartBodyEncodeProvider(): array
     {
         return [
             'multipart unstructured model with empty object' => [
@@ -287,7 +288,7 @@ final class ClientTest extends TestCase
         $this->assertStringMatchesFormat($expectedBodyFormat, (string) $request->getBody());
     }
 
-    public function invalidMultipartBodyEncodeProvider(): array
+    public static function invalidMultipartBodyEncodeProvider(): array
     {
         return [
             'unstructured model with an array' => [
@@ -296,9 +297,9 @@ final class ClientTest extends TestCase
                 'Unable to encode body. Could not serialize data.'
             ],
             'unstructured model with an object that has a property that cannot be converted to a string' => [
-                new UnstructuredModel((object)['a' => []]),
+                new UnstructuredModel((object)['a' => new stdClass()]),
                 ['Content-Type' => 'multipart/form-data'],
-                'Unable to convert array value of Tectalic\OpenAi\Models\UnstructuredModel::a to a string.'
+                'Unable to convert object value of Tectalic\OpenAi\Models\UnstructuredModel::a to a string.'
             ],
         ];
     }
@@ -375,7 +376,7 @@ final class ClientTest extends TestCase
     /**
      * @return array<string[]>
      */
-    public function invalidResponse(): array
+    public static function invalidResponse(): array
     {
         return [
             ['get', ClientException::class, ''],
@@ -403,7 +404,7 @@ final class ClientTest extends TestCase
         $client->sendRequest($client->$method('/'));
     }
 
-    public function mergeRequestPartsProvider(): array
+    public static function mergeRequestPartsProvider(): array
     {
         return [
             'no query params' => [

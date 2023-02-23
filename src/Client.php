@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2022 Tectalic (https://tectalic.com)
+ * Copyright (c) 2022-present Tectalic (https://tectalic.com)
  *
  * For copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
@@ -370,7 +370,7 @@ final class Client implements ClientInterface
 
         $request = $request->withHeader(
             'User-Agent',
-            'Tectalic OpenAI REST API Client/1.3.0'
+            'Tectalic OpenAI REST API Client/1.3.1'
         );
 
         // Merge Headers.

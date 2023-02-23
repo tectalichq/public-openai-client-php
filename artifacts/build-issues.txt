@@ -67,10 +67,8 @@ Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Oper
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].
-Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[id].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[object].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[created].
-Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[model].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].
 Ignored. No visitors for this input. Source: OpenApi.Paths.PathItem[/edits].Operation[post].Responses.Response[200].MediaType[application/json].Schema.Schema[choices].Schema[items].Schema[text].
@@ -580,10 +578,8 @@ Component ignored. Source: OpenApi.Components.Schema[CreateEditRequest].Schema[n
 Component ignored. Source: OpenApi.Components.Schema[CreateEditRequest].Schema[temperature].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditRequest].Schema[top_p].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].
-Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[id].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[object].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[created].
-Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[model].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[choices].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[choices].Schema[items].
 Component ignored. Source: OpenApi.Components.Schema[CreateEditResponse].Schema[choices].Schema[items].Schema[text].

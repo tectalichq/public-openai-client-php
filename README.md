@@ -161,7 +161,7 @@ See the table below for a full list of API Handlers and Methods.
 |`FineTunes::create()`|Creates a job that fine-tunes a specified model from a given dataset.<br />Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br />Learn more about Fine-tuning| `POST` `/fine-tunes`                       |
 |`FineTunes::retrieve()`|Gets info about the fine-tune job.<br />Learn more about Fine-tuning| `GET` `/fine-tunes/{fine_tune_id}`         |
 |`FineTunesCancel::cancelFineTune()`|Immediately cancel a fine-tune job.| `POST` `/fine-tunes/{fine_tune_id}/cancel` |
-|`FineTunesEvents::listFineTune()`|Get fine-grained status updates for a fine-tune job.| `GET` `/fine-tunes/{fine_tune_id}/e\vents` |
+|`FineTunesEvents::listFineTune()`|Get fine-grained status updates for a fine-tune job.| `GET` `/fine-tunes/{fine_tune_id}/events` |
 |`ImagesEdits::createImage()`|Creates an edited or extended image given an original image and a prompt.| `POST` `/images/edits`                     |
 |`ImagesGenerations::create()`|Creates an image given a prompt.| `POST` `/images/generations`               |
 |`ImagesVariations::createImage()`|Creates a variation of a given image.| `POST` `/images/variations`                |
@@ -280,7 +280,6 @@ try {
 } catch (ClientException $e) {
     // Error response received. Retrieve the HTTP response code and response body.
     $responseBody = $handler->toArray();
-    $rawResponse  = $handler->getResponse()->getResponse();
     $responseCode = $handler->getResponse()->getStatusCode();
     // Handle the error...
 }
@@ -376,6 +375,6 @@ If you have any questions or feedback, please use the [discussion board](https:/
 
 ## License
 
-This software is copyright (c) 2022 [Tectalic](https://tectalic.com).
+This software is copyright (c) 2022-present [Tectalic](https://tectalic.com).
 
 For copyright and license information, please view the **LICENSE** file.

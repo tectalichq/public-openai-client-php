@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2022 Tectalic (https://tectalic.com)
+ * Copyright (c) 2022-present Tectalic (https://tectalic.com)
  *
  * For copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
@@ -21,19 +21,13 @@ final class CreateResponse extends AbstractModel
      *
      * These properties must all be set when this Model is instantiated.
      */
-    protected const REQUIRED = ['id', 'object', 'created', 'model', 'choices', 'usage'];
-
-    /** @var string */
-    public $id;
+    protected const REQUIRED = ['object', 'created', 'choices', 'usage'];
 
     /** @var string */
     public $object;
 
     /** @var int */
     public $created;
-
-    /** @var string */
-    public $model;
 
     /** @var \Tectalic\OpenAi\Models\Edits\CreateResponseChoicesItem[] */
     public $choices;

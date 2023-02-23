@@ -25,6 +25,11 @@
       "Tests\\": "tests/"
     }
   },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": false
+    }
+  },
   "conflict": {
     "cebe/php-openapi": "<1.7",
     "riverline/multipart-parser": "<2.0.9",
@@ -44,7 +49,7 @@
     "mikey179/vfsstream": "^1.6.10",
     "php-http/mock-client": "^1.5",
     "phpstan/phpstan": "^1.4",
-    "phpunit/phpunit": "^8.5.14 || ^9.5",
+    "phpunit/phpunit": "^8.5.14 || ^9.5 || ^10.0",
     "squizlabs/php_codesniffer": "^3.6",
     "symfony/http-client": "^5.3"
   },
@@ -57,12 +62,12 @@
     ],
     "test:coverage": [
       "Composer\\Config::disableProcessTimeout",
-      "XDEBUG_MODE=coverage phpunit --verbose --coverage-html=coverage"
+      "XDEBUG_MODE=coverage phpunit --coverage-html=coverage"
     ],
-    "test:integration": "phpunit --verbose --testsuite=integration",
+    "test:integration": "phpunit --testsuite=integration",
     "test:phpcs": "phpcs -q -s",
     "test:phpstan": "phpstan analyse --memory-limit=1G",
-    "test:unit": "phpunit --verbose --testsuite=unit"
+    "test:unit": "phpunit --testsuite=unit"
   },
   "scripts-descriptions": {
     "test": "Run common test.",

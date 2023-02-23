@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2022 Tectalic (https://tectalic.com)
+ * Copyright (c) 2022-present Tectalic (https://tectalic.com)
  *
  * For copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Models;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 use Spatie\DataTransferObject\DataTransferObjectError;
 use Tectalic\OpenAi\Models\AbstractModel;
@@ -20,8 +21,10 @@ final class AbstractModelTest extends TestCase
 {
     public function testAbstractModelWithDeprecatedProperty(): void
     {
-        $this->expectDeprecation();
-        $this->expectDeprecationMessage('Property `a` is deprecated');
+        \set_error_handler(static function (int $errno, string $errstr) {
+            throw new Exception($errstr, $errno);
+        }, \E_USER_DEPRECATED);
+        $this->expectExceptionMessage('Property `a` is deprecated');
 
         $class = new class (['a' => 'valueA', 'b' => []]) extends AbstractModel {
             protected const DEPRECATED = ['a'];

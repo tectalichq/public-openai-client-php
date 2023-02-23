@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (c) 2022 Tectalic (https://tectalic.com)
+ * Copyright (c) 2022-present Tectalic (https://tectalic.com)
  *
  * For copyright and license information, please view the LICENSE file that was distributed with this source code.
  *
@@ -96,7 +96,7 @@ final class FilesContentTest extends TestCase
         $handler->toModel();
     }
 
-    public function toArrayDataProvider(): array
+    public static function toArrayDataProvider(): array
     {
         return [
             ['{}', []],

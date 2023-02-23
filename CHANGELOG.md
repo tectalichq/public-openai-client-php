@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.3.1 - 2023-02-23
+
+### Added
+- Add support for PHPUnit v9.6.x and v10.x.
+
+### Changed
+- Remove `id` and `model` required properties from the `Tectalic\OpenAi\Models\Edits\CreateResponse` model, as they are no longer returned by OpenAI's API.
+- Improve compatibility with the `php-http/discovery` package v1.15.0 and newer.
+- Update Copyright year.
+
+### Fixed
+- Fix `Response body parse failed` error when retrieving a Model response from the `Edits::create()` handler and method.
+- Fix incorrect Error handling example in Readme.
+
 ## 1.3.0 - 2022-12-21
 
 ### Added
