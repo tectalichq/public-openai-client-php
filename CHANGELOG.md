@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Remove `id` and `model` required properties from the `Tectalic\OpenAi\Models\Edits\CreateResponse` model, as they are no longer returned by OpenAI's API.
 - Improve compatibility with the `php-http/discovery` package v1.15.0 and newer.
+- Use Fully Qualified Class Names for Examples in Readme.
 - Update Copyright year.
 
 ### Fixed
