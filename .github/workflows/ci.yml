@@ -96,7 +96,7 @@ jobs:
         if: matrix.test-type == 'integration'
         run: |
           npm install -g @stoplight/prism-cli
-          prism mock tests/openapi.yaml >artifacts/prism.log 2>&1 &
+          prism mock tests/openapi.yaml >prism.log 2>&1 &
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -123,7 +123,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ github.event.repository.name }}-prism.log
-          path: artifacts/prism.log
+          path: prism.log
 
   coverage:
     name: Coverage
@@ -169,9 +169,3 @@ jobs:
         with:
           name: ${{ github.event.repository.name }}-coverage-report
           path: coverage/
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ github.event.repository.name }}-artifacts
-          path: artifacts/
