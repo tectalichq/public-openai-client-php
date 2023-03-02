@@ -21,13 +21,14 @@ final class CreateImageRequest extends AbstractModel
      *
      * These properties must all be set when this Model is instantiated.
      */
-    protected const REQUIRED = ['prompt', 'image', 'mask'];
+    protected const REQUIRED = ['prompt', 'image'];
 
     /** List of properties that represent a file to be uploaded. */
     public const FILE_UPLOADS = ['image', 'mask'];
 
     /**
-     * The image to edit. Must be a valid PNG file, less than 4MB, and square.
+     * The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask
+     * is not provided, image must have transparency, which will be used as the mask.
      *
      * @var string must be an absolute path to a file.
      */
@@ -91,8 +92,8 @@ final class CreateImageRequest extends AbstractModel
     public $response_format;
 
     /**
-     * A unique identifier representing your end-user, which will help OpenAI to
-     * monitor and detect abuse. Learn more.
+     * A unique identifier representing your end-user, which can help OpenAI to monitor
+     * and detect abuse. Learn more.
      *
      * Example: 'user-1234'
      *

@@ -24,8 +24,8 @@ final class CreateRequest extends AbstractModel
     protected const REQUIRED = ['model', 'instruction'];
 
     /**
-     * ID of the model to use. You can use the List models API to see all of your
-     * available models, or see our Model overview for descriptions of them.
+     * ID of the model to use. You can use the text-davinci-edit-001 or
+     * code-davinci-edit-001 model with this endpoint.
      *
      * @var string
      */
@@ -63,9 +63,9 @@ final class CreateRequest extends AbstractModel
     public $n;
 
     /**
-     * What sampling temperature to use. Higher values means the model will take more
-     * risks. Try 0.9 for more creative applications, and 0 (argmax sampling) for ones
-     * with a well-defined answer.
+     * What sampling temperature to use, between 0 and 2. Higher values like 0.8 will
+     * make the output more random, while lower values like 0.2 will make it more
+     * focused and deterministic.
      * We generally recommend altering this or top_p but not both.
      *
      * Default Value: 1

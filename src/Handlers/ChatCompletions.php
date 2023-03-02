@@ -19,11 +19,11 @@ use Tectalic\OpenAi\ClientException;
 use Tectalic\OpenAi\Manager;
 use Tectalic\OpenAi\Models\AbstractModel;
 use Tectalic\OpenAi\Models\AbstractModelCollection;
-use Tectalic\OpenAi\Models\Edits\CreateRequest;
-use Tectalic\OpenAi\Models\Edits\CreateResponse;
+use Tectalic\OpenAi\Models\ChatCompletions\CreateRequest;
+use Tectalic\OpenAi\Models\ChatCompletions\CreateResponse;
 use Throwable;
 
-final class Edits
+final class ChatCompletions
 {
     /** @var Client */
     private $client;
@@ -43,10 +43,10 @@ final class Edits
     }
 
     /**
-     * Creates a new edit for the provided input, instruction, and parameters.
+     * Creates a completion for the chat message
      *
-     * Operation URL: POST /edits
-     * Operation ID:  createEdit
+     * Operation URL: POST /chat/completions
+     * Operation ID:  createChatCompletion
      *
      * @param CreateRequest|array $body
      *
@@ -55,7 +55,7 @@ final class Edits
      */
     public function create($body): self
     {
-        $url = '/edits';
+        $url = '/chat/completions';
         $this->setRequest($this->client->post(
             $url,
             \is_array($body) ? new CreateRequest($body) : $body,

@@ -16,13 +16,13 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\Psr18Client;
 use Tectalic\OpenAi\Authentication;
 use Tectalic\OpenAi\Client;
-use Tectalic\OpenAi\Models\ImagesEdits\CreateImageRequest;
-use Tectalic\OpenAi\Models\ImagesEdits\CreateImageResponse;
+use Tectalic\OpenAi\Models\AudioTranscriptions\CreateRequest;
+use Tectalic\OpenAi\Models\AudioTranscriptions\CreateResponse;
 use Tests\MockUri;
 use org\bovigo\vfs\content\LargeFileContent;
 use org\bovigo\vfs\vfsStream;
 
-final class ImagesEditsTest extends TestCase
+final class AudioTranscriptionsTest extends TestCase
 {
     /** @var Client */
     public $client;
@@ -36,28 +36,25 @@ final class ImagesEditsTest extends TestCase
         );
     }
 
-    public function testCreateImageMethod(): void
+    public function testCreateMethod(): void
     {
         $this->markTestSkipped('The default mocking server does not support multipart file upload requests.');
 
         // @phpstan-ignore-next-line
         $filesystem = vfsStream::setup();
         // Create the file(s) to be uploaded.
-        $files = ['image'];
+        $files = ['file'];
         foreach ($files as $file) {
             vfsStream::newFile($file)
                 ->withContent(LargeFileContent::withKilobytes(1))
                 ->at($filesystem);
         }
-        $createImage = $this->client->imagesEdits()->createImage(new CreateImageRequest([
-            'image' => 'vfs://root/image',
-            'prompt' => 'A cute baby sea otter wearing a beret',
-        ]));
-        $response = $createImage->getResponse();
+        $create = $this->client->audioTranscriptions()->create(new CreateRequest(['file' => 'vfs://root/file', 'model' => 'alpha0']));
+        $response = $create->getResponse();
         $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
         $this->assertLessThan(300, $response->getStatusCode());
-        $model = $createImage->toModel();
+        $model = $create->toModel();
         $model->jsonSerialize();
-        $this->assertInstanceOf(CreateImageResponse::class, $model);
+        $this->assertInstanceOf(CreateResponse::class, $model);
     }
 }

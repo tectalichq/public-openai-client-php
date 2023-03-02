@@ -20,6 +20,9 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
+use Tectalic\OpenAi\Handlers\AudioTranscriptions;
+use Tectalic\OpenAi\Handlers\AudioTranslations;
+use Tectalic\OpenAi\Handlers\ChatCompletions;
 use Tectalic\OpenAi\Handlers\Completions;
 use Tectalic\OpenAi\Handlers\Edits;
 use Tectalic\OpenAi\Handlers\Embeddings;
@@ -80,6 +83,17 @@ final class Client implements ClientInterface
     }
 
     /**
+     * Access to the chatCompletions handler.
+     *
+     * @api
+     * @return ChatCompletions
+     */
+    public function chatCompletions(): ChatCompletions
+    {
+        return new \Tectalic\OpenAi\Handlers\ChatCompletions($this);
+    }
+
+    /**
      * Access to the edits handler.
      *
      * @api
@@ -132,6 +146,28 @@ final class Client implements ClientInterface
     public function embeddings(): Embeddings
     {
         return new \Tectalic\OpenAi\Handlers\Embeddings($this);
+    }
+
+    /**
+     * Access to the audioTranscriptions handler.
+     *
+     * @api
+     * @return AudioTranscriptions
+     */
+    public function audioTranscriptions(): AudioTranscriptions
+    {
+        return new \Tectalic\OpenAi\Handlers\AudioTranscriptions($this);
+    }
+
+    /**
+     * Access to the audioTranslations handler.
+     *
+     * @api
+     * @return AudioTranslations
+     */
+    public function audioTranslations(): AudioTranslations
+    {
+        return new \Tectalic\OpenAi\Handlers\AudioTranslations($this);
     }
 
     /**
@@ -370,7 +406,7 @@ final class Client implements ClientInterface
 
         $request = $request->withHeader(
             'User-Agent',
-            'Tectalic OpenAI REST API Client/1.3.1'
+            'Tectalic OpenAI REST API Client/1.4.0'
         );
 
         // Merge Headers.

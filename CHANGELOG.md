@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.4.0 - 2023-03-02
+
+### Added
+- Add support for the new **ChatGPT** API, including `gpt-3.5-turbo` model and the new Chat completions endpoint. [Chat completions guide](https://platform.openai.com/docs/guides/chat).
+- Add support for the new **Whisper** API, allowing **Transcriptions** and **Translations**, accepting a variety of formats (`m4a`, `mp3`, `mp4`, `mpeg`, `mpga`, `wav`, `webm`). [Speech to text guide](https://platform.openai.com/docs/guides/speech-to-text).
+- Add new `AudioTranscriptions` Handler, which transcribes audio into the input language text using the Whisper API.
+- Add new `AudioTranslations` Handler, which transcribes audio into english text using the Whisper API.
+- Add new `ChatCompletions` Handler, which creates a completion for one or more chat messages using the ChatGPT API.
+
+### Changed
+- Clarify which models can be used in `\Tectalic\OpenAi\Models\Edits\CreateRequest::$model` when performing Edits.
+- Clarify that `\Tectalic\OpenAi\Models\Embeddings\CreateRequest:$input` can be a maximum of 8192 tokens (not 2048 tokens).
+- Clarify that `\Tectalic\OpenAi\Models\ImagesEdits\CreateImageRequest::$mask` is no longer a required field.
+- API version updated from 1.1.0 to 1.2.0.
+
 ## 1.3.1 - 2023-02-23
 
 ### Added

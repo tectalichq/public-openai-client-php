@@ -73,8 +73,8 @@ final class CreateImageRequest extends AbstractModel
     public $response_format;
 
     /**
-     * A unique identifier representing your end-user, which will help OpenAI to
-     * monitor and detect abuse. Learn more.
+     * A unique identifier representing your end-user, which can help OpenAI to monitor
+     * and detect abuse. Learn more.
      *
      * Example: 'user-1234'
      *

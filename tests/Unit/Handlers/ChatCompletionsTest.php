@@ -19,14 +19,12 @@ use ReflectionClass;
 use ReflectionObject;
 use Tectalic\OpenAi\Authentication;
 use Tectalic\OpenAi\ClientException;
-use Tectalic\OpenAi\Handlers\ImagesEdits;
+use Tectalic\OpenAi\Handlers\ChatCompletions;
 use Tectalic\OpenAi\Manager;
-use Tectalic\OpenAi\Models\ImagesEdits\CreateImageRequest;
+use Tectalic\OpenAi\Models\ChatCompletions\CreateRequest;
 use Tests\AssertValidateTrait;
-use org\bovigo\vfs\content\LargeFileContent;
-use org\bovigo\vfs\vfsStream;
 
-final class ImagesEditsTest extends TestCase
+final class ChatCompletionsTest extends TestCase
 {
     use AssertValidateTrait;
 
@@ -54,7 +52,7 @@ final class ImagesEditsTest extends TestCase
     {
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Request not configured.');
-        (new ImagesEdits())->getRequest();
+        (new ChatCompletions())->getRequest();
     }
 
     public function testUnsupportedContentTypeResponse(): void
@@ -62,7 +60,7 @@ final class ImagesEditsTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Unsupported content type: text/plain');
 
-        $handler = new ImagesEdits();
+        $handler = new ChatCompletions();
         $method = (new ReflectionObject($handler))->getMethod('parseResponse');
         $method->setAccessible(true);
         $method->invoke($handler, new Response(
@@ -77,7 +75,7 @@ final class ImagesEditsTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage('Failed to parse JSON response body: Syntax error');
 
-        $handler = new ImagesEdits();
+        $handler = new ChatCompletions();
         $method = (new ReflectionObject($handler))->getMethod('parseResponse');
         $method->setAccessible(true);
         $method->invoke($handler, new Response(
@@ -92,7 +90,7 @@ final class ImagesEditsTest extends TestCase
         $this->expectException(ClientException::class);
         $this->expectExceptionMessage("Unsuccessful response. HTTP status code: 418 (I'm a teapot).");
 
-        $handler = new ImagesEdits();
+        $handler = new ChatCompletions();
         $property = (new ReflectionObject($handler))->getProperty('response');
         $property->setAccessible(true);
         $property->setValue($handler, new Response(418));
@@ -113,7 +111,7 @@ final class ImagesEditsTest extends TestCase
      */
     public function testToArray(string $rawJsonResponse, array $expected): void
     {
-        $handler = new ImagesEdits();
+        $handler = new ChatCompletions();
         $property = (new ReflectionObject($handler))->getProperty('response');
         $property->setAccessible(true);
         $property->setValue($handler, new Response(
@@ -124,20 +122,12 @@ final class ImagesEditsTest extends TestCase
         $this->assertSame($expected, $handler->toArray());
     }
 
-    public function testCreateImageMethod(): void
+    public function testCreateMethod(): void
     {
-        $filesystem = vfsStream::setup();
-        // Create the file(s) to be uploaded.
-        $files = ['image'];
-        foreach ($files as $file) {
-            vfsStream::newFile($file)
-                ->withContent(LargeFileContent::withKilobytes(1))
-                ->at($filesystem);
-        }
-        $request = (new ImagesEdits())
-            ->createImage(new CreateImageRequest([
-            'image' => 'vfs://root/image',
-            'prompt' => 'A cute baby sea otter wearing a beret',
+        $request = (new ChatCompletions())
+            ->create(new CreateRequest([
+            'model' => 'alpha0',
+            'messages' => [['role' => 'system', 'content' => 'alpha0']],
         ]))
             ->getRequest();
         $this->assertValidate($request);

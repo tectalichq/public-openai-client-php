@@ -19,11 +19,11 @@ use Tectalic\OpenAi\ClientException;
 use Tectalic\OpenAi\Manager;
 use Tectalic\OpenAi\Models\AbstractModel;
 use Tectalic\OpenAi\Models\AbstractModelCollection;
-use Tectalic\OpenAi\Models\Edits\CreateRequest;
-use Tectalic\OpenAi\Models\Edits\CreateResponse;
+use Tectalic\OpenAi\Models\AudioTranslations\CreateRequest;
+use Tectalic\OpenAi\Models\AudioTranslations\CreateResponse;
 use Throwable;
 
-final class Edits
+final class AudioTranslations
 {
     /** @var Client */
     private $client;
@@ -43,10 +43,10 @@ final class Edits
     }
 
     /**
-     * Creates a new edit for the provided input, instruction, and parameters.
+     * Translates audio into into English.
      *
-     * Operation URL: POST /edits
-     * Operation ID:  createEdit
+     * Operation URL: POST /audio/translations
+     * Operation ID:  createTranslation
      *
      * @param CreateRequest|array $body
      *
@@ -55,11 +55,11 @@ final class Edits
      */
     public function create($body): self
     {
-        $url = '/edits';
+        $url = '/audio/translations';
         $this->setRequest($this->client->post(
             $url,
             \is_array($body) ? new CreateRequest($body) : $body,
-            ['Content-Type' => 'application/json']
+            ['Content-Type' => 'multipart/form-data']
         ));
         $this->modelType = CreateResponse::class;
         return $this;
