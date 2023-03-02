@@ -195,13 +195,13 @@ In the **Usage** code above, customize the `Authentication` constructor to your 
 
 The primary class you will interact with is the `Client` class (`Tectalic\OpenAi\Client`).
 
-This `Client` class also contains the helper methods that let you quickly access the 13 API Handlers.
+This `Client` class also contains the helper methods that let you quickly access the 16 API Handlers.
 
 Please see below for a complete list of supported handlers and methods.
 
 ### Supported API Handlers and Methods
 
-This package supports 20 API Methods, which are grouped into 13 API Handlers.
+This package supports 23 API Methods, which are grouped into 16 API Handlers.
 
 See the table below for a full list of API Handlers and Methods.
 
