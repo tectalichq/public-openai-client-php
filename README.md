@@ -102,7 +102,7 @@ foreach ($response->data as $item) {
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
 
 /** @var \Tectalic\OpenAi\Models\AudioTranscriptions\CreateResponse $response */
-$response = $openaiClient->imagesGenerations()->create(
+$response = $openaiClient->audioTranscriptions()->create(
     new \Tectalic\OpenAi\Models\AudioTranscriptions\CreateRequest([
         'file' => '/full/path/to/audio/file.mp3',
         'model' => 'whisper-1',
@@ -121,7 +121,7 @@ echo $response->text;
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
 
 /** @var \Tectalic\OpenAi\Models\AudioTranslations\CreateResponse $response */
-$response = $openaiClient->imagesGenerations()->create(
+$response = $openaiClient->audioTranslations()->create(
     new \Tectalic\OpenAi\Models\AudioTranslations\CreateRequest([
         'file' => '/full/path/to/audio/file.mp3',
         'model' => 'whisper-1',
