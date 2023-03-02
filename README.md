@@ -29,7 +29,7 @@ $response = $openaiClient->chatCompletions()->create(
     ])
 )->toModel();
 
-echo $model->choices[0]->message->content;
+echo $response->choices[0]->message->content;
 // Ahoy there, me hearty! Gather round and listen well, for I'll be tellin' ye about the treasure trove known as ChatGPT API! ...
 ```
 
