@@ -17,20 +17,30 @@ Integrating OpenAI into your application is now as simple as a few lines of code
 ### Chat Completion using ChatGPT (GPT-3.5 & GPT-4)
 
 ```php
-$openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
+$openaiClient = \Tectalic\OpenAi\Manager::build(
+    new \GuzzleHttp\Client(),
+    new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY'))
+);
 
 /** @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponse $response */
 $response = $openaiClient->chatCompletions()->create(
     new \Tectalic\OpenAi\Models\ChatCompletions\CreateRequest([
         'model' => 'gpt-4',
         'messages' => [
-            ['role' => 'user', 'content' => 'Tell the world about GPT-4 in the style of a pirate'],
+            [
+                'role' => 'user',
+                'content' => 'Will using a well designed and supported third party package save time?'
+            ],
         ],
     ])
 )->toModel();
 
 echo $response->choices[0]->message->content;
-Ahoy there, ye landlubbers and sea dogs! Gather 'round for a tale of a treasure like no other - the mystical, the enigmatic, GPT-4. ...
+
+// Yes, using a well-designed and supported third-party package can save time during software development.
+// It allows you to focus on the core functionality of your application without having to reinvent the wheel or spend resources developing the same functionality from scratch.
+// A good third-party package can provide reliability, efficiency, and continued support with updates and bug fixes, which in turn facilitates faster development and a more stable final product.
+// Additionally, using widely adopted packages can also increase the chances of compatibility with other software components and make it easier for other developers to understand and work with your code.
 ```
 
 [Learn more about chat completion](https://platform.openai.com/docs/guides/chat).
