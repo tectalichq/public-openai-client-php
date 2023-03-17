@@ -45,7 +45,7 @@ Supported [GPT-3.5 models](https://platform.openai.com/docs/models/gpt-3-5) incl
 
 Supported [GPT-4 models](https://platform.openai.com/docs/models/gpt-4) include `gpt-4` and more.
 
-Note: GPT-4 is currently in a limited beta and only accessible to those who have been granted access. [Please see here](https://platform.openai.com/docs/models/gpt-4) for details and instructions on how to join the waitlist.
+Note: GPT-4 is currently in a limited beta and is only accessible to those who have been granted access. [Please see here](https://platform.openai.com/docs/models/gpt-4) for details and instructions on how to join the waitlist.
 
 If you receive a 404 error when attempting to use GPT-4, then your OpenAI account has not been granted access.
 
@@ -133,7 +133,7 @@ echo $response->text;
 
 Supported [Whisper models](https://platform.openai.com/docs/models/whisper) include `whisper-1`.
 
-[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text).
+[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text), including the [50+ supported languages](https://platform.openai.com/docs/guides/speech-to-text/supported-languages).
 
 ### Speech to Text Audio Translation (Whisper)
 
@@ -149,12 +149,12 @@ $response = $openaiClient->audioTranslations()->create(
 )->toModel();
 
 echo $response->text;
-// Your audio transcript in english...
+// Your audio transcript in English...
 ```
 
 Supported [Whisper models](https://platform.openai.com/docs/models/whisper) include `whisper-1`.
 
-[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text).
+[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text), including the [50+ supported languages](https://platform.openai.com/docs/guides/speech-to-text/supported-languages).
 
 ## Installation
 
