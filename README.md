@@ -4,7 +4,7 @@
 
 The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
 
-Supports **ChatGPT**, **GPT-3**, **Codex**, **DALL·E** and **Whisper** based models, fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
+Supports **ChatGPT**, **GPT-4**, **GPT-3.5**, **GPT-3**, **Codex**, **DALL·E**, **Whisper**, **Embeddings** and **Moderation** models, with fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
 
 More information is available from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
 
@@ -14,7 +14,7 @@ More information is available from [https://tectalic.com/apis/openai](https://te
 
 Integrating OpenAI into your application is now as simple as a few lines of code.
 
-### Text Completion using ChatGPT
+### Chat Completion using ChatGPT (GPT-3.5 & GPT-4)
 
 ```php
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
@@ -22,20 +22,34 @@ $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \T
 /** @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponse $response */
 $response = $openaiClient->chatCompletions()->create(
     new \Tectalic\OpenAi\Models\ChatCompletions\CreateRequest([
-        'model' => 'gpt-3.5-turbo',
+        'model' => 'gpt-4',
         'messages' => [
-            ['role' => 'user', 'content' => 'Tell the world about the ChatGPT API in the style of a pirate'],
+            ['role' => 'user', 'content' => 'Tell the world about GPT-4 in the style of a pirate'],
         ],
     ])
 )->toModel();
 
 echo $response->choices[0]->message->content;
-// Ahoy there, me hearty! Gather round and listen well, for I'll be tellin' ye about the treasure trove known as ChatGPT API! ...
+Ahoy there, ye landlubbers and sea dogs! Gather 'round for a tale of a treasure like no other - the mystical, the enigmatic, GPT-4. ...
 ```
 
 [Learn more about chat completion](https://platform.openai.com/docs/guides/chat).
 
-### Text Completion using GPT-3
+This handler supports both the *GPT-3.5* and *GPT-4* models:
+
+#### GPT-3.5
+
+Supported [GPT-3.5 models](https://platform.openai.com/docs/models/gpt-3-5) include `gpt-3.5-turbo`, `text-davinci-003`, `text-davinci-002` and more.
+
+#### GPT-4
+
+Supported [GPT-4 models](https://platform.openai.com/docs/models/gpt-4) include `gpt-4` and more.
+
+Note: GPT-4 is currently in a limited beta and is only accessible to those who have been granted access. [Please see here](https://platform.openai.com/docs/models/gpt-4) for details and instructions on how to join the waitlist.
+
+If you receive a 404 error when attempting to use GPT-4, then your OpenAI account has not been granted access.
+
+### Text Completion (GPT-3)
 
 ```php
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
@@ -43,7 +57,7 @@ $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \T
 /** @var \Tectalic\OpenAi\Models\Completions\CreateResponse $response */
 $response = $openaiClient->completions()->create(
     new \Tectalic\OpenAi\Models\Completions\CreateRequest([
-        'model'  => 'text-davinci-002',
+        'model'  => 'text-davinci-003',
         'prompt' => 'Will using a third party package save time?',
     ])
 )->toModel();
@@ -52,9 +66,11 @@ echo $response->choices[0]->text;
 // Using a third party package can save time because you don't have to write the code yourself.
 ```
 
+This handler supports all [GPT-3 models](https://platform.openai.com/docs/models/gpt-3), including `text-davinci-003`, `text-davinci-002` and more.
+
 [Learn more about text completion](https://platform.openai.com/docs/guides/completion).
 
-### Code Completion Using Codex
+### Code Completion (Codex)
 
 ```php
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
@@ -73,9 +89,11 @@ echo $response->choices[0]->text;
 // $now = date("Y-m-d G:i:s")
 ```
 
+Supported [Codex models](https://platform.openai.com/docs/models/codex) include `code-davinci-002` and `code-cushman-001`.
+
 [Learn more about code completion](https://platform.openai.com/docs/guides/code).
 
-### Image Generation Using DALL·E
+### Image Generation (DALL·E)
 
 ```php
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
@@ -96,7 +114,7 @@ foreach ($response->data as $item) {
 
 [Learn more about image generation](https://platform.openai.com/docs/guides/images).
 
-### Audio Transcription (Speech to text) using Whisper
+### Speech to Text Audio Transcription (Whisper)
 
 ```php
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
@@ -113,9 +131,11 @@ echo $response->text;
 // Your audio transcript in your source language...
 ```
 
-[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text).
+Supported [Whisper models](https://platform.openai.com/docs/models/whisper) include `whisper-1`.
 
-### Audio Translation (Speech to text) using Whisper
+[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text), including the [50+ supported languages](https://platform.openai.com/docs/guides/speech-to-text/supported-languages).
+
+### Speech to Text Audio Translation (Whisper)
 
 ```php
 $openaiClient = \Tectalic\OpenAi\Manager::build(new \GuzzleHttp\Client(), new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY')));
@@ -129,10 +149,12 @@ $response = $openaiClient->audioTranslations()->create(
 )->toModel();
 
 echo $response->text;
-// Your audio transcript in english...
+// Your audio transcript in English...
 ```
 
-[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text).
+Supported [Whisper models](https://platform.openai.com/docs/models/whisper) include `whisper-1`.
+
+[Learn more about speech to text](https://platform.openai.com/docs/guides/speech-to-text), including the [50+ supported languages](https://platform.openai.com/docs/guides/speech-to-text/supported-languages).
 
 ## Installation
 
