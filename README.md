@@ -49,7 +49,7 @@ This handler supports both the *GPT-3.5* and *GPT-4* models:
 
 #### GPT-3.5
 
-Supported [GPT-3.5 models](https://platform.openai.com/docs/models/gpt-3-5) include `gpt-3.5-turbo`, `text-davinci-003`, `text-davinci-002` and more.
+Supported [GPT-3.5 models](https://platform.openai.com/docs/models/gpt-3-5) include `gpt-3.5-turbo` and more.
 
 #### GPT-4
 
