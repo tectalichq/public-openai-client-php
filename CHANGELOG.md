@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.5.0 - 2023-06-19
+
+### Added
+- Add support for **Function Calling** in the chat completions handler. [Function calling guide](https://platform.openai.com/docs/guides/gpt/function-calling).
+
+### Changed
+- Improve Examples in Readme.
+- The `\Tectalic\OpenAi\Models\Completions\CreateRequest::$prompt` property is now required.
+- The `\Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem::$text` property is now required.
+- The `\Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem::$index` property is now required.
+- The `\Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem::$logprobs` property is now required.
+- The `\Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem::$finish_reason` property is now required.
+- The `\Tectalic\OpenAi\Models\ChatCompletions\CreateRequestMessagesItem::$content` property is no longer marked as required, as it is not required for `function` chats but is for all other types.
+- Document the valid values for the `\Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem::$finish_reason` property.
+- Document the valid values for the `\Tectalic\OpenAi\Models\ChatCompletions\CreateResponseChoicesItem::$finish_reason` property.
+- API version updated from 1.2.0 to 1.3.1.
+
 ## 1.4.0 - 2023-03-02
 
 ### Added

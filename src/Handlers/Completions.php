@@ -43,7 +43,7 @@ final class Completions
     }
 
     /**
-     * Creates a completion for the provided prompt and parameters
+     * Creates a completion for the provided prompt and parameters.
      *
      * Operation URL: POST /completions
      * Operation ID:  createCompletion

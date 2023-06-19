@@ -22,6 +22,10 @@ final class CreateResponseChoicesItem extends AbstractModel
     /** @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponseChoicesItemMessage */
     public $message;
 
-    /** @var string */
+    /**
+     * Allowed values: 'stop', 'length', 'function_call'
+     *
+     * @var string
+     */
     public $finish_reason;
 }

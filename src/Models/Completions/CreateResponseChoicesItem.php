@@ -16,6 +16,13 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class CreateResponseChoicesItem extends AbstractModel
 {
+    /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = ['text', 'index', 'logprobs', 'finish_reason'];
+
     /** @var string */
     public $text;
 
@@ -25,6 +32,10 @@ final class CreateResponseChoicesItem extends AbstractModel
     /** @var \Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItemLogprobs|null */
     public $logprobs;
 
-    /** @var string */
+    /**
+     * Allowed values: 'stop', 'length'
+     *
+     * @var string
+     */
     public $finish_reason;
 }

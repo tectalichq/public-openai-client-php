@@ -30,8 +30,8 @@ final class CreateRequest extends AbstractModel
     protected $ignoreMissing = false;
 
     /**
-     * The audio file to transcribe, in one of these formats: mp3, mp4, mpeg, mpga,
-     * m4a, wav, or webm.
+     * The audio file object (not file name) to transcribe, in one of these formats:
+     * mp3, mp4, mpeg, mpga, m4a, wav, or webm.
      *
      * @var string must be an absolute path to a file.
      */
