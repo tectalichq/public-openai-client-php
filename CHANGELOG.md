@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add support for **Function Calling** in the chat completions handler. [Function calling guide](https://platform.openai.com/docs/guides/gpt/function-calling).
 
 ### Changed
+- Improve Examples in Readme.
 - The `\Tectalic\OpenAi\Models\Completions\CreateRequest::$prompt` property is now required.
 - The `\Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem::$text` property is now required.
 - The `\Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem::$index` property is now required.

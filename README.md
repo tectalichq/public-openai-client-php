@@ -59,6 +59,70 @@ Note: GPT-4 is currently in a limited beta and is only accessible to those who h
 
 If you receive a 404 error when attempting to use GPT-4, then your OpenAI account has not been granted access.
 
+### Chat Completion Function Calling using ChatGPT (GPT-3.5 & GPT-4)
+
+The following example uses the `gpt-3.5-turbo-0613` model to demonstrate function calling.
+
+It converts natural language into a function call, which can then be executed within your application.
+
+```php
+$openaiClient = \Tectalic\OpenAi\Manager::build(
+    new \GuzzleHttp\Client(),
+    new \Tectalic\OpenAi\Authentication(getenv('OPENAI_API_KEY'))
+);
+
+/** @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponse $response */
+$response = $openaiClient->chatCompletions()->create(new CreateRequest([
+            'model' => 'gpt-3.5-turbo-0613',
+            'messages' => [
+                ['role' => 'user', 'content' => 'What\'s the weather like in Boston?']
+            ],
+            'functions' => [
+                [
+                    'name' => 'get_current_weather',
+                    'description' => 'Get the current weather in a given location',
+                    'parameters' => new \Tectalic\OpenAi\Models\ChatCompletions\CreateRequestFunctionsItemParameters(
+                        [
+                            'type' => 'object',
+                            'properties' => [
+                                'location' => [
+                                    'type' => 'string',
+                                    'description' => 'The worldwide city and state, e.g. San Francisco, CA',
+                                ],
+                                'format' => [
+                                    'type' => 'string',
+                                    'description' => 'The temperature unit to use. Infer this from the users location.',
+                                    'enum' => ['celsius', 'farhenheit'],
+                                ],
+                                'num_days' => [
+                                    'type' => 'integer',
+                                    'description' => 'The number of days to forecast',
+                                ],
+                            ],
+                            'required' => ['location', 'format', 'num_days'],
+                        ]
+                    )
+                ]
+            ],
+            'function_call' => 'auto',
+        ]))->toModel();
+
+$params = json_decode($response->choices[0]->message->function_call->arguments, true);
+var_dump($params);
+
+// array(3) {
+//     'location' =>
+//     string(6) "Boston"
+//     'format' =>
+//     string(7) "celsius"
+//     'num_days' =>
+//     int(1)
+//}
+
+```
+
+[Learn more about function calling](https://platform.openai.com/docs/guides/gpt/function-calling).
+
 ### Text Completion (GPT-3)
 
 ```php
