@@ -21,7 +21,7 @@ final class CreateRequest extends AbstractModel
      *
      * These properties must all be set when this Model is instantiated.
      */
-    protected const REQUIRED = ['model'];
+    protected const REQUIRED = ['model', 'prompt'];
 
     /**
      * ID of the model to use. You can use the List models API to see all of your
@@ -58,8 +58,7 @@ final class CreateRequest extends AbstractModel
     /**
      * The maximum number of tokens to generate in the completion.
      * The token count of your prompt plus max_tokens cannot exceed the model's context
-     * length. Most models have a context length of 2048 tokens (except for the newest
-     * models, which support 4096).
+     * length. Example Python code for counting tokens.
      *
      * Default Value: 16
      *
@@ -114,7 +113,7 @@ final class CreateRequest extends AbstractModel
     /**
      * Whether to stream back partial progress. If set, tokens will be sent as
      * data-only server-sent events as they become available, with the stream
-     * terminated by a data: [DONE] message.
+     * terminated by a data: [DONE] message. Example Python code.
      *
      * Default Value: false
      *
@@ -127,8 +126,7 @@ final class CreateRequest extends AbstractModel
      * chosen tokens. For example, if logprobs is 5, the API will return a list of the
      * 5 most likely tokens. The API will always return the logprob of the sampled
      * token, so there may be up to logprobs+1 elements in the response.
-     * The maximum value for logprobs is 5. If you need more than this, please contact
-     * us through our Help center and describe your use case.
+     * The maximum value for logprobs is 5.
      *
      * Default Value: null
      *

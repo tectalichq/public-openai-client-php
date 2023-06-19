@@ -25,6 +25,10 @@ final class CreateResponseChoicesItem extends AbstractModel
     /** @var \Tectalic\OpenAi\Models\Edits\CreateResponseChoicesItemLogprobs|null */
     public $logprobs;
 
-    /** @var string */
+    /**
+     * Allowed values: 'stop', 'length'
+     *
+     * @var string
+     */
     public $finish_reason;
 }

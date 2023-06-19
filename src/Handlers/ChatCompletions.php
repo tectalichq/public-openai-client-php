@@ -43,7 +43,7 @@ final class ChatCompletions
     }
 
     /**
-     * Creates a completion for the chat message
+     * Creates a model response for the given chat conversation.
      *
      * Operation URL: POST /chat/completions
      * Operation ID:  createChatCompletion

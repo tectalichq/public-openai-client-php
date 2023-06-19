@@ -242,8 +242,8 @@ See the table below for a full list of API Handlers and Methods.
 | --------------------------------- | ----------- | ---------------- |
 |`AudioTranscriptions::create()`|Transcribes audio into the input language.|`POST` `/audio/transcriptions`|
 |`AudioTranslations::create()`|Translates audio into into English.|`POST` `/audio/translations`|
-|`ChatCompletions::create()`|Creates a completion for the chat message|`POST` `/chat/completions`|
-|`Completions::create()`|Creates a completion for the provided prompt and parameters|`POST` `/completions`|
+|`ChatCompletions::create()`|Creates a model response for the given chat conversation.|`POST` `/chat/completions`|
+|`Completions::create()`|Creates a completion for the provided prompt and parameters.|`POST` `/completions`|
 |`Edits::create()`|Creates a new edit for the provided input, instruction, and parameters.|`POST` `/edits`|
 |`Embeddings::create()`|Creates an embedding vector representing the input text.|`POST` `/embeddings`|
 |`Files::list()`|Returns a list of files that belong to the user's organization.|`GET` `/files`|

@@ -125,10 +125,7 @@ final class ChatCompletionsTest extends TestCase
     public function testCreateMethod(): void
     {
         $request = (new ChatCompletions())
-            ->create(new CreateRequest([
-            'model' => 'alpha0',
-            'messages' => [['role' => 'system', 'content' => 'alpha0']],
-        ]))
+            ->create(new CreateRequest(['model' => 'alpha0', 'messages' => [['role' => 'system']]]))
             ->getRequest();
         $this->assertValidate($request);
     }

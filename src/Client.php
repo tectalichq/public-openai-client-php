@@ -72,17 +72,6 @@ final class Client implements ClientInterface
     }
 
     /**
-     * Access to the completions handler.
-     *
-     * @api
-     * @return Completions
-     */
-    public function completions(): Completions
-    {
-        return new \Tectalic\OpenAi\Handlers\Completions($this);
-    }
-
-    /**
      * Access to the chatCompletions handler.
      *
      * @api
@@ -91,6 +80,17 @@ final class Client implements ClientInterface
     public function chatCompletions(): ChatCompletions
     {
         return new \Tectalic\OpenAi\Handlers\ChatCompletions($this);
+    }
+
+    /**
+     * Access to the completions handler.
+     *
+     * @api
+     * @return Completions
+     */
+    public function completions(): Completions
+    {
+        return new \Tectalic\OpenAi\Handlers\Completions($this);
     }
 
     /**
@@ -406,7 +406,7 @@ final class Client implements ClientInterface
 
         $request = $request->withHeader(
             'User-Agent',
-            'Tectalic OpenAI REST API Client/1.4.0'
+            'Tectalic OpenAI REST API Client/1.5.0'
         );
 
         // Merge Headers.

@@ -24,19 +24,38 @@ final class CreateRequest extends AbstractModel
     protected const REQUIRED = ['model', 'messages'];
 
     /**
-     * ID of the model to use. Currently, only gpt-3.5-turbo and gpt-3.5-turbo-0301 are
-     * supported.
+     * ID of the model to use. See the model endpoint compatibility table for details
+     * on which models work with the Chat API.
      *
      * @var string
      */
     public $model;
 
     /**
-     * The messages to generate chat completions for, in the chat format.
+     * A list of messages comprising the conversation so far. Example Python code.
      *
      * @var \Tectalic\OpenAi\Models\ChatCompletions\CreateRequestMessagesItem[]
      */
     public $messages;
+
+    /**
+     * A list of functions the model may generate JSON inputs for.
+     *
+     * @var \Tectalic\OpenAi\Models\ChatCompletions\CreateRequestFunctionsItem[]
+     */
+    public $functions;
+
+    /**
+     * Controls how the model responds to function calls. "none" means the model does
+     * not call a function, and responds to the end-user. "auto" means the model can
+     * pick between an end-user or calling a function.  Specifying a particular
+     * function via {"name":\ "my_function"} forces the model to call that function.
+     * "none" is the default when no functions are present. "auto" is the default if
+     * functions are present.
+     *
+     * @var mixed
+     */
+    public $function_call;
 
     /**
      * What sampling temperature to use, between 0 and 2. Higher values like 0.8 will
@@ -80,7 +99,7 @@ final class CreateRequest extends AbstractModel
     /**
      * If set, partial message deltas will be sent, like in ChatGPT. Tokens will be
      * sent as data-only server-sent events as they become available, with the stream
-     * terminated by a data: [DONE] message.
+     * terminated by a data: [DONE] message. Example Python code.
      *
      * Default Value: false
      *
@@ -98,8 +117,9 @@ final class CreateRequest extends AbstractModel
     public $stop;
 
     /**
-     * The maximum number of tokens allowed for the generated answer. By default, the
-     * number of tokens the model can return will be (4096 - prompt tokens).
+     * The maximum number of tokens to generate in the chat completion.
+     * The total length of input tokens and generated tokens is limited by the model's
+     * context length. Example Python code for counting tokens.
      *
      * @var int
      */
