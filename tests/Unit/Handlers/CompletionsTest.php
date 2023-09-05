@@ -125,7 +125,7 @@ final class CompletionsTest extends TestCase
     public function testCreateMethod(): void
     {
         $request = (new Completions())
-            ->create(new CreateRequest(['model' => 'alpha0', 'prompt' => '<|endoftext|>']))
+            ->create(new CreateRequest(['model' => 'mixed', 'prompt' => '<|endoftext|>']))
             ->getRequest();
         $this->assertValidate($request);
     }

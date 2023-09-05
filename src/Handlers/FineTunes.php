@@ -25,6 +25,9 @@ use Tectalic\OpenAi\Models\FineTunes\ListResponse;
 use Tectalic\OpenAi\Models\FineTunes\RetrieveResponse;
 use Throwable;
 
+/**
+ * @deprecated
+ */
 final class FineTunes
 {
     /** @var Client */
@@ -50,6 +53,8 @@ final class FineTunes
      * Operation URL: GET /fine-tunes
      * Operation ID:  listFineTunes
      *
+     * @deprecated
+     *
      * @api
      * @return self
      */
@@ -69,12 +74,14 @@ final class FineTunes
      * Creates a job that fine-tunes a specified model from a given dataset.
      * Response includes details of the enqueued job including job status and the name
      * of the fine-tuned models once complete.
-     * Learn more about Fine-tuning
+     * Learn more about fine-tuning
      *
      * Operation URL: POST /fine-tunes
      * Operation ID:  createFineTune
      *
      * @param CreateRequest|array $body
+     *
+     * @deprecated
      *
      * @api
      * @return self
@@ -93,12 +100,14 @@ final class FineTunes
 
     /**
      * Gets info about the fine-tune job.
-     * Learn more about Fine-tuning
+     * Learn more about fine-tuning
      *
      * Operation URL: GET /fine-tunes/{fine_tune_id}
      * Operation ID:  retrieveFineTune
      *
      * @param string $fineTuneId The ID of the fine-tune job
+     *
+     * @deprecated
      *
      * @api
      * @return self

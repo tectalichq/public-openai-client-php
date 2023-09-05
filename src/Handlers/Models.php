@@ -90,7 +90,8 @@ final class Models
     }
 
     /**
-     * Delete a fine-tuned model. You must have the Owner role in your organization.
+     * Delete a fine-tuned model. You must have the Owner role in your organization to
+     * delete a model.
      *
      * Operation URL: DELETE /models/{model}
      * Operation ID:  deleteModel

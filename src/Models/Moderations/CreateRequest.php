@@ -43,7 +43,7 @@ final class CreateRequest extends AbstractModel
      *
      * Example: 'text-moderation-stable'
      *
-     * @var string
+     * @var mixed
      */
     public $model;
 }

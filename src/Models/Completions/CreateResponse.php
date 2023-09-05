@@ -23,21 +23,45 @@ final class CreateResponse extends AbstractModel
      */
     protected const REQUIRED = ['id', 'object', 'created', 'model', 'choices'];
 
-    /** @var string */
+    /**
+     * A unique identifier for the completion.
+     *
+     * @var string
+     */
     public $id;
 
-    /** @var string */
+    /**
+     * The object type, which is always "text_completion"
+     *
+     * @var string
+     */
     public $object;
 
-    /** @var int */
+    /**
+     * The Unix timestamp (in seconds) of when the completion was created.
+     *
+     * @var int
+     */
     public $created;
 
-    /** @var string */
+    /**
+     * The model used for completion.
+     *
+     * @var string
+     */
     public $model;
 
-    /** @var \Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem[] */
+    /**
+     * The list of completion choices the model generated for the input prompt.
+     *
+     * @var \Tectalic\OpenAi\Models\Completions\CreateResponseChoicesItem[]
+     */
     public $choices;
 
-    /** @var \Tectalic\OpenAi\Models\Completions\CreateResponseUsage */
+    /**
+     * Usage statistics for the completion request.
+     *
+     * @var \Tectalic\OpenAi\Models\Completions\CreateResponseUsage
+     */
     public $usage;
 }

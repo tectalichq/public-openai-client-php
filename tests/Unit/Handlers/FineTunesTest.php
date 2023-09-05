@@ -133,7 +133,7 @@ final class FineTunesTest extends TestCase
     public function testCreateMethod(): void
     {
         $request = (new FineTunes())
-            ->create(new CreateRequest(['training_file' => 'file-ajSREls59WBbvgSzJSVWxMCB']))
+            ->create(new CreateRequest(['training_file' => 'file-abc123']))
             ->getRequest();
         $this->assertValidate($request);
     }

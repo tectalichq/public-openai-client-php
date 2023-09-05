@@ -43,7 +43,7 @@ final class AudioTranslations
     }
 
     /**
-     * Translates audio into into English.
+     * Translates audio into English.
      *
      * Operation URL: POST /audio/translations
      * Operation ID:  createTranslation

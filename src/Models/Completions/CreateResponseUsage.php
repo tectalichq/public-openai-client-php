@@ -23,12 +23,24 @@ final class CreateResponseUsage extends AbstractModel
      */
     protected const REQUIRED = ['prompt_tokens', 'completion_tokens', 'total_tokens'];
 
-    /** @var int */
+    /**
+     * Number of tokens in the prompt.
+     *
+     * @var int
+     */
     public $prompt_tokens;
 
-    /** @var int */
+    /**
+     * Number of tokens in the generated completion.
+     *
+     * @var int
+     */
     public $completion_tokens;
 
-    /** @var int */
+    /**
+     * Total number of tokens used in the request (prompt + completion).
+     *
+     * @var int
+     */
     public $total_tokens;
 }

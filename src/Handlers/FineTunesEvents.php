@@ -22,6 +22,9 @@ use Tectalic\OpenAi\Models\AbstractModelCollection;
 use Tectalic\OpenAi\Models\FineTunesEvents\ListFineTuneResponse;
 use Throwable;
 
+/**
+ * @deprecated
+ */
 final class FineTunesEvents
 {
     /** @var Client */
@@ -56,6 +59,8 @@ final class FineTunesEvents
      * data: [DONE] message when the job is finished (succeeded, cancelled,
      * or failed).
      * If set to false, only events generated so far will be returned.
+     *
+     * @deprecated
      *
      * @api
      * @return self

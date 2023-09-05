@@ -22,6 +22,9 @@ use Tectalic\OpenAi\Models\AbstractModelCollection;
 use Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponse;
 use Throwable;
 
+/**
+ * @deprecated
+ */
 final class FineTunesCancel
 {
     /** @var Client */
@@ -48,6 +51,8 @@ final class FineTunesCancel
      * Operation ID:  cancelFineTune
      *
      * @param string $fineTuneId The ID of the fine-tune job to cancel
+     *
+     * @deprecated
      *
      * @api
      * @return self

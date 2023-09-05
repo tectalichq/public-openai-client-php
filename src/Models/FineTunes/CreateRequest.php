@@ -31,7 +31,7 @@ final class CreateRequest extends AbstractModel
      * Additionally, you must upload your file with the purpose fine-tune.
      * See the fine-tuning guide for more details.
      *
-     * Example: 'file-ajSREls59WBbvgSzJSVWxMCB'
+     * Example: 'file-abc123'
      *
      * @var string
      */
@@ -48,7 +48,7 @@ final class CreateRequest extends AbstractModel
      * Additionally, you must upload your file with the purpose fine-tune.
      * See the fine-tuning guide for more details.
      *
-     * Example: 'file-XjSREls59WBbvgSzJSVWxMCa'
+     * Example: 'file-abc123'
      *
      * @var string|null
      */
@@ -56,13 +56,16 @@ final class CreateRequest extends AbstractModel
 
     /**
      * The name of the base model to fine-tune. You can select one of "ada",
-     * "babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21.
+     * "babbage", "curie", "davinci", or a fine-tuned model created after 2022-04-21
+     * and before 2023-08-22.
      * To learn more about these models, see the
      * Models documentation.
      *
      * Default Value: 'curie'
      *
-     * @var string|null
+     * Example: 'curie'
+     *
+     * @var mixed
      */
     public $model;
 

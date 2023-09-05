@@ -23,15 +23,31 @@ final class CreateResponse extends AbstractModel
      */
     protected const REQUIRED = ['object', 'created', 'choices', 'usage'];
 
-    /** @var string */
+    /**
+     * The object type, which is always edit.
+     *
+     * @var string
+     */
     public $object;
 
-    /** @var int */
+    /**
+     * The Unix timestamp (in seconds) of when the edit was created.
+     *
+     * @var int
+     */
     public $created;
 
-    /** @var \Tectalic\OpenAi\Models\Edits\CreateResponseChoicesItem[] */
+    /**
+     * A list of edit choices. Can be more than one if n is greater than 1.
+     *
+     * @var \Tectalic\OpenAi\Models\Edits\CreateResponseChoicesItem[]
+     */
     public $choices;
 
-    /** @var \Tectalic\OpenAi\Models\Edits\CreateResponseUsage */
+    /**
+     * Usage statistics for the completion request.
+     *
+     * @var \Tectalic\OpenAi\Models\Edits\CreateResponseUsage
+     */
     public $usage;
 }

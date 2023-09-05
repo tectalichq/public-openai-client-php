@@ -21,7 +21,7 @@ final class CreateResponseChoicesItemMessage extends AbstractModel
      *
      * These properties must all be set when this Model is instantiated.
      */
-    protected const REQUIRED = ['role'];
+    protected const REQUIRED = ['role', 'content'];
 
     /**
      * The role of the author of this message.

@@ -27,7 +27,9 @@ final class CreateRequest extends AbstractModel
      * ID of the model to use. You can use the text-davinci-edit-001 or
      * code-davinci-edit-001 model with this endpoint.
      *
-     * @var string
+     * Example: 'text-davinci-edit-001'
+     *
+     * @var mixed
      */
     public $model;
 

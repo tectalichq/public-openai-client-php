@@ -36,42 +36,96 @@ final class CancelFineTuneResponse extends AbstractModel
         'result_files',
     ];
 
-    /** @var string */
+    /**
+     * The object identifier, which can be referenced in the API endpoints.
+     *
+     * @var string
+     */
     public $id;
 
-    /** @var string */
+    /**
+     * The object type, which is always "fine-tune".
+     *
+     * @var string
+     */
     public $object;
 
-    /** @var int */
+    /**
+     * The Unix timestamp (in seconds) for when the fine-tuning job was created.
+     *
+     * @var int
+     */
     public $created_at;
 
-    /** @var int */
+    /**
+     * The Unix timestamp (in seconds) for when the fine-tuning job was last updated.
+     *
+     * @var int
+     */
     public $updated_at;
 
-    /** @var string */
+    /**
+     * The base model that is being fine-tuned.
+     *
+     * @var string
+     */
     public $model;
 
-    /** @var string|null */
+    /**
+     * The name of the fine-tuned model that is being created.
+     *
+     * @var string|null
+     */
     public $fine_tuned_model;
 
-    /** @var string */
+    /**
+     * The organization that owns the fine-tuning job.
+     *
+     * @var string
+     */
     public $organization_id;
 
-    /** @var string */
+    /**
+     * The current status of the fine-tuning job, which can be either created, running,
+     * succeeded, failed, or cancelled.
+     *
+     * @var string
+     */
     public $status;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseHyperparams */
+    /**
+     * The hyperparameters used for the fine-tuning job. See the fine-tuning guide for
+     * more details.
+     *
+     * @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseHyperparams
+     */
     public $hyperparams;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseTrainingFilesItem[] */
+    /**
+     * The list of files used for training.
+     *
+     * @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseTrainingFilesItem[]
+     */
     public $training_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseValidationFilesItem[] */
+    /**
+     * The list of files used for validation.
+     *
+     * @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseValidationFilesItem[]
+     */
     public $validation_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseResultFilesItem[] */
+    /**
+     * The compiled results files for the fine-tuning job.
+     *
+     * @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseResultFilesItem[]
+     */
     public $result_files;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseEventsItem[] */
+    /**
+     * The list of events that have been observed in the lifecycle of the FineTune job.
+     *
+     * @var \Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseEventsItem[]
+     */
     public $events;
 }

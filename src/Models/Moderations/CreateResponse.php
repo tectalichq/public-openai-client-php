@@ -23,12 +23,24 @@ final class CreateResponse extends AbstractModel
      */
     protected const REQUIRED = ['id', 'model', 'results'];
 
-    /** @var string */
+    /**
+     * The unique identifier for the moderation request.
+     *
+     * @var string
+     */
     public $id;
 
-    /** @var string */
+    /**
+     * The model used to generate the moderation results.
+     *
+     * @var string
+     */
     public $model;
 
-    /** @var \Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItem[] */
+    /**
+     * A list of moderation objects.
+     *
+     * @var \Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItem[]
+     */
     public $results;
 }

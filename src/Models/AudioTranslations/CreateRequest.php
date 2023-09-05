@@ -30,8 +30,8 @@ final class CreateRequest extends AbstractModel
     protected $ignoreMissing = false;
 
     /**
-     * The audio file object (not file name) translate, in one of these formats: mp3,
-     * mp4, mpeg, mpga, m4a, wav, or webm.
+     * The audio file object (not file name) translate, in one of these formats: flac,
+     * mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
      *
      * @var string must be an absolute path to a file.
      */
@@ -40,7 +40,9 @@ final class CreateRequest extends AbstractModel
     /**
      * ID of the model to use. Only whisper-1 is currently available.
      *
-     * @var string
+     * Example: 'whisper-1'
+     *
+     * @var mixed
      */
     public $model;
 

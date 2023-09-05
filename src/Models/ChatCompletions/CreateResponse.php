@@ -23,21 +23,45 @@ final class CreateResponse extends AbstractModel
      */
     protected const REQUIRED = ['id', 'object', 'created', 'model', 'choices'];
 
-    /** @var string */
+    /**
+     * A unique identifier for the chat completion.
+     *
+     * @var string
+     */
     public $id;
 
-    /** @var string */
+    /**
+     * The object type, which is always chat.completion.
+     *
+     * @var string
+     */
     public $object;
 
-    /** @var int */
+    /**
+     * The Unix timestamp (in seconds) of when the chat completion was created.
+     *
+     * @var int
+     */
     public $created;
 
-    /** @var string */
+    /**
+     * The model used for the chat completion.
+     *
+     * @var string
+     */
     public $model;
 
-    /** @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponseChoicesItem[] */
+    /**
+     * A list of chat completion choices. Can be more than one if n is greater than 1.
+     *
+     * @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponseChoicesItem[]
+     */
     public $choices;
 
-    /** @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponseUsage */
+    /**
+     * Usage statistics for the completion request.
+     *
+     * @var \Tectalic\OpenAi\Models\ChatCompletions\CreateResponseUsage
+     */
     public $usage;
 }

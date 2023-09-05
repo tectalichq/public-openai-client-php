@@ -37,7 +37,7 @@ final class EmbeddingsTest extends TestCase
     public function testCreateMethod(): void
     {
         $create = $this->client->embeddings()->create(new CreateRequest([
-            'model' => 'alpha0',
+            'model' => 'text-embedding-ada-002',
             'input' => 'The quick brown fox jumped over the lazy dog',
         ]));
         $response = $create->getResponse();

@@ -132,7 +132,7 @@ final class ModelsTest extends TestCase
     public function testRetrieveMethod(): void
     {
         $request = (new Models())
-            ->retrieve('text-davinci-001')
+            ->retrieve('gpt-3.5-turbo')
             ->getRequest();
         $this->assertValidate($request);
     }
@@ -140,7 +140,7 @@ final class ModelsTest extends TestCase
     public function testDeleteMethod(): void
     {
         $request = (new Models())
-            ->delete('curie:ft-acmeco-2021-03-03-21-44-20')
+            ->delete('ft:gpt-3.5-turbo:acemeco:suffix:abc123')
             ->getRequest();
         $this->assertValidate($request);
     }

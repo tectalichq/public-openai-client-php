@@ -21,29 +21,63 @@ final class RetrieveResponseTrainingFilesItem extends AbstractModel
      *
      * These properties must all be set when this Model is instantiated.
      */
-    protected const REQUIRED = ['id', 'object', 'bytes', 'created_at', 'filename', 'purpose'];
+    protected const REQUIRED = ['id', 'object', 'bytes', 'created_at', 'filename', 'purpose', 'format'];
 
-    /** @var string */
+    /**
+     * The file identifier, which can be referenced in the API endpoints.
+     *
+     * @var string
+     */
     public $id;
 
-    /** @var string */
+    /**
+     * The object type, which is always "file".
+     *
+     * @var string
+     */
     public $object;
 
-    /** @var int */
+    /**
+     * The size of the file in bytes.
+     *
+     * @var int
+     */
     public $bytes;
 
-    /** @var int */
+    /**
+     * The Unix timestamp (in seconds) for when the file was created.
+     *
+     * @var int
+     */
     public $created_at;
 
-    /** @var string */
+    /**
+     * The name of the file.
+     *
+     * @var string
+     */
     public $filename;
 
-    /** @var string */
+    /**
+     * The intended purpose of the file. Currently, only "fine-tune" is supported.
+     *
+     * @var string
+     */
     public $purpose;
 
-    /** @var string */
+    /**
+     * The current status of the file, which can be either uploaded, processed,
+     * pending, error, deleting or deleted.
+     *
+     * @var string
+     */
     public $status;
 
-    /** @var \Tectalic\OpenAi\Models\FineTunes\RetrieveResponseTrainingFilesItemStatusDetails|null */
+    /**
+     * Additional details about the status of the file. If the file is in the error
+     * state, this will include a message describing the error.
+     *
+     * @var string|null
+     */
     public $status_details;
 }

@@ -23,15 +23,31 @@ final class ListResponseDataItem extends AbstractModel
      */
     protected const REQUIRED = ['id', 'object', 'created', 'owned_by'];
 
-    /** @var string */
+    /**
+     * The model identifier, which can be referenced in the API endpoints.
+     *
+     * @var string
+     */
     public $id;
 
-    /** @var string */
+    /**
+     * The object type, which is always "model".
+     *
+     * @var string
+     */
     public $object;
 
-    /** @var int */
+    /**
+     * The Unix timestamp (in seconds) when the model was created.
+     *
+     * @var int
+     */
     public $created;
 
-    /** @var string */
+    /**
+     * The organization that owns the model.
+     *
+     * @var string
+     */
     public $owned_by;
 }

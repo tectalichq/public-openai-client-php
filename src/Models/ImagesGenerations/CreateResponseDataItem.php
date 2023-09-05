@@ -16,9 +16,17 @@ use Tectalic\OpenAi\Models\AbstractModel;
 
 final class CreateResponseDataItem extends AbstractModel
 {
-    /** @var string */
+    /**
+     * The URL of the generated image, if response_format is url (default).
+     *
+     * @var string
+     */
     public $url;
 
-    /** @var string */
+    /**
+     * The base64-encoded JSON of the generated image, if response_format is b64_json.
+     *
+     * @var string
+     */
     public $b64_json;
 }
