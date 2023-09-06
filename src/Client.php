@@ -31,6 +31,9 @@ use Tectalic\OpenAi\Handlers\FilesContent;
 use Tectalic\OpenAi\Handlers\FineTunes;
 use Tectalic\OpenAi\Handlers\FineTunesCancel;
 use Tectalic\OpenAi\Handlers\FineTunesEvents;
+use Tectalic\OpenAi\Handlers\FineTuningJobs;
+use Tectalic\OpenAi\Handlers\FineTuningJobsCancel;
+use Tectalic\OpenAi\Handlers\FineTuningJobsEvents;
 use Tectalic\OpenAi\Handlers\ImagesEdits;
 use Tectalic\OpenAi\Handlers\ImagesGenerations;
 use Tectalic\OpenAi\Handlers\ImagesVariations;
@@ -95,6 +98,8 @@ final class Client implements ClientInterface
 
     /**
      * Access to the edits handler.
+     *
+     * @deprecated
      *
      * @api
      * @return Edits
@@ -193,7 +198,42 @@ final class Client implements ClientInterface
     }
 
     /**
+     * Access to the fineTuningJobs handler.
+     *
+     * @api
+     * @return FineTuningJobs
+     */
+    public function fineTuningJobs(): FineTuningJobs
+    {
+        return new \Tectalic\OpenAi\Handlers\FineTuningJobs($this);
+    }
+
+    /**
+     * Access to the fineTuningJobsEvents handler.
+     *
+     * @api
+     * @return FineTuningJobsEvents
+     */
+    public function fineTuningJobsEvents(): FineTuningJobsEvents
+    {
+        return new \Tectalic\OpenAi\Handlers\FineTuningJobsEvents($this);
+    }
+
+    /**
+     * Access to the fineTuningJobsCancel handler.
+     *
+     * @api
+     * @return FineTuningJobsCancel
+     */
+    public function fineTuningJobsCancel(): FineTuningJobsCancel
+    {
+        return new \Tectalic\OpenAi\Handlers\FineTuningJobsCancel($this);
+    }
+
+    /**
      * Access to the fineTunes handler.
+     *
+     * @deprecated
      *
      * @api
      * @return FineTunes
@@ -206,6 +246,8 @@ final class Client implements ClientInterface
     /**
      * Access to the fineTunesCancel handler.
      *
+     * @deprecated
+     *
      * @api
      * @return FineTunesCancel
      */
@@ -216,6 +258,8 @@ final class Client implements ClientInterface
 
     /**
      * Access to the fineTunesEvents handler.
+     *
+     * @deprecated
      *
      * @api
      * @return FineTunesEvents
@@ -406,7 +450,7 @@ final class Client implements ClientInterface
 
         $request = $request->withHeader(
             'User-Agent',
-            'Tectalic OpenAI REST API Client/1.5.0'
+            'Tectalic OpenAI REST API Client/1.6.0'
         );
 
         // Merge Headers.

@@ -49,7 +49,7 @@ final class FineTunesTest extends TestCase
 
     public function testCreateMethod(): void
     {
-        $create = $this->client->fineTunes()->create(new CreateRequest(['training_file' => 'file-ajSREls59WBbvgSzJSVWxMCB']));
+        $create = $this->client->fineTunes()->create(new CreateRequest(['training_file' => 'file-abc123']));
         $response = $create->getResponse();
         $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
         $this->assertLessThan(300, $response->getStatusCode());

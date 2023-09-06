@@ -17,6 +17,13 @@ use Tectalic\OpenAi\Models\AbstractModel;
 final class CreateResponseChoicesItemMessageFunctionCall extends AbstractModel
 {
     /**
+     * List of required property names.
+     *
+     * These properties must all be set when this Model is instantiated.
+     */
+    protected const REQUIRED = ['name', 'arguments'];
+
+    /**
      * The name of the function to call.
      *
      * @var string

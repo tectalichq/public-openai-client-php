@@ -125,7 +125,10 @@ final class ChatCompletionsTest extends TestCase
     public function testCreateMethod(): void
     {
         $request = (new ChatCompletions())
-            ->create(new CreateRequest(['model' => 'alpha0', 'messages' => [['role' => 'system']]]))
+            ->create(new CreateRequest([
+            'model' => 'gpt-3.5-turbo',
+            'messages' => [['role' => 'system', 'content' => 'alpha0']],
+        ]))
             ->getRequest();
         $this->assertValidate($request);
     }

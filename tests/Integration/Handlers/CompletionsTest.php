@@ -36,7 +36,7 @@ final class CompletionsTest extends TestCase
 
     public function testCreateMethod(): void
     {
-        $create = $this->client->completions()->create(new CreateRequest(['model' => 'alpha0', 'prompt' => '<|endoftext|>']));
+        $create = $this->client->completions()->create(new CreateRequest(['model' => 'mixed', 'prompt' => '<|endoftext|>']));
         $response = $create->getResponse();
         $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
         $this->assertLessThan(300, $response->getStatusCode());

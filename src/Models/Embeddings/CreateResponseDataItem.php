@@ -23,12 +23,25 @@ final class CreateResponseDataItem extends AbstractModel
      */
     protected const REQUIRED = ['index', 'object', 'embedding'];
 
-    /** @var int */
+    /**
+     * The index of the embedding in the list of embeddings.
+     *
+     * @var int
+     */
     public $index;
 
-    /** @var string */
+    /**
+     * The object type, which is always "embedding".
+     *
+     * @var string
+     */
     public $object;
 
-    /** @var int[]|float[] */
+    /**
+     * The embedding vector, which is a list of floats. The length of vector depends on
+     * the model as listed in the embedding guide.
+     *
+     * @var int[]|float[]
+     */
     public $embedding;
 }

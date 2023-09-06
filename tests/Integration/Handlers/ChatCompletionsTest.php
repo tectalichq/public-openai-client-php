@@ -36,7 +36,10 @@ final class ChatCompletionsTest extends TestCase
 
     public function testCreateMethod(): void
     {
-        $create = $this->client->chatCompletions()->create(new CreateRequest(['model' => 'alpha0', 'messages' => [['role' => 'system']]]));
+        $create = $this->client->chatCompletions()->create(new CreateRequest([
+            'model' => 'gpt-3.5-turbo',
+            'messages' => [['role' => 'system', 'content' => 'alpha0']],
+        ]));
         $response = $create->getResponse();
         $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
         $this->assertLessThan(300, $response->getStatusCode());

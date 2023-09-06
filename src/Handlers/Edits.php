@@ -23,6 +23,9 @@ use Tectalic\OpenAi\Models\Edits\CreateRequest;
 use Tectalic\OpenAi\Models\Edits\CreateResponse;
 use Throwable;
 
+/**
+ * @deprecated
+ */
 final class Edits
 {
     /** @var Client */
@@ -49,6 +52,8 @@ final class Edits
      * Operation ID:  createEdit
      *
      * @param CreateRequest|array $body
+     *
+     * @deprecated
      *
      * @api
      * @return self

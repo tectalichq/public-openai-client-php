@@ -23,12 +23,24 @@ final class CreateResponseResultsItem extends AbstractModel
      */
     protected const REQUIRED = ['flagged', 'categories', 'category_scores'];
 
-    /** @var bool */
+    /**
+     * Whether the content violates OpenAI's usage policies.
+     *
+     * @var bool
+     */
     public $flagged;
 
-    /** @var \Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItemCategories */
+    /**
+     * A list of the categories, and whether they are flagged or not.
+     *
+     * @var \Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItemCategories
+     */
     public $categories;
 
-    /** @var \Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItemCategoryScores */
+    /**
+     * A list of the categories along with their scores as predicted by model.
+     *
+     * @var \Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItemCategoryScores
+     */
     public $category_scores;
 }

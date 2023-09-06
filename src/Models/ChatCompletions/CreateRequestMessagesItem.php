@@ -21,7 +21,7 @@ final class CreateRequestMessagesItem extends AbstractModel
      *
      * These properties must all be set when this Model is instantiated.
      */
-    protected const REQUIRED = ['role'];
+    protected const REQUIRED = ['role', 'content'];
 
     /**
      * The role of the messages author. One of system, user, assistant, or function.
@@ -33,10 +33,10 @@ final class CreateRequestMessagesItem extends AbstractModel
     public $role;
 
     /**
-     * The contents of the message. content is required for all messages except
-     * assistant messages with function calls.
+     * The contents of the message. content is required for all messages, and may be
+     * null for assistant messages with function calls.
      *
-     * @var string
+     * @var string|null
      */
     public $content;
 

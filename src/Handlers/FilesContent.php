@@ -42,12 +42,12 @@ final class FilesContent
     }
 
     /**
-     * Returns the contents of the specified file
+     * Returns the contents of the specified file.
      *
      * Operation URL: GET /files/{file_id}/content
      * Operation ID:  downloadFile
      *
-     * @param string $fileId The ID of the file to use for this request
+     * @param string $fileId The ID of the file to use for this request.
      *
      * @api
      * @return self

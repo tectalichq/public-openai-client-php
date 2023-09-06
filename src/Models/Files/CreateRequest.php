@@ -31,8 +31,7 @@ final class CreateRequest extends AbstractModel
 
     /**
      * Name of the JSON Lines file to be uploaded.
-     * If the purpose is set to "fine-tune", each line is a JSON record with "prompt"
-     * and "completion" fields representing your training examples.
+     * If the purpose is set to "fine-tune", the file will be used for fine-tuning.
      *
      * @var string must be an absolute path to a file.
      */
@@ -40,7 +39,7 @@ final class CreateRequest extends AbstractModel
 
     /**
      * The intended purpose of the uploaded documents.
-     * Use "fine-tune" for Fine-tuning. This allows us to validate the format of the
+     * Use "fine-tune" for fine-tuning. This allows us to validate the format of the
      * uploaded file.
      *
      * Example: 'fine-tune'

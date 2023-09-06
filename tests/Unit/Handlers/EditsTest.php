@@ -126,7 +126,7 @@ final class EditsTest extends TestCase
     {
         $request = (new Edits())
             ->create(new CreateRequest([
-            'model' => 'alpha0',
+            'model' => 'text-davinci-edit-001',
             'instruction' => 'Fix the spelling mistakes.',
         ]))
             ->getRequest();

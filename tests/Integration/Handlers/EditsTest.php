@@ -37,7 +37,7 @@ final class EditsTest extends TestCase
     public function testCreateMethod(): void
     {
         $create = $this->client->edits()->create(new CreateRequest([
-            'model' => 'alpha0',
+            'model' => 'text-davinci-edit-001',
             'instruction' => 'Fix the spelling mistakes.',
         ]));
         $response = $create->getResponse();

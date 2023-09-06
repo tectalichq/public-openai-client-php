@@ -23,7 +23,10 @@ final class CreateResponseResultsItemCategoryScores extends AbstractModel
      */
     protected const MAPPED = [
         'hateThreatening' => 'hate/threatening',
+        'harassmentThreatening' => 'harassment/threatening',
         'selfHarm' => 'self-harm',
+        'selfHarmIntent' => 'self-harm/intent',
+        'selfHarmInstructions' => 'self-harm/instructions',
         'sexualMinors' => 'sexual/minors',
         'violenceGraphic' => 'violence/graphic',
     ];
@@ -36,31 +39,91 @@ final class CreateResponseResultsItemCategoryScores extends AbstractModel
     protected const REQUIRED = [
         'hate',
         'hateThreatening',
+        'harassment',
+        'harassmentThreatening',
         'selfHarm',
+        'selfHarmIntent',
+        'selfHarmInstructions',
         'sexual',
         'sexualMinors',
         'violence',
         'violenceGraphic',
     ];
 
-    /** @var float|int */
+    /**
+     * The score for the category 'hate'.
+     *
+     * @var float|int
+     */
     public $hate;
 
-    /** @var float|int */
+    /**
+     * The score for the category 'hate/threatening'.
+     *
+     * @var float|int
+     */
     public $hateThreatening;
 
-    /** @var float|int */
+    /**
+     * The score for the category 'harassment'.
+     *
+     * @var float|int
+     */
+    public $harassment;
+
+    /**
+     * The score for the category 'harassment/threatening'.
+     *
+     * @var float|int
+     */
+    public $harassmentThreatening;
+
+    /**
+     * The score for the category 'self-harm'.
+     *
+     * @var float|int
+     */
     public $selfHarm;
 
-    /** @var float|int */
+    /**
+     * The score for the category 'self-harm/intent'.
+     *
+     * @var float|int
+     */
+    public $selfHarmIntent;
+
+    /**
+     * The score for the category 'self-harm/instructions'.
+     *
+     * @var float|int
+     */
+    public $selfHarmInstructions;
+
+    /**
+     * The score for the category 'sexual'.
+     *
+     * @var float|int
+     */
     public $sexual;
 
-    /** @var float|int */
+    /**
+     * The score for the category 'sexual/minors'.
+     *
+     * @var float|int
+     */
     public $sexualMinors;
 
-    /** @var float|int */
+    /**
+     * The score for the category 'violence'.
+     *
+     * @var float|int
+     */
     public $violence;
 
-    /** @var float|int */
+    /**
+     * The score for the category 'violence/graphic'.
+     *
+     * @var float|int
+     */
     public $violenceGraphic;
 }

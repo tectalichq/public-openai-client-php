@@ -27,7 +27,9 @@ final class CreateRequest extends AbstractModel
      * ID of the model to use. See the model endpoint compatibility table for details
      * on which models work with the Chat API.
      *
-     * @var string
+     * Example: 'gpt-3.5-turbo'
+     *
+     * @var mixed
      */
     public $model;
 

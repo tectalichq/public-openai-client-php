@@ -48,7 +48,7 @@ final class ModelsTest extends TestCase
 
     public function testRetrieveMethod(): void
     {
-        $retrieve = $this->client->models()->retrieve('text-davinci-001');
+        $retrieve = $this->client->models()->retrieve('gpt-3.5-turbo');
         $response = $retrieve->getResponse();
         $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
         $this->assertLessThan(300, $response->getStatusCode());
@@ -59,7 +59,7 @@ final class ModelsTest extends TestCase
 
     public function testDeleteMethod(): void
     {
-        $delete = $this->client->models()->delete('curie:ft-acmeco-2021-03-03-21-44-20');
+        $delete = $this->client->models()->delete('ft:gpt-3.5-turbo:acemeco:suffix:abc123');
         $response = $delete->getResponse();
         $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
         $this->assertLessThan(300, $response->getStatusCode());

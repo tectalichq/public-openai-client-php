@@ -135,7 +135,7 @@ final class AudioTranscriptionsTest extends TestCase
                 ->at($filesystem);
         }
         $request = (new AudioTranscriptions())
-            ->create(new CreateRequest(['file' => 'vfs://root/file', 'model' => 'alpha0']))
+            ->create(new CreateRequest(['file' => 'vfs://root/file', 'model' => 'whisper-1']))
             ->getRequest();
         $this->assertValidate($request);
     }

@@ -49,7 +49,7 @@ final class AudioTranslationsTest extends TestCase
                 ->withContent(LargeFileContent::withKilobytes(1))
                 ->at($filesystem);
         }
-        $create = $this->client->audioTranslations()->create(new CreateRequest(['file' => 'vfs://root/file', 'model' => 'alpha0']));
+        $create = $this->client->audioTranslations()->create(new CreateRequest(['file' => 'vfs://root/file', 'model' => 'whisper-1']));
         $response = $create->getResponse();
         $this->assertGreaterThanOrEqual(200, $response->getStatusCode());
         $this->assertLessThan(300, $response->getStatusCode());

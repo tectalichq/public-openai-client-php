@@ -5,6 +5,55 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.6.0 - 2023-09-06
+
+### Added
+- Add support for OpenAI's new **fine-tuning** API, which allows fine-tuning of GPT 3.5 Turbo. [Fine-tuning guide](https://platform.openai.com/docs/guides/fine-tuning). [Announcement](https://openai.com/blog/gpt-3-5-turbo-fine-tuning-and-api-updates).
+- Add new `FineTuningJobs` Handler, which creates and lists fine-tuning jobs.
+- Add new `FineTuningJobsEvents` Handler, which gets status updates for a given fine-tuning job.
+- Add new `FineTuningJobsCancel` Handler, which cancels an existing fine-tuning job.
+- Add support for new content moderation categories: `harassment/threatening`, `self-harm/intent`, `self-harm/instructions`. [Moderation guide](https://platform.openai.com/docs/guides/moderation).
+
+### Changed
+- The `\Tectalic\OpenAi\Models\ChatCompletions\CreateRequestFunctionsItem::$parameters` property is now required.
+- The `\Tectalic\OpenAi\Models\ChatCompletions\CreateRequestMessagesItem::$content` property is now required.
+- The `\Tectalic\OpenAi\Models\ChatCompletions\CreateRequestMessagesItemFunctionCall` `name` and `arguments` properties are now required.
+- The `\Tectalic\OpenAi\Models\ChatCompletions\CreateResponseChoicesItem` `index`, `message` and `finish_reason` properties are now required.
+- The `\Tectalic\OpenAi\Models\ChatCompletions\CreateResponseChoicesItemMessage::$content` property is now required.
+- The `\Tectalic\OpenAi\Models\ChatCompletions\CreateResponseChoicesItemMessageFunctionCall` `name` and `arguments` properties are now required.
+- The `\Tectalic\OpenAi\Models\Edits\CreateResponseChoicesItem` `text`, `index` and `finish_reason` properties are now required.
+- The `\Tectalic\OpenAi\Models\Edits\CreateResponseChoicesItem::$logprobs` property has been removed.
+- The `\Tectalic\OpenAi\Models\Files\CreateResponse::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\Files\ListResponseDataItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\Files\RetrieveResponse::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\CreateResponseHyperparams` model structure is now defined, with the following required properties: `n_epochs`, `batch_size`, `prompt_loss_weight` and `learning_rate_multiplier`.
+- The `\Tectalic\OpenAi\Models\FineTunes\CreateResponseResultFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\CreateResponseTrainingFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\CreateResponseValidationFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\ListResponseDataItemHyperparams` model structure is now defined, with the following required properties: `n_epochs`, `batch_size`, `prompt_loss_weight` and `learning_rate_multiplier`.
+- The `\Tectalic\OpenAi\Models\FineTunes\ListResponseDataItemResultFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\ListResponseDataItemTrainingFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\ListResponseDataItemValidationFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\RetrieveResponseHyperparams` model structure is now defined, with the following required properties: `n_epochs`, `batch_size`, `prompt_loss_weight` and `learning_rate_multiplier`.
+- The `\Tectalic\OpenAi\Models\FineTunes\RetrieveResponseResultFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\RetrieveResponseTrainingFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\RetrieveResponseValidationFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunes\RetrieveResponseValidationFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseHyperparams` model structure is now defined, with the following required properties: `n_epochs`, `batch_size`, `prompt_loss_weight` and `learning_rate_multiplier`.
+- The `\Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseResultFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseTrainingFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\FineTunesCancel\CancelFineTuneResponseValidationFilesItem::$format` property is now required.
+- The `\Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItemCategories` model now supports `harassment/threatening`, `self-harm/intent`, `self-harm/instructions` information.
+- The `\Tectalic\OpenAi\Models\Moderations\CreateResponseResultsItemCategoryScores` model now supports `harassment/threatening`, `self-harm/intent`, `self-harm/instructions` information.
+- Improved documentation for many model properties.
+- API version updated from 1.3.1 to 2.0.0.
+
+### Deprecated
+- Deprecate the `Edits` Handler. The `ChatCompletions` handler should be used instead. These endpoints will be shut down on January 04, 2024.
+- Deprecate the `FineTunes` Handler. The new `FineTunesJobs` handler should be used instead. These endpoints will be shut down on January 04, 2024.
+- Deprecate the `FineTunesEvents` Handler. The new `FineTunesJobsEvents` handler should be used instead. These endpoints will be shut down on January 04, 2024.
+- Deprecate the `FineTunesCancel` Handler. The new `FineTunesJobsCancel` handler should be used instead. These endpoints will be shut down on January 04, 2024.
+
 ## 1.5.0 - 2023-06-19
 
 ### Added

@@ -4,7 +4,7 @@
 
 The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
 
-Supports **ChatGPT**, **GPT-4**, **GPT-3.5**, **GPT-3**, **Codex**, **DALL·E**, **Whisper**, **Embeddings** and **Moderation** models, with fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
+Supports **ChatGPT**, **GPT-4**, **GPT-3.5**, **GPT-3**, **Codex**, **DALL·E**, **Whisper**, **Fine-Tuning**, **Embeddings** and **Moderation** models, with fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.
 
 More information is available from [https://tectalic.com/apis/openai](https://tectalic.com/apis/openai).
 
@@ -291,13 +291,13 @@ In the **Usage** code above, customize the `Authentication` constructor to your 
 
 The primary class you will interact with is the `Client` class (`Tectalic\OpenAi\Client`).
 
-This `Client` class also contains the helper methods that let you quickly access the 16 API Handlers.
+This `Client` class also contains the helper methods that let you quickly access the 19 API Handlers.
 
 Please see below for a complete list of supported handlers and methods.
 
 ### Supported API Handlers and Methods
 
-This package supports 23 API Methods, which are grouped into 16 API Handlers.
+This package supports 28 API Methods, which are grouped into 19 API Handlers.
 
 See the table below for a full list of API Handlers and Methods.
 
@@ -305,28 +305,35 @@ See the table below for a full list of API Handlers and Methods.
 | API Handler Class and Method Name | Description | API Verb and URL |
 | --------------------------------- | ----------- | ---------------- |
 |`AudioTranscriptions::create()`|Transcribes audio into the input language.|`POST` `/audio/transcriptions`|
-|`AudioTranslations::create()`|Translates audio into into English.|`POST` `/audio/translations`|
+|`AudioTranslations::create()`|Translates audio into English.|`POST` `/audio/translations`|
 |`ChatCompletions::create()`|Creates a model response for the given chat conversation.|`POST` `/chat/completions`|
 |`Completions::create()`|Creates a completion for the provided prompt and parameters.|`POST` `/completions`|
-|`Edits::create()`|Creates a new edit for the provided input, instruction, and parameters.|`POST` `/edits`|
+|~~`Edits::create()`~~|~~Creates a new edit for the provided input, instruction, and parameters.~~|~~`POST` `/edits`~~|
 |`Embeddings::create()`|Creates an embedding vector representing the input text.|`POST` `/embeddings`|
 |`Files::list()`|Returns a list of files that belong to the user's organization.|`GET` `/files`|
 |`Files::create()`|Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.|`POST` `/files`|
 |`Files::retrieve()`|Returns information about a specific file.|`GET` `/files/{file_id}`|
 |`Files::delete()`|Delete a file.|`DELETE` `/files/{file_id}`|
-|`FilesContent::download()`|Returns the contents of the specified file|`GET` `/files/{file_id}/content`|
-|`FineTunes::list()`|List your organization's fine-tuning jobs|`GET` `/fine-tunes`|
-|`FineTunes::create()`|Creates a job that fine-tunes a specified model from a given dataset.<br />Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br />Learn more about Fine-tuning|`POST` `/fine-tunes`|
-|`FineTunes::retrieve()`|Gets info about the fine-tune job.<br />Learn more about Fine-tuning|`GET` `/fine-tunes/{fine_tune_id}`|
-|`FineTunesCancel::cancelFineTune()`|Immediately cancel a fine-tune job.|`POST` `/fine-tunes/{fine_tune_id}/cancel`|
-|`FineTunesEvents::listFineTune()`|Get fine-grained status updates for a fine-tune job.|`GET` `/fine-tunes/{fine_tune_id}/events`|
+|`FilesContent::download()`|Returns the contents of the specified file.|`GET` `/files/{file_id}/content`|
+|~~`FineTunes::list()`~~|~~List your organization's fine-tuning jobs~~|~~`GET` `/fine-tunes`~~|
+|~~`FineTunes::create()`~~|~~Creates a job that fine-tunes a specified model from a given dataset.<br />Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br />Learn more about fine-tuning~~|~~`POST` `/fine-tunes`~~|
+|~~`FineTunes::retrieve()`~~|~~Gets info about the fine-tune job.<br />Learn more about fine-tuning~~|~~`GET` `/fine-tunes/{fine_tune_id}`~~|
+|~~`FineTunesCancel::cancelFineTune()`~~|~~Immediately cancel a fine-tune job.~~|~~`POST` `/fine-tunes/{fine_tune_id}/cancel`~~|
+|~~`FineTunesEvents::listFineTune()`~~|~~Get fine-grained status updates for a fine-tune job.~~|~~`GET` `/fine-tunes/{fine_tune_id}/events`~~|
+|`FineTuningJobs::listPaginated()`|List your organization's fine-tuning jobs|`GET` `/fine_tuning/jobs`|
+|`FineTuningJobs::create()`|Creates a job that fine-tunes a specified model from a given dataset.<br />Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.<br />Learn more about fine-tuning|`POST` `/fine_tuning/jobs`|
+|`FineTuningJobs::retrieve()`|Get info about a fine-tuning job.<br />Learn more about fine-tuning|`GET` `/fine_tuning/jobs/{fine_tuning_job_id}`|
+|`FineTuningJobsCancel::fineTuning()`|Immediately cancel a fine-tune job.|`POST` `/fine_tuning/jobs/{fine_tuning_job_id}/cancel`|
+|`FineTuningJobsEvents::listFineTuning()`|Get status updates for a fine-tuning job.|`GET` `/fine_tuning/jobs/{fine_tuning_job_id}/events`|
 |`ImagesEdits::createImage()`|Creates an edited or extended image given an original image and a prompt.|`POST` `/images/edits`|
 |`ImagesGenerations::create()`|Creates an image given a prompt.|`POST` `/images/generations`|
 |`ImagesVariations::createImage()`|Creates a variation of a given image.|`POST` `/images/variations`|
 |`Models::list()`|Lists the currently available models, and provides basic information about each one such as the owner and availability.|`GET` `/models`|
 |`Models::retrieve()`|Retrieves a model instance, providing basic information about the model such as the owner and permissioning.|`GET` `/models/{model}`|
-|`Models::delete()`|Delete a fine-tuned model. You must have the Owner role in your organization.|`DELETE` `/models/{model}`|
+|`Models::delete()`|Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.|`DELETE` `/models/{model}`|
 |`Moderations::create()`|Classifies if text violates OpenAI's Content Policy|`POST` `/moderations`|
+
+Deprecated method(s) are listed with ~~strike-through~~ formatting. Please do not use these methods, as they will be removed in a future release.
 
 ### Making a Request
 

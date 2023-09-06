@@ -1,6 +1,6 @@
 {
   "name": "tectalic/openai",
-  "description": "An OpenAI REST API Client with support for ChatGPT, GPT-4, GPT-3.5, GPT-3, Codex, DALL·E, Whisper, Embeddings and Moderation models. Includes fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.",
+  "description": "An OpenAI REST API Client with support for ChatGPT, GPT-4, GPT-3.5, GPT-3, Codex, DALL·E, Whisper, Embeddings, Fine-Tuning and Moderation models. Includes fully typed Data Transfer Objects (DTOs) for all requests and responses and IDE autocomplete support.",
   "type": "library",
   "license": "MIT",
   "keywords": [
@@ -9,6 +9,7 @@
     "chatgpt",
     "dalle",
     "dall-e",
+    "fine-tuning",
     "gpt-3",
     "gpt-3.5",
     "gpt-4",
