@@ -59,9 +59,10 @@ final class FineTuningResponse extends AbstractModel
     public $created_at;
 
     /**
-     * The Unix timestamp (in seconds) for when the fine-tuning job was finished.
+     * The Unix timestamp (in seconds) for when the fine-tuning job was finished. The
+     * value will be null if the fine-tuning job is still running.
      *
-     * @var int
+     * @var int|null
      */
     public $finished_at;
 
@@ -73,7 +74,8 @@ final class FineTuningResponse extends AbstractModel
     public $model;
 
     /**
-     * The name of the fine-tuned model that is being created.
+     * The name of the fine-tuned model that is being created. The value will be null
+     * if the fine-tuning job is still running.
      *
      * @var string|null
      */
@@ -103,30 +105,34 @@ final class FineTuningResponse extends AbstractModel
     public $hyperparameters;
 
     /**
-     * The file ID used for training.
+     * The file ID used for training. You can retrieve the training data with the Files
+     * API.
      *
      * @var string
      */
     public $training_file;
 
     /**
-     * The file ID used for validation.
+     * The file ID used for validation. You can retrieve the validation results with
+     * the Files API.
      *
      * @var string|null
      */
     public $validation_file;
 
     /**
-     * The compiled results files for the fine-tuning job.
+     * The compiled results file ID(s) for the fine-tuning job. You can retrieve the
+     * results with the Files API.
      *
-     * @var \Tectalic\OpenAi\Models\FineTuningJobsCancel\FineTuningResponseResultFilesItem[]
+     * @var string[]
      */
     public $result_files;
 
     /**
-     * The total number of billable tokens processed by this fine tuning job.
+     * The total number of billable tokens processed by this fine-tuning job. The value
+     * will be null if the fine-tuning job is still running.
      *
-     * @var int
+     * @var int|null
      */
     public $trained_tokens;
 }

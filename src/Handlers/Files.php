@@ -98,7 +98,7 @@ final class Files
      * Operation URL: GET /files/{file_id}
      * Operation ID:  retrieveFile
      *
-     * @param string $fileId The ID of the file to use for this request
+     * @param string $fileId The ID of the file to use for this request.
      *
      * @api
      * @return self
@@ -121,7 +121,7 @@ final class Files
      * Operation URL: DELETE /files/{file_id}
      * Operation ID:  deleteFile
      *
-     * @param string $fileId The ID of the file to use for this request
+     * @param string $fileId The ID of the file to use for this request.
      *
      * @api
      * @return self

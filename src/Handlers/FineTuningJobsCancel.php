@@ -47,7 +47,7 @@ final class FineTuningJobsCancel
      * Operation URL: POST /fine_tuning/jobs/{fine_tuning_job_id}/cancel
      * Operation ID:  cancelFineTuningJob
      *
-     * @param string $fineTuningJobId The ID of the fine-tuning job to cancel
+     * @param string $fineTuningJobId The ID of the fine-tuning job to cancel.
      *
      * @api
      * @return self

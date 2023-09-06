@@ -1,17 +1,19 @@
 # Modified to with the following fixes:
-# - Add missing Bearer Authentication:
-#     - Add `bearerAuth` security to the top-level OpenAPI object.
-#     - Add `bearerAuth` definition to Components.securitySchemes.
 # - Add example to CreateFileRequest `purpose` property.
 # - Add nullable to CreateChatCompletionRequest `stop` property.
 # - Remove default `inf` value from CreateChatCompletionRequest `max_tokens` property.
 openapi: 3.0.0
 info:
   title: OpenAI API
-  description: APIs for sampling from and fine-tuning language models
+  description: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.
   version: "2.0.0"
-security:
-  - bearerAuth: [ ]
+  termsOfService: https://openai.com/policies/terms-of-use
+  contact:
+    name: OpenAI Support
+    url: https://help.openai.com/
+  license:
+    name: MIT
+    url: https://github.com/openai/openai-openapi/blob/master/LICENSE
 servers:
   - url: https://api.openai.com/v1
 tags:
@@ -87,7 +89,7 @@ paths:
 
                 async function main() {
                   const completion = await openai.chat.completions.create({
-                    messages: [{ role: "system", content: "string" }],
+                    messages: [{ role: "system", content: "You are a helpful assistant." }],
                     model: "VAR_model_id",
                   });
 
@@ -932,7 +934,7 @@ paths:
           required: true
           schema:
             type: string
-          description: The ID of the file to use for this request
+          description: The ID of the file to use for this request.
       responses:
         "200":
           description: OK
@@ -983,7 +985,7 @@ paths:
           required: true
           schema:
             type: string
-          description: The ID of the file to use for this request
+          description: The ID of the file to use for this request.
       responses:
         "200":
           description: OK
@@ -1031,14 +1033,14 @@ paths:
       operationId: downloadFile
       tags:
         - OpenAI
-      summary: Returns the contents of the specified file
+      summary: Returns the contents of the specified file.
       parameters:
         - in: path
           name: file_id
           required: true
           schema:
             type: string
-          description: The ID of the file to use for this request
+          description: The ID of the file to use for this request.
       responses:
         "200":
           description: OK
@@ -1229,7 +1231,7 @@ paths:
             type: string
             example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
           description: |
-            The ID of the fine-tuning job
+            The ID of the fine-tuning job.
       responses:
         "200":
           description: OK
@@ -1257,7 +1259,7 @@ paths:
 
               async function main() {
                 const fineTune = await openai.fineTuning.jobs.retrieve("ft-AF1WoRqd3aJAHsqc9NY7iL8F");
-
+                
                 console.log(fineTune);
               }
 
@@ -1280,7 +1282,7 @@ paths:
               "hyperparameters": {
                   "n_epochs": 4,
               },
-              "trained_tokens": 5768
+              "trained_tokens": 5768 | null
             }
 
   /fine_tuning/jobs/{fine_tuning_job_id}/events:
@@ -1387,7 +1389,7 @@ paths:
             type: string
             example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
           description: |
-            The ID of the fine-tuning job to cancel
+            The ID of the fine-tuning job to cancel.
       responses:
         "200":
           description: OK
@@ -2147,6 +2149,12 @@ paths:
             }
 
 components:
+
+  securitySchemes:
+    ApiKeyAuth:
+      type: http
+      scheme: 'bearer'
+
   schemas:
     Error:
       type: object
@@ -3800,14 +3808,15 @@ components:
           description: The Unix timestamp (in seconds) for when the fine-tuning job was created.
         finished_at:
           type: integer
-          description: The Unix timestamp (in seconds) for when the fine-tuning job was finished.
+          nullable: true
+          description: The Unix timestamp (in seconds) for when the fine-tuning job was finished. The value will be null if the fine-tuning job is still running.
         model:
           type: string
           description: The base model that is being fine-tuned.
         fine_tuned_model:
           type: string
           nullable: true
-          description: The name of the fine-tuned model that is being created.
+          description: The name of the fine-tuned model that is being created. The value will be null if the fine-tuning job is still running.
         organization_id:
           type: string
           description: The organization that owns the fine-tuning job.
@@ -3833,19 +3842,21 @@ components:
                 "Auto" decides the optimal number of epochs based on the size of the dataset. If setting the number manually, we support any number between 1 and 50 epochs.
         training_file:
           type: string
-          description: The file ID used for training.
+          description: The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
         validation_file:
           type: string
           nullable: true
-          description: The file ID used for validation.
+          description: The file ID used for validation. You can retrieve the validation results with the [Files API](/docs/api-reference/files/retrieve-contents).
         result_files:
           type: array
-          description: The compiled results files for the fine-tuning job.
+          description: The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).  
           items:
-            $ref: "#/components/schemas/OpenAIFile"
+            type: string
+            example: file-abc123
         trained_tokens:
           type: integer
-          description: The total number of billable tokens processed by this fine tuning job.
+          nullable: true
+          description: The total number of billable tokens processed by this fine-tuning job. The value will be null if the fine-tuning job is still running.
       required:
         - id
         - object
@@ -4030,11 +4041,11 @@ components:
         - level
         - message
       x-oiMeta:
-        name: The fine-tuning event object
+        name: The fine-tuning job event object
         example: |
           {
-            "object": "fine_tuning.job.event",
-            "id": "ft-event-xiA7iJjj8V2zOkCGvWF2hAkDWBQZe",
+            "object": "event",
+            "id": "ftevent-abc123"
             "created_at": 1677610602,
             "level": "info",
             "message": "Created fine-tuning job"
@@ -4082,10 +4093,10 @@ components:
         - prompt_tokens
         - completion_tokens
         - total_tokens
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
+
+security:
+  - ApiKeyAuth: []
+
 x-oaiMeta:
   groups:
     # > General Notes

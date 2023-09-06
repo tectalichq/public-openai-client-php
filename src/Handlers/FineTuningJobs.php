@@ -103,7 +103,7 @@ final class FineTuningJobs
      * Operation URL: GET /fine_tuning/jobs/{fine_tuning_job_id}
      * Operation ID:  retrieveFineTuningJob
      *
-     * @param string $fineTuningJobId The ID of the fine-tuning job
+     * @param string $fineTuningJobId The ID of the fine-tuning job.
      *
      * @api
      * @return self
