@@ -1,5 +1,7 @@
 # Tectalic OpenAI REST API Client
 
+> **This package is no longer supported or maintained.**
+
 ## Introduction
 
 The **Tectalic OpenAI REST API Client** is a package that provides a convenient and straightforward way to interact with the **OpenAI API** from your PHP application.
